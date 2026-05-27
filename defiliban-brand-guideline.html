@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defiliban — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --white: #F5F3EE;
+    --ink: #1A1A1A;
+    --ink-60: #666460;
+    --ink-30: #B8B5AF;
+    --ink-10: #ECEAE5;
+    --accent: #C8A96E;
+    --accent-deep: #9A7A3E;
+    --accent-light: #F0E4C8;
+    --red: #C0392B;
+    --green-pos: #1A7A4A;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --mono: 'DM Mono', 'Courier New', monospace;
+    --rule: 1px solid var(--ink-10);
+    --rule-strong: 1.5px solid var(--ink);
+    --max: 900px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.08);
+    pointer-events: none;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.05);
+    pointer-events: none;
+  }
+  .cover-logo { display: flex; align-items: center; gap: 14px; }
+  .cover-bars { display: flex; align-items: flex-end; gap: 5px; height: 36px; }
+  .cover-bars span {
+    display: block; width: 9px; background: #F5F3EE; border-radius: 2px;
+  }
+  .cover-bars span:nth-child(1) { height: 20px; }
+  .cover-bars span:nth-child(2) { height: 28px; }
+  .cover-bars span:nth-child(3) { height: 36px; }
+  .cover-wordmark { font-family: var(--sans); font-size: 28px; font-weight: 500; color: #F5F3EE; letter-spacing: -0.3px; }
+
+  .cover-title {
+    font-family: var(--serif);
+    font-size: clamp(52px, 8vw, 80px);
+    font-weight: 400;
+    color: #F5F3EE;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    max-width: 700px;
+  }
+  .cover-title em { font-style: italic; color: var(--accent); }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(245,243,238,0.12);
+    padding-top: 24px;
+  }
+  .cover-meta { font-size: 12px; color: rgba(245,243,238,0.4); font-family: var(--mono); letter-spacing: .5px; }
+  .cover-ver { font-size: 12px; color: var(--accent); font-family: var(--mono); }
+
+  /* ── LAYOUT ── */
+  .section {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 80px 40px;
+    border-bottom: var(--rule);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-60);
+    margin-bottom: 8px;
+  }
+  .section-num {
+    font-family: var(--serif);
+    font-size: 11px;
+    color: var(--accent);
+    margin-right: 8px;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+  h3 {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-60);
+    margin-bottom: 12px;
+  }
+
+  /* ── LOGO SECTION ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    border: var(--rule);
+  }
+  .logo-cell {
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+  .logo-cell.dark { background: var(--black); }
+  .logo-cell.light { background: var(--white); border: none; }
+  .logo-cell.gold { background: var(--accent); }
+  .logo-cell.paper { background: #EDE9E0; }
+
+  .logo-display { display: flex; align-items: center; gap: 12px; }
+  .logo-bars-sm { display: flex; align-items: flex-end; gap: 4px; height: 28px; }
+  .logo-bars-sm span { display: block; width: 7px; border-radius: 1.5px; }
+  .logo-bars-sm span:nth-child(1) { height: 15px; }
+  .logo-bars-sm span:nth-child(2) { height: 22px; }
+  .logo-bars-sm span:nth-child(3) { height: 28px; }
+  .logo-name { font-family: var(--sans); font-size: 22px; font-weight: 500; letter-spacing: -0.2px; }
+  .on-dark .logo-bars-sm span, .on-dark .logo-name { color: #F5F3EE; }
+  .on-dark .logo-bars-sm span { background: #F5F3EE; }
+  .on-light .logo-bars-sm span { background: var(--black); }
+  .on-light .logo-name { color: var(--black); }
+  .on-gold .logo-bars-sm span { background: var(--black); }
+  .on-gold .logo-name { color: var(--black); }
+  .on-paper .logo-bars-sm span { background: var(--ink); }
+  .on-paper .logo-name { color: var(--ink); }
+
+  .logo-usage-note { font-size: 11px; font-family: var(--mono); letter-spacing: .3px; }
+  .on-dark .logo-usage-note { color: rgba(245,243,238,0.4); }
+  .on-light .logo-usage-note, .on-paper .logo-usage-note { color: var(--ink-60); }
+  .on-gold .logo-usage-note { color: rgba(10,10,10,0.5); }
+
+  .logo-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .logo-rule-item {
+    padding: 24px;
+    border: var(--rule);
+    border-radius: 2px;
+  }
+  .logo-rule-item.dont { opacity: 0.6; position: relative; }
+  .logo-rule-item.dont::before {
+    content: '✕';
+    position: absolute;
+    top: 12px; right: 14px;
+    font-size: 14px;
+    color: var(--red);
+    font-weight: 500;
+  }
+  .logo-rule-item.do::before {
+    content: '✓';
+    position: absolute;
+    top: 12px; right: 14px;
+    font-size: 14px;
+    color: var(--green-pos);
+    font-weight: 500;
+  }
+  .logo-rule-item.do { position: relative; }
+  .rule-label { font-size: 11px; font-family: var(--mono); color: var(--ink-60); margin-top: 12px; }
+
+  /* ── COLOR SECTION ── */
+  .color-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: var(--rule); margin-bottom: 24px; }
+  .color-swatch { aspect-ratio: 1/1.2; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; border-right: var(--rule); }
+  .color-swatch:last-child { border-right: none; }
+  .swatch-hex { font-family: var(--mono); font-size: 11px; }
+  .swatch-name { font-size: 11px; margin-top: 2px; }
+  .swatch-dark { color: rgba(245,243,238,0.7); }
+  .swatch-dark .swatch-name { color: rgba(245,243,238,0.45); }
+  .swatch-light { color: var(--ink); }
+  .swatch-light .swatch-name { color: var(--ink-60); }
+
+  .color-usage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .color-usage-item {
+    padding: 20px;
+    border: var(--rule);
+    border-radius: 2px;
+  }
+  .color-usage-item .cu-label { font-size: 11px; font-family: var(--mono); color: var(--ink-60); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
+  .color-usage-item .cu-desc { font-size: 13px; color: var(--ink); line-height: 1.5; }
+
+  /* ── TYPOGRAPHY ── */
+  .type-specimen { border: var(--rule); padding: 40px; margin-bottom: 2px; }
+  .type-display {
+    font-family: var(--serif);
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+  .type-display em { font-style: italic; }
+  .type-h1 { font-family: var(--serif); font-size: 36px; font-weight: 400; line-height: 1.15; letter-spacing: -0.5px; }
+  .type-h2 { font-family: var(--serif); font-size: 24px; font-weight: 500; line-height: 1.25; }
+  .type-h3 { font-family: var(--sans); font-size: 16px; font-weight: 500; line-height: 1.3; letter-spacing: .1px; }
+  .type-body { font-family: var(--sans); font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--ink); max-width: 600px; }
+  .type-caption { font-family: var(--sans); font-size: 13px; color: var(--ink-60); line-height: 1.5; }
+  .type-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-60); }
+  .type-data { font-family: var(--mono); font-size: 22px; font-weight: 500; color: var(--ink); }
+
+  .type-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 40px;
+    border: var(--rule);
+    border-top: none;
+    margin-bottom: 2px;
+    background: #FAFAF8;
+  }
+  .type-meta-col .tm-label { font-family: var(--mono); font-size: 10px; color: var(--ink-30); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .type-meta-col .tm-val { font-size: 13px; color: var(--ink-60); }
+
+  .type-pairing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 2px;
+  }
+  .tp-cell { padding: 32px; border: var(--rule); }
+  .tp-cell .tp-tag { font-family: var(--mono); font-size: 10px; color: var(--accent-deep); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+
+  /* ── COMPONENTS ── */
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* Article card */
+  .article-card { border: var(--rule); padding: 0; overflow: hidden; }
+  .article-card-img { background: var(--black); height: 160px; position: relative; display: flex; align-items: flex-end; padding: 16px; }
+  .article-card-img .tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+    background: var(--accent); color: var(--black); padding: 3px 8px; border-radius: 1px; font-weight: 500;
+  }
+  .article-card-img .img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6));
+  }
+  .article-card-body { padding: 20px; }
+  .article-card-body h4 {
+    font-family: var(--serif); font-size: 18px; font-weight: 400; line-height: 1.3;
+    color: var(--ink); margin-bottom: 8px; letter-spacing: -0.2px;
+  }
+  .article-card-body .excerpt { font-size: 13px; color: var(--ink-60); line-height: 1.55; margin-bottom: 14px; }
+  .article-card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: var(--rule); }
+  .article-card-footer .byline { font-size: 11px; color: var(--ink-60); font-family: var(--mono); }
+  .article-card-footer .read-time { font-size: 11px; color: var(--ink-30); font-family: var(--mono); }
+
+  /* Ticker */
+  .ticker-bar {
+    border: var(--rule);
+    border-bottom: none;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+    background: var(--black);
+  }
+  .ticker-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 20px;
+    border-right: 1px solid rgba(245,243,238,0.1);
+  }
+  .ticker-sym { font-family: var(--mono); font-size: 12px; color: rgba(245,243,238,0.9); font-weight: 500; }
+  .ticker-price { font-family: var(--mono); font-size: 12px; color: rgba(245,243,238,0.6); }
+  .ticker-chg { font-family: var(--mono); font-size: 11px; }
+  .ticker-chg.pos { color: #2ECC71; }
+  .ticker-chg.neg { color: #E74C3C; }
+
+  /* Tags / Badges */
+  .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+  .badge {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 500;
+    padding: 4px 10px; border-radius: 1px;
+  }
+  .badge-defi { background: var(--accent-light); color: var(--accent-deep); }
+  .badge-markets { background: #E8EFF8; color: #1A4A7A; }
+  .badge-policy { background: #F5E8E8; color: #7A1A1A; }
+  .badge-breaking { background: var(--black); color: var(--white); }
+  .badge-web3 { background: #EBF0E8; color: #2A4A1A; }
+  .badge-research { background: var(--ink-10); color: var(--ink-60); }
+
+  /* Navigation */
+  .nav-demo {
+    border: var(--rule);
+    background: var(--white);
+    overflow: hidden;
+  }
+  .nav-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 32px;
+    border-bottom: var(--rule-strong);
+    height: 64px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-bars { display: flex; align-items: flex-end; gap: 3px; height: 22px; }
+  .nav-bars span { display: block; width: 5px; background: var(--black); border-radius: 1px; }
+  .nav-bars span:nth-child(1) { height: 12px; }
+  .nav-bars span:nth-child(2) { height: 17px; }
+  .nav-bars span:nth-child(3) { height: 22px; }
+  .nav-wm { font-family: var(--sans); font-size: 18px; font-weight: 500; color: var(--black); letter-spacing: -0.2px; }
+  .nav-links { display: flex; gap: 0; }
+  .nav-link {
+    font-size: 13px; font-family: var(--sans); color: var(--ink-60);
+    padding: 0 16px; height: 64px; display: flex; align-items: center;
+    border-left: var(--rule); cursor: default;
+    transition: color .15s;
+  }
+  .nav-link.active { color: var(--ink); border-bottom: 2px solid var(--black); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-search { font-size: 13px; color: var(--ink-60); }
+  .nav-cta {
+    font-size: 12px; font-family: var(--sans); font-weight: 500;
+    background: var(--black); color: var(--white);
+    padding: 7px 16px; border-radius: 1px; cursor: default;
+    letter-spacing: .2px;
+  }
+  .nav-sub {
+    display: flex; gap: 0;
+    border-bottom: var(--rule);
+    padding: 0 32px;
+    background: #FAFAF8;
+  }
+  .nav-sub a {
+    font-size: 12px; font-family: var(--mono); color: var(--ink-60);
+    padding: 8px 14px 8px 0; margin-right: 14px;
+    letter-spacing: .3px; text-decoration: none; text-transform: uppercase;
+  }
+  .nav-sub a.hot { color: var(--red); }
+
+  /* Data display */
+  .data-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: var(--rule); }
+  .data-card {
+    padding: 20px; border-right: var(--rule);
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .data-card:last-child { border-right: none; }
+  .dc-label { font-family: var(--mono); font-size: 10px; color: var(--ink-30); text-transform: uppercase; letter-spacing: 1px; }
+  .dc-val { font-family: var(--mono); font-size: 20px; font-weight: 500; color: var(--ink); line-height: 1.1; }
+  .dc-chg { font-family: var(--mono); font-size: 11px; }
+  .dc-chg.pos { color: var(--green-pos); }
+  .dc-chg.neg { color: var(--red); }
+
+  /* Reading experience */
+  .reading-demo {
+    border: var(--rule);
+    max-width: 660px;
+    padding: 40px 48px;
+    background: var(--white);
+  }
+  .rd-section { font-family: var(--mono); font-size: 10px; color: var(--accent-deep); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .rd-headline {
+    font-family: var(--serif); font-size: 32px; font-weight: 400;
+    line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px;
+  }
+  .rd-deck {
+    font-family: var(--sans); font-size: 16px; font-weight: 300;
+    color: var(--ink-60); line-height: 1.6; margin-bottom: 20px;
+    border-left: 2px solid var(--accent); padding-left: 16px;
+  }
+  .rd-byline {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-30);
+    margin-bottom: 28px; padding-bottom: 20px; border-bottom: var(--rule);
+  }
+  .rd-byline .author { color: var(--ink-60); }
+  .rd-body { font-family: var(--sans); font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--ink); }
+  .rd-body p { margin-bottom: 20px; }
+  .rd-pullquote {
+    font-family: var(--serif); font-size: 20px; font-style: italic; font-weight: 400;
+    line-height: 1.4; color: var(--ink);
+    border-top: var(--rule-strong); border-bottom: var(--rule);
+    padding: 20px 0; margin: 24px 0;
+  }
+
+  /* ── SPACING / GRID ── */
+  .spacing-row { display: flex; align-items: flex-end; gap: 0; border: var(--rule); overflow: hidden; }
+  .sp-unit {
+    display: flex; flex-direction: column; align-items: flex-start;
+    padding: 12px; border-right: var(--rule); flex: 1;
+  }
+  .sp-unit:last-child { border-right: none; }
+  .sp-block { background: var(--accent-light); width: 100%; }
+  .sp-label { font-family: var(--mono); font-size: 10px; color: var(--ink-60); margin-top: 8px; }
+  .sp-val { font-family: var(--mono); font-size: 11px; color: var(--ink); font-weight: 500; }
+
+  /* ── DARK SECTION ── */
+  .dark-section {
+    background: var(--black);
+    padding: 80px 40px;
+    max-width: 100%;
+  }
+  .dark-inner { max-width: var(--max); margin: 0 auto; }
+  .dark-section .section-label { color: rgba(245,243,238,0.35); }
+  .dark-section h2 { color: #F5F3EE; margin-bottom: 32px; }
+
+  .dark-nav-demo {
+    background: var(--black);
+    border: 1px solid rgba(245,243,238,0.1);
+  }
+  .dark-nav-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 32px;
+    border-bottom: 1px solid rgba(245,243,238,0.12);
+    height: 60px;
+  }
+  .dark-nav-bars span { background: #F5F3EE; }
+  .dark-nav-wm { color: #F5F3EE; font-family: var(--sans); font-size: 18px; font-weight: 500; letter-spacing: -0.2px; }
+  .dark-nav-links { display: flex; gap: 0; }
+  .dark-nav-link {
+    font-size: 12px; color: rgba(245,243,238,0.45);
+    padding: 0 16px; height: 60px; display: flex; align-items: center;
+    border-left: 1px solid rgba(245,243,238,0.08); font-family: var(--sans);
+  }
+  .dark-nav-link.active { color: #F5F3EE; border-bottom: 1.5px solid var(--accent); }
+  .dark-cta {
+    font-size: 12px; font-family: var(--sans); font-weight: 500;
+    background: var(--accent); color: var(--black);
+    padding: 6px 16px; border-radius: 1px;
+  }
+  .dark-hero {
+    padding: 40px 32px;
+    border-bottom: 1px solid rgba(245,243,238,0.08);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+  }
+  .dh-tag { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+  .dh-headline { font-family: var(--serif); font-size: 26px; font-weight: 400; color: #F5F3EE; line-height: 1.2; letter-spacing: -.3px; }
+  .dh-meta { font-family: var(--mono); font-size: 11px; color: rgba(245,243,238,0.3); margin-top: 12px; }
+  .dh-side { border-left: 1px solid rgba(245,243,238,0.08); padding-left: 32px; }
+  .dh-side-item { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(245,243,238,0.06); }
+  .dh-side-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .dh-si-num { font-family: var(--serif); font-size: 24px; color: rgba(245,243,238,0.12); }
+  .dh-si-h { font-family: var(--serif); font-size: 14px; color: rgba(245,243,238,0.75); line-height: 1.35; margin-top: 4px; }
+  .dh-si-cat { font-family: var(--mono); font-size: 10px; color: rgba(245,243,238,0.3); margin-top: 3px; text-transform: uppercase; letter-spacing: .8px; }
+
+  /* ── TONE OF VOICE ── */
+  .tov-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tov-card { border: var(--rule); padding: 24px; }
+  .tov-card h4 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+  .tov-card p { font-size: 13px; color: var(--ink-60); line-height: 1.6; }
+  .tov-card .tov-ex { font-family: var(--mono); font-size: 11px; color: var(--accent-deep); background: var(--accent-light); padding: 8px 10px; margin-top: 12px; border-radius: 1px; line-height: 1.5; }
+
+  /* ── MOTION ── */
+  .motion-item { border: var(--rule); padding: 24px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: center; }
+  .mo-left .mo-label { font-family: var(--mono); font-size: 11px; color: var(--ink-60); text-transform: uppercase; letter-spacing: .5px; }
+  .mo-left .mo-desc { font-size: 13px; color: var(--ink); margin-top: 4px; }
+  .mo-code { font-family: var(--mono); font-size: 11px; color: var(--accent-deep); background: var(--accent-light); padding: 4px 10px; border-radius: 1px; }
+
+  /* ── FOOTER ── */
+  .brand-footer {
+    background: var(--black);
+    padding: 40px;
+    max-width: 100%;
+  }
+  .brand-footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .bf-copy { font-family: var(--mono); font-size: 11px; color: rgba(245,243,238,0.3); }
+  .bf-version { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+
+  /* divider */
+  .rule { border: none; border-top: var(--rule); margin: 0; }
+  .rule-strong { border: none; border-top: var(--rule-strong); margin: 0; }
+
+  /* responsive minimal */
+  @media(max-width: 640px) {
+    .cover { padding: 32px; }
+    .section { padding: 48px 24px; }
+    .logo-grid, .color-row, .comp-grid, .tov-grid, .type-pairing, .data-cards { grid-template-columns: 1fr; }
+    .dark-hero { grid-template-columns: 1fr; }
+    .color-row { overflow-x: auto; display: flex; }
+    .nav-links, .nav-sub { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-logo">
+    <div class="cover-bars">
+      <span></span><span></span><span></span>
+    </div>
+    <span class="cover-wordmark">Defiliban</span>
+  </div>
+  <div>
+    <p style="font-family:var(--mono);font-size:11px;color:rgba(200,169,110,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">Brand Guidelines</p>
+    <div class="cover-title">Where <em>finance</em><br>meets the chain.</div>
+  </div>
+  <div class="cover-footer">
+    <span class="cover-meta">Crypto · Web3 · DeFi · Finance</span>
+    <span class="cover-ver">v1.0 — 2026</span>
+  </div>
+</div>
+
+<!-- 01 LOGO -->
+<div class="section">
+  <p class="section-label"><span class="section-num">01</span>Logo</p>
+  <h2>Logo & identity</h2>
+
+  <div class="logo-grid">
+    <div class="logo-cell dark on-dark">
+      <div class="logo-display">
+        <div class="logo-bars-sm"><span></span><span></span><span></span></div>
+        <span class="logo-name">Defiliban</span>
+      </div>
+      <span class="logo-usage-note">Primary — on dark</span>
+    </div>
+    <div class="logo-cell light on-light" style="border:0.5px solid var(--ink-10)">
+      <div class="logo-display">
+        <div class="logo-bars-sm"><span></span><span></span><span></span></div>
+        <span class="logo-name">Defiliban</span>
+      </div>
+      <span class="logo-usage-note">Primary — on light</span>
+    </div>
+    <div class="logo-cell gold on-gold" style="border-top:2px solid rgba(0,0,0,0.08)">
+      <div class="logo-display">
+        <div class="logo-bars-sm"><span></span><span></span><span></span></div>
+        <span class="logo-name">Defiliban</span>
+      </div>
+      <span class="logo-usage-note">Accent — on gold</span>
+    </div>
+    <div class="logo-cell paper on-paper" style="border-top:2px solid rgba(0,0,0,0.06)">
+      <div class="logo-display">
+        <div class="logo-bars-sm"><span></span><span></span><span></span></div>
+        <span class="logo-name">Defiliban</span>
+      </div>
+      <span class="logo-usage-note">Editorial — on paper</span>
+    </div>
+  </div>
+
+  <div class="logo-rules">
+    <div class="logo-rule-item do" style="background:#F7FBF7">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:20px">
+          <span style="display:block;width:5px;height:11px;background:var(--black);border-radius:1px"></span>
+          <span style="display:block;width:5px;height:16px;background:var(--black);border-radius:1px"></span>
+          <span style="display:block;width:5px;height:20px;background:var(--black);border-radius:1px"></span>
+        </div>
+        <span style="font-family:var(--sans);font-size:16px;font-weight:500;color:var(--black)">Defiliban</span>
+      </div>
+      <div class="rule-label">Luôn dùng icon + wordmark đủ bộ</div>
+    </div>
+    <div class="logo-rule-item dont" style="background:#FBF7F7">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:20px;transform:rotate(15deg)">
+          <span style="display:block;width:5px;height:11px;background:#999;border-radius:1px"></span>
+          <span style="display:block;width:5px;height:16px;background:#999;border-radius:1px"></span>
+          <span style="display:block;width:5px;height:20px;background:#999;border-radius:1px"></span>
+        </div>
+        <span style="font-family:var(--sans);font-size:16px;font-weight:500;color:#999;font-style:italic">Defiliban</span>
+      </div>
+      <div class="rule-label">Không xoay, nghiêng hoặc thay màu tuỳ ý</div>
+    </div>
+    <div class="logo-rule-item do" style="background:#F7FBF7">
+      <div style="padding:12px;background:var(--black);display:inline-flex;align-items:center;gap:8px;border-radius:2px;margin-bottom:12px">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:18px">
+          <span style="display:block;width:4px;height:10px;background:#F5F3EE;border-radius:1px"></span>
+          <span style="display:block;width:4px;height:14px;background:#F5F3EE;border-radius:1px"></span>
+          <span style="display:block;width:4px;height:18px;background:#F5F3EE;border-radius:1px"></span>
+        </div>
+        <span style="font-family:var(--sans);font-size:14px;font-weight:500;color:#F5F3EE">Defiliban</span>
+      </div>
+      <div class="rule-label">Clearspace tối thiểu = chiều cao logo</div>
+    </div>
+    <div class="logo-rule-item dont" style="background:#FBF7F7">
+      <div style="margin-bottom:12px;position:relative;display:inline-flex;align-items:center;gap:8px">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:20px">
+          <span style="display:block;width:5px;height:11px;background:#C8A96E;border-radius:1px"></span>
+          <span style="display:block;width:5px;height:16px;background:#9A7A3E;border-radius:1px"></span>
+          <span style="display:block;width:5px;height:20px;background:#E5C88A;border-radius:1px"></span>
+        </div>
+        <span style="font-family:var(--sans);font-size:16px;font-weight:500;background:linear-gradient(90deg,#C8A96E,#534AB7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Defiliban</span>
+      </div>
+      <div class="rule-label">Không dùng gradient, outline hay shadow trên logo</div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 COLOR -->
+<div class="section">
+  <p class="section-label"><span class="section-num">02</span>Color</p>
+  <h2>Color palette</h2>
+
+  <h3>Primary palette</h3>
+  <div class="color-row">
+    <div class="color-swatch swatch-dark" style="background:#0A0A0A">
+      <span class="swatch-hex">#0A0A0A</span>
+      <span class="swatch-name">Obsidian</span>
+    </div>
+    <div class="color-swatch swatch-dark" style="background:#1A1A1A">
+      <span class="swatch-hex">#1A1A1A</span>
+      <span class="swatch-name">Ink</span>
+    </div>
+    <div class="color-swatch swatch-light" style="background:#F5F3EE;border-right:0.5px solid #E0DDD8">
+      <span class="swatch-hex">#F5F3EE</span>
+      <span class="swatch-name">Paper</span>
+    </div>
+    <div class="color-swatch swatch-light" style="background:#C8A96E">
+      <span class="swatch-hex" style="color:#412402">#C8A96E</span>
+      <span class="swatch-name" style="color:#633806">Gold</span>
+    </div>
+    <div class="color-swatch swatch-light" style="background:#F0E4C8">
+      <span class="swatch-hex" style="color:#633806">#F0E4C8</span>
+      <span class="swatch-name" style="color:#854F0B">Gold light</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px">Functional palette</h3>
+  <div class="color-row">
+    <div class="color-swatch swatch-dark" style="background:#1A7A4A">
+      <span class="swatch-hex">#1A7A4A</span>
+      <span class="swatch-name">Positive</span>
+    </div>
+    <div class="color-swatch swatch-dark" style="background:#C0392B">
+      <span class="swatch-hex">#C0392B</span>
+      <span class="swatch-name">Negative</span>
+    </div>
+    <div class="color-swatch swatch-light" style="background:#1A4A7A">
+      <span class="swatch-hex" style="color:#E6F1FB">#1A4A7A</span>
+      <span class="swatch-name" style="color:#85B7EB">Info / Markets</span>
+    </div>
+    <div class="color-swatch swatch-light" style="background:#666460">
+      <span class="swatch-hex" style="color:#D3D1C7">#666460</span>
+      <span class="swatch-name" style="color:#B4B2A9">Secondary text</span>
+    </div>
+    <div class="color-swatch swatch-light" style="background:#ECEAE5;border-right:0.5px solid #D8D5CE">
+      <span class="swatch-hex" style="color:#444441">#ECEAE5</span>
+      <span class="swatch-name" style="color:#5F5E5A">Border / Rule</span>
+    </div>
+  </div>
+
+  <div class="color-usage">
+    <div class="color-usage-item">
+      <div class="cu-label">Obsidian + Gold</div>
+      <div class="cu-desc">Bộ đôi chủ đạo. Obsidian cho nền dark mode, header, footer. Gold là accent duy nhất — dùng cho category tag, số thứ tự, đường kẻ accent, link hover.</div>
+    </div>
+    <div class="color-usage-item">
+      <div class="cu-label">Paper tone</div>
+      <div class="cu-desc">Nền chính cho light mode. Không dùng trắng tinh — Paper (#F5F3EE) tạo cảm giác báo in, ấm hơn, ít mỏi mắt hơn khi đọc bài dài.</div>
+    </div>
+    <div class="color-usage-item">
+      <div class="cu-label">Green / Red</div>
+      <div class="cu-desc">Chỉ dùng cho dữ liệu tài chính: giá tăng/giảm, % change. Không dùng cho decoration. Phải đủ tương phản ≥ 4.5:1 trên nền sáng.</div>
+    </div>
+    <div class="color-usage-item">
+      <div class="cu-label">Không được phép</div>
+      <div class="cu-desc">Gradient, shadow màu, neon, hoặc màu sắc không có trong palette. Crypto visual thường lạm dụng purple-to-cyan gradient — Defiliban tránh hoàn toàn.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 TYPOGRAPHY -->
+<div class="section">
+  <p class="section-label"><span class="section-num">03</span>Typography</p>
+  <h2>Type system</h2>
+
+  <div class="type-specimen">
+    <div class="type-label" style="margin-bottom:12px">Display — Playfair Display 400 / Italic</div>
+    <div class="type-display">Bitcoin hits <em>new ATH</em><br>as institutions pile in.</div>
+  </div>
+  <div class="type-meta-row">
+    <div class="type-meta-col"><div class="tm-label">Typeface</div><div class="tm-val">Playfair Display</div></div>
+    <div class="type-meta-col"><div class="tm-label">Weight</div><div class="tm-val">400 Regular + Italic</div></div>
+    <div class="type-meta-col"><div class="tm-label">Size</div><div class="tm-val">48–80px</div></div>
+    <div class="type-meta-col"><div class="tm-label">Usage</div><div class="tm-val">Hero headline, featured story</div></div>
+  </div>
+
+  <div class="type-specimen" style="margin-top:2px">
+    <div class="type-label" style="margin-bottom:12px">H1 — Playfair Display 400</div>
+    <div class="type-h1">SEC approves spot Ether staking ETFs in landmark ruling for the DeFi sector</div>
+  </div>
+  <div class="type-meta-row">
+    <div class="type-meta-col"><div class="tm-label">Typeface</div><div class="tm-val">Playfair Display</div></div>
+    <div class="type-meta-col"><div class="tm-label">Weight</div><div class="tm-val">400</div></div>
+    <div class="type-meta-col"><div class="tm-label">Size</div><div class="tm-val">32–40px</div></div>
+    <div class="type-meta-col"><div class="tm-label">Usage</div><div class="tm-val">Article headline, section title</div></div>
+  </div>
+
+  <div class="type-specimen" style="margin-top:2px">
+    <div class="type-label" style="margin-bottom:12px">Body — DM Sans 300</div>
+    <div class="type-body">The iShares Bitcoin Trust has accumulated assets faster than any exchange-traded product in the history of financial markets, surpassing even the gold ETF launched in 2004. Institutional demand shows no signs of slowing, with asset managers citing Bitcoin's growing role as a macro hedge.</div>
+  </div>
+  <div class="type-meta-row">
+    <div class="type-meta-col"><div class="tm-label">Typeface</div><div class="tm-val">DM Sans</div></div>
+    <div class="type-meta-col"><div class="tm-label">Weight</div><div class="tm-val">300 Light</div></div>
+    <div class="type-meta-col"><div class="tm-label">Size</div><div class="tm-val">16px</div></div>
+    <div class="type-meta-col"><div class="tm-label">Line height</div><div class="tm-val">1.75–1.8</div></div>
+  </div>
+
+  <div class="type-specimen" style="margin-top:2px">
+    <div class="type-label" style="margin-bottom:16px">Data & metadata — DM Mono</div>
+    <div style="display:flex;gap:40px;align-items:flex-end;flex-wrap:wrap">
+      <div>
+        <div class="type-data">$98,420</div>
+        <div class="type-label" style="margin-top:4px;color:var(--green-pos)">+2.4%</div>
+      </div>
+      <div>
+        <div class="type-label">// 2026-05-27 · 14:32 UTC</div>
+        <div class="type-label" style="margin-top:6px">By Sarah Chen · 8 min read</div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--accent-deep);background:var(--accent-light);padding:4px 10px;border-radius:1px;text-transform:uppercase;letter-spacing:1px">DeFi · Breaking</div>
+      </div>
+    </div>
+  </div>
+  <div class="type-meta-row" style="margin-bottom:32px">
+    <div class="type-meta-col"><div class="tm-label">Typeface</div><div class="tm-val">DM Mono</div></div>
+    <div class="type-meta-col"><div class="tm-label">Usage</div><div class="tm-val">Prices, timestamps, tags, captions</div></div>
+    <div class="type-meta-col"><div class="tm-label">Size</div><div class="tm-val">10–22px</div></div>
+    <div class="type-meta-col"><div class="tm-label">Note</div><div class="tm-val">Không dùng cho body text</div></div>
+  </div>
+
+  <h3>Type pairing in context</h3>
+  <div class="type-pairing">
+    <div class="tp-cell">
+      <div class="tp-tag">Serif headline + Sans body</div>
+      <div style="font-family:var(--serif);font-size:20px;font-weight:400;line-height:1.2;margin-bottom:10px">Tokenized stocks emerge as fastest-growing asset class on Ethereum</div>
+      <div style="font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.7;color:var(--ink-60)">On-chain equities have seen 340% growth in 90 days, driven by retail demand in Southeast Asia and Latin America.</div>
+    </div>
+    <div class="tp-cell">
+      <div class="tp-tag">Mono label + Serif number</div>
+      <div style="font-family:var(--mono);font-size:10px;color:var(--ink-30);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Total Value Locked</div>
+      <div style="font-family:var(--serif);font-size:36px;font-weight:400;color:var(--ink);line-height:1">$148.2B</div>
+      <div style="font-family:var(--mono);font-size:12px;color:var(--green-pos);margin-top:6px">+12.4% this month</div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 COMPONENTS -->
+<div class="section">
+  <p class="section-label"><span class="section-num">04</span>Components</p>
+  <h2>UI components</h2>
+
+  <!-- Navigation -->
+  <h3 style="margin-bottom:16px">Navigation — light mode</h3>
+  <div class="nav-demo">
+    <div class="nav-top">
+      <div class="nav-logo">
+        <div class="nav-bars"><span></span><span></span><span></span></div>
+        <span class="nav-wm">Defiliban</span>
+      </div>
+      <div class="nav-links">
+        <span class="nav-link active">Markets</span>
+        <span class="nav-link">DeFi</span>
+        <span class="nav-link">Web3</span>
+        <span class="nav-link">Policy</span>
+        <span class="nav-link">Research</span>
+      </div>
+      <div class="nav-actions">
+        <span class="nav-search">&#x2315;</span>
+        <div class="nav-cta">Subscribe</div>
+      </div>
+    </div>
+    <div class="nav-sub">
+      <a href="#" class="hot">Breaking</a>
+      <a href="#">Bitcoin</a>
+      <a href="#">Ethereum</a>
+      <a href="#">DeFi protocols</a>
+      <a href="#">ETF tracker</a>
+      <a href="#">On-chain data</a>
+    </div>
+  </div>
+
+  <!-- Ticker -->
+  <h3 style="margin-top:32px;margin-bottom:16px">Price ticker</h3>
+  <div class="ticker-bar">
+    <div class="ticker-item">
+      <span class="ticker-sym">BTC</span>
+      <span class="ticker-price">$98,420</span>
+      <span class="ticker-chg pos">+2.4%</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">ETH</span>
+      <span class="ticker-price">$3,810</span>
+      <span class="ticker-chg pos">+1.8%</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">SOL</span>
+      <span class="ticker-price">$182.40</span>
+      <span class="ticker-chg neg">-0.6%</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">BNB</span>
+      <span class="ticker-price">$614</span>
+      <span class="ticker-chg pos">+0.9%</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">AVAX</span>
+      <span class="ticker-price">$41.20</span>
+      <span class="ticker-chg neg">-1.2%</span>
+    </div>
+  </div>
+
+  <!-- Data cards -->
+  <h3 style="margin-top:32px;margin-bottom:16px">Market data strip</h3>
+  <div class="data-cards">
+    <div class="data-card">
+      <span class="dc-label">Market cap</span>
+      <span class="dc-val">$3.42T</span>
+      <span class="dc-chg pos">+1.9%</span>
+    </div>
+    <div class="data-card">
+      <span class="dc-label">24h volume</span>
+      <span class="dc-val">$148B</span>
+      <span class="dc-chg pos">+5.2%</span>
+    </div>
+    <div class="data-card">
+      <span class="dc-label">BTC dominance</span>
+      <span class="dc-val">54.2%</span>
+      <span class="dc-chg neg">-0.3%</span>
+    </div>
+    <div class="data-card">
+      <span class="dc-label">Fear & Greed</span>
+      <span class="dc-val">72</span>
+      <span class="dc-chg" style="color:var(--accent-deep)">Greed</span>
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <h3 style="margin-top:32px;margin-bottom:16px">Category badges</h3>
+  <div class="badge-row">
+    <span class="badge badge-breaking">Breaking</span>
+    <span class="badge badge-defi">DeFi</span>
+    <span class="badge badge-markets">Markets</span>
+    <span class="badge badge-policy">Policy</span>
+    <span class="badge badge-web3">Web3</span>
+    <span class="badge badge-research">Research</span>
+  </div>
+
+  <!-- Article cards -->
+  <h3 style="margin-top:32px;margin-bottom:16px">Article cards</h3>
+  <div class="comp-grid">
+    <div class="article-card">
+      <div class="article-card-img">
+        <div class="article-card-img img-overlay"></div>
+        <div style="position:relative;z-index:1">
+          <span class="tag">DeFi</span>
+        </div>
+      </div>
+      <div class="article-card-body">
+        <h4>Uniswap v5 launches with intent-based trading and gasless swaps for all users</h4>
+        <p class="excerpt">The new version introduces a solver network that abstracts gas fees entirely, routing trades through the most efficient liquidity path on-chain.</p>
+        <div class="article-card-footer">
+          <span class="byline">Marcus Lee</span>
+          <span class="read-time">5 min read</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-card">
+      <div class="article-card-img" style="background:#1A1A2E">
+        <div class="article-card-img img-overlay"></div>
+        <div style="position:relative;z-index:1">
+          <span class="tag" style="background:#1A4A7A;color:#B5D4F4">Markets</span>
+        </div>
+      </div>
+      <div class="article-card-body">
+        <h4>BlackRock's Bitcoin ETF crosses $50B AUM, setting record in fund history</h4>
+        <p class="excerpt">Institutional demand shows no signs of slowing as the iShares Bitcoin Trust surpasses the gold ETF milestone in record time.</p>
+        <div class="article-card-footer">
+          <span class="byline">Sarah Chen</span>
+          <span class="read-time">12 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 READING EXPERIENCE -->
+<div class="section">
+  <p class="section-label"><span class="section-num">05</span>Reading experience</p>
+  <h2>Article page typography</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start">
+    <div class="reading-demo">
+      <div class="rd-section">DeFi · Protocol</div>
+      <h2 class="rd-headline">Uniswap v5 ships intent-based trading, eliminating gas fees for end users</h2>
+      <div class="rd-deck">
+        A new solver network routes every swap through the optimal on-chain path, absorbing gas costs entirely and making DeFi accessible to users who never held ETH.
+      </div>
+      <div class="rd-byline">
+        <span class="author">Marcus Lee</span>
+        <span>·</span>
+        <span>May 27, 2026</span>
+        <span>·</span>
+        <span>8 min read</span>
+      </div>
+      <div class="rd-body">
+        <p>The Uniswap Foundation unveiled version 5 of its flagship decentralized exchange on Tuesday, introducing a fundamental shift in how trades are executed on Ethereum. Rather than requiring users to set gas prices and wait for block inclusion, the new system relies on a permissioned network of solvers who compete to fill orders off-chain before settling the result on-chain.</p>
+        <div class="rd-pullquote">"This is the moment DeFi stops asking users to be their own infrastructure engineers."</div>
+        <p>Early data from the protocol's testnet suggests the solver network can cut effective swap costs by up to 60% compared to v4, while simultaneously improving execution price by an average of 12 basis points through better routing across fragmented liquidity pools.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:16px">Column measure</h3>
+      <div style="border:var(--rule);padding:20px;border-radius:2px;margin-bottom:16px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--ink-60);margin-bottom:4px">Max body width</div>
+        <div style="font-family:var(--serif);font-size:24px">560–640px</div>
+        <div style="font-size:13px;color:var(--ink-60);margin-top:6px;line-height:1.5">Giới hạn cột đọc để max ~70 ký tự/dòng. Đây là chuẩn editorial tốt nhất cho long-form.</div>
+      </div>
+      <div style="border:var(--rule);padding:20px;border-radius:2px;margin-bottom:16px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--ink-60);margin-bottom:4px">Body line height</div>
+        <div style="font-family:var(--serif);font-size:24px">1.75–1.8</div>
+        <div style="font-size:13px;color:var(--ink-60);margin-top:6px;line-height:1.5">Cao hơn blog thông thường (1.6) vì bài crypto thường dày số liệu — cần breathing room.</div>
+      </div>
+      <div style="border:var(--rule);padding:20px;border-radius:2px">
+        <div style="font-family:var(--mono);font-size:11px;color:var(--ink-60);margin-bottom:4px">Accent line</div>
+        <div style="border-left:2px solid var(--accent);padding-left:12px;font-size:13px;color:var(--ink-60);line-height:1.6">Deck / lead paragraph dùng gold left-border để phân biệt với body text.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 DARK MODE -->
+<div class="dark-section">
+  <div class="dark-inner">
+    <p class="section-label"><span class="section-num" style="color:rgba(200,169,110,0.7)">06</span>Dark mode</p>
+    <h2>Dark mode — native</h2>
+
+    <div class="dark-nav-demo">
+      <div class="dark-nav-top">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="nav-bars dark-nav-bars" style="height:20px">
+            <span style="display:block;width:5px;height:11px;background:#F5F3EE;border-radius:1px"></span>
+            <span style="display:block;width:5px;height:16px;background:#F5F3EE;border-radius:1px"></span>
+            <span style="display:block;width:5px;height:20px;background:#F5F3EE;border-radius:1px"></span>
+          </div>
+          <span class="dark-nav-wm">Defiliban</span>
+        </div>
+        <div class="dark-nav-links">
+          <span class="dark-nav-link active">Markets</span>
+          <span class="dark-nav-link">DeFi</span>
+          <span class="dark-nav-link">Web3</span>
+          <span class="dark-nav-link">Research</span>
+        </div>
+        <div class="dark-cta">Subscribe</div>
+      </div>
+      <div class="dark-hero">
+        <div>
+          <div class="dh-tag">Breaking · Markets</div>
+          <div class="dh-headline">BlackRock's Bitcoin ETF crosses $50B AUM, setting record for fastest-growing fund in history</div>
+          <div class="dh-meta">Sarah Chen · 12 min ago · 12 min read</div>
+        </div>
+        <div class="dh-side">
+          <div class="dh-side-item">
+            <div class="dh-si-num">01</div>
+            <div class="dh-si-h">Pectra upgrade boosts validator efficiency by 40%</div>
+            <div class="dh-si-cat">ETH · Protocol</div>
+          </div>
+          <div class="dh-side-item">
+            <div class="dh-si-num">02</div>
+            <div class="dh-si-h">SEC approves spot Ether staking ETFs</div>
+            <div class="dh-si-cat">Regulation</div>
+          </div>
+          <div class="dh-side-item">
+            <div class="dh-si-num">03</div>
+            <div class="dh-si-h">Uniswap v5 ships gasless swaps</div>
+            <div class="dh-si-cat">DeFi · Protocol</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px">
+      <div style="border:1px solid rgba(245,243,238,0.08);padding:20px">
+        <div style="font-family:var(--mono);font-size:10px;color:rgba(200,169,110,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Background</div>
+        <div style="font-family:var(--mono);font-size:14px;color:#F5F3EE">#0A0A0A</div>
+        <div style="font-size:12px;color:rgba(245,243,238,0.35);margin-top:4px">Obsidian — nền chính</div>
+      </div>
+      <div style="border:1px solid rgba(245,243,238,0.08);padding:20px">
+        <div style="font-family:var(--mono);font-size:10px;color:rgba(200,169,110,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Surface</div>
+        <div style="font-family:var(--mono);font-size:14px;color:#F5F3EE">#141414</div>
+        <div style="font-size:12px;color:rgba(245,243,238,0.35);margin-top:4px">Card, sidebar, elevated</div>
+      </div>
+      <div style="border:1px solid rgba(245,243,238,0.08);padding:20px">
+        <div style="font-family:var(--mono);font-size:10px;color:rgba(200,169,110,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Accent</div>
+        <div style="font-family:var(--mono);font-size:14px;color:#C8A96E">#C8A96E</div>
+        <div style="font-size:12px;color:rgba(245,243,238,0.35);margin-top:4px">Gold — giữ nguyên trên dark</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 07 SPACING -->
+<div class="section">
+  <p class="section-label"><span class="section-num">07</span>Spacing & grid</p>
+  <h2>Spacing scale</h2>
+
+  <div class="spacing-row">
+    <div class="sp-unit"><div class="sp-block" style="height:4px"></div><div class="sp-label">4px</div><div class="sp-val">xs</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:8px"></div><div class="sp-label">8px</div><div class="sp-val">sm</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:16px"></div><div class="sp-label">16px</div><div class="sp-val">md</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:24px"></div><div class="sp-label">24px</div><div class="sp-val">lg</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:32px"></div><div class="sp-label">32px</div><div class="sp-val">xl</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:48px"></div><div class="sp-label">48px</div><div class="sp-val">2xl</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:64px"></div><div class="sp-label">64px</div><div class="sp-val">3xl</div></div>
+    <div class="sp-unit"><div class="sp-block" style="height:80px"></div><div class="sp-label">80px</div><div class="sp-val">4xl</div></div>
+  </div>
+
+  <div style="margin-top:32px;border:var(--rule);padding:32px">
+    <h3 style="margin-bottom:20px">Layout grid</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="border:var(--rule);padding:16px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink-60);margin-bottom:6px">Desktop</div>
+        <div style="font-family:var(--serif);font-size:18px;margin-bottom:4px">Max 1280px</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.5">Content area 900px. Margin tự động hai bên. Sidebar 280px, content 580px, gap 40px.</div>
+      </div>
+      <div style="border:var(--rule);padding:16px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink-60);margin-bottom:6px">Tablet</div>
+        <div style="font-family:var(--serif);font-size:18px;margin-bottom:4px">768–1024px</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.5">Single column, sidebar collapse thành accordion. Padding 24px.</div>
+      </div>
+      <div style="border:var(--rule);padding:16px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink-60);margin-bottom:6px">Mobile</div>
+        <div style="font-family:var(--serif);font-size:18px;margin-bottom:4px">320–767px</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.5">Full width, padding 16px. Font scale giảm 15%. Ticker ẩn, thay bằng bottom bar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 08 TONE OF VOICE -->
+<div class="section">
+  <p class="section-label"><span class="section-num">08</span>Tone of voice</p>
+  <h2>Editorial voice</h2>
+  <div class="tov-grid">
+    <div class="tov-card">
+      <h4>Authoritative</h4>
+      <p>Viết như chuyên gia, không như người bình luận. Số liệu trước, opinion sau. Không dùng từ hype như "moon", "bullish season".</p>
+      <div class="tov-ex">✓ "BTC rose 2.4% following the ETF announcement."<br><br>✕ "Bitcoin is absolutely pumping right now!"</div>
+    </div>
+    <div class="tov-card">
+      <h4>Precise</h4>
+      <p>Tiêu đề không giật gân. Dẫn nguồn rõ ràng. Phân biệt fact vs analysis. Cập nhật khi thông tin thay đổi.</p>
+      <div class="tov-ex">✓ "according to on-chain data from Glassnode"<br><br>✕ "sources say" / "rumored to be"</div>
+    </div>
+    <div class="tov-card">
+      <h4>Accessible</h4>
+      <p>Giải thích thuật ngữ kỹ thuật lần đầu xuất hiện. Viết cho người hiểu tài chính, không bắt buộc phải biết code.</p>
+      <div class="tov-ex">✓ "total value locked (TVL) — the sum of all assets deposited in a protocol"<br><br>✕ dùng jargon không giải thích</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="brand-footer">
+  <div class="brand-footer-inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="display:flex;align-items:flex-end;gap:3px;height:18px">
+        <span style="display:block;width:5px;height:10px;background:rgba(245,243,238,0.5);border-radius:1px"></span>
+        <span style="display:block;width:5px;height:14px;background:rgba(245,243,238,0.5);border-radius:1px"></span>
+        <span style="display:block;width:5px;height:18px;background:rgba(245,243,238,0.5);border-radius:1px"></span>
+      </div>
+      <span style="font-family:var(--sans);font-size:14px;font-weight:500;color:rgba(245,243,238,0.5)">Defiliban</span>
+    </div>
+    <span class="bf-copy">Brand Guidelines v1.0 — 2026</span>
+    <span class="bf-version">Typographic Broadsheet</span>
+  </div>
+</div>
+
+</body>
+</html>
