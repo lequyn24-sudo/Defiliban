@@ -253,6 +253,42 @@ a {
   background-color: var(--bg-surface);
 }
 
+/* ── Row hover for list items ── */
+.row-hover {
+  transition: background-color 0.15s ease;
+}
+.row-hover:hover {
+  background-color: var(--bg-surface2);
+}
+
+/* ── Cluster card hover ── */
+.cluster-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+.cluster-card:hover {
+  background-color: var(--bg-surface2);
+}
+
+/* ── Social icon hover ── */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+.social-icon:hover {
+  border-color: var(--border-mid);
+  color: var(--text-primary);
+}
+
 /* ── Line clamp helpers ── */
 .line-clamp-2 {
   display: -webkit-box;

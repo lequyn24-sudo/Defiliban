@@ -1,15 +1,30 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { BarChart2, Search, User, Menu, X } from 'lucide-react'
-import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { usePathname, useRouter } from 'next/navigation'
+import { useState, useRef } from 'react'
+import { BarChart2, Menu, X } from 'lucide-react'
 import { MAIN_NAV_CATEGORIES } from '@/lib/constants/categories'
+
+const EXTRA_LINKS = [
+  { slug: 'tools', label: 'Tools', href: '/tools' },
+  { slug: 'about', label: 'About', href: '/about' },
+]
 
 export function Navbar() {
   const pathname = usePathname()
+  const router = useRouter()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [searchValue, setSearchValue] = useState('')
+  const searchRef = useRef<HTMLInputElement>(null)
+
+  function handleSearchSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (searchValue.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchValue.trim())}`)
+      setSearchValue('')
+    }
+  }
 
   return (
     <header
@@ -21,31 +36,43 @@ export function Navbar() {
       }}
     >
       <nav
-        className="flex items-center h-full gap-4 px-4"
+        className="flex items-center h-full gap-6 px-4"
         style={{ maxWidth: '1280px', margin: '0 auto' }}
       >
-        {/* Wordmark */}
+        {/* Wordmark + subtitle */}
         <Link
           href="/"
           className="flex items-center gap-2 flex-shrink-0"
           style={{ textDecoration: 'none' }}
         >
-          <BarChart2
-            size={16}
-            style={{ color: 'var(--text-primary)' }}
-          />
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '15px',
-              fontWeight: 500,
-              letterSpacing: '1px',
-              textTransform: 'uppercase',
-              color: 'var(--text-primary)',
-            }}
-          >
-            DEFILIBAN
-          </span>
+          <BarChart2 size={16} style={{ color: 'var(--text-primary)' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+            <span
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '15px',
+                fontWeight: 500,
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                color: 'var(--text-primary)',
+                lineHeight: 1,
+              }}
+            >
+              DEFILIBAN
+            </span>
+            <span
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '9px',
+                letterSpacing: '0.4px',
+                color: 'var(--text-dim)',
+                lineHeight: 1,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              DeFi Protocol Deep-Dive Specialist
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav links */}
@@ -53,103 +80,106 @@ export function Navbar() {
           {MAIN_NAV_CATEGORIES.map((cat) => {
             const active = pathname.startsWith(`/${cat.slug}`)
             return (
-              <Link
+              <NavLink
                 key={cat.slug}
                 href={`/${cat.slug}`}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '10px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '1.2px',
-                  color: active ? 'var(--text-primary)' : 'var(--text-dim)',
-                  padding: '4px 10px',
-                  height: '52px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  borderBottom: active
-                    ? '1.5px solid var(--text-primary)'
-                    : '1.5px solid transparent',
-                  transition: 'color 0.15s, border-color 0.15s',
-                  textDecoration: 'none',
-                }}
-              >
-                {cat.label}
-              </Link>
+                label={cat.label}
+                active={active}
+              />
             )
           })}
+          {EXTRA_LINKS.map((link) => (
+            <NavLink
+              key={link.slug}
+              href={link.href}
+              label={link.label}
+              active={pathname.startsWith(link.href)}
+            />
+          ))}
         </div>
 
-        {/* Right controls */}
-        <div
-          className="flex items-center gap-2 ml-auto"
-          style={{ flexShrink: 0 }}
+        {/* Search bar */}
+        <form
+          onSubmit={handleSearchSubmit}
+          className="hidden md:flex items-center"
+          style={{
+            position: 'relative',
+            flexShrink: 0,
+          }}
         >
-          <Link
-            href="/search"
-            aria-label="Search"
-            style={{
-              color: 'var(--text-dim)',
-              display: 'flex',
-              alignItems: 'center',
-              padding: '4px',
-            }}
-          >
-            <Search size={16} />
-          </Link>
-
-          <ThemeToggle />
-
-          <Link
-            href="/account"
-            aria-label="Account"
-            style={{
-              color: 'var(--text-dim)',
-              display: 'flex',
-              alignItems: 'center',
-              padding: '4px',
-            }}
-          >
-            <User size={16} />
-          </Link>
-
-          <Link
-            href="/newsletter"
+          <input
+            ref={searchRef}
+            type="text"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder="Search research..."
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.8px',
-              background: 'var(--text-primary)',
-              color: 'var(--bg-void)',
-              padding: '5px 14px',
-              borderRadius: '20px',
-              fontWeight: 500,
-              whiteSpace: 'nowrap',
-              textDecoration: 'none',
-              transition: 'opacity 0.15s',
+              fontSize: '11px',
+              color: 'var(--text-primary)',
+              background: 'transparent',
+              border: '1px solid var(--border)',
+              borderRadius: '4px',
+              padding: '5px 36px 5px 10px',
+              width: '180px',
+              outline: 'none',
+              letterSpacing: '0.3px',
             }}
-          >
-            Subscribe
-          </Link>
-
-          {/* Mobile menu toggle */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Menu"
+          />
+          <span
             style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
+              position: 'absolute',
+              right: '8px',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '10px',
               color: 'var(--text-dim)',
-              display: 'flex',
-              alignItems: 'center',
-              padding: '4px',
+              pointerEvents: 'none',
+              letterSpacing: '0',
             }}
           >
-            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        </div>
+            [/]
+          </span>
+        </form>
+
+        {/* Subscribe pill */}
+        <Link
+          href="/newsletter"
+          className="hidden md:block"
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '10px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.8px',
+            background: 'var(--text-primary)',
+            color: 'var(--bg-void)',
+            padding: '5px 14px',
+            borderRadius: '20px',
+            fontWeight: 500,
+            whiteSpace: 'nowrap',
+            textDecoration: 'none',
+            flexShrink: 0,
+          }}
+        >
+          Subscribe
+        </Link>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden ml-auto"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label="Menu"
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: 'var(--text-dim)',
+            display: 'flex',
+            alignItems: 'center',
+            padding: '4px',
+          }}
+        >
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
       </nav>
 
       {/* Mobile menu */}
@@ -162,10 +192,29 @@ export function Navbar() {
             borderBottom: '1px solid var(--border)',
           }}
         >
-          {MAIN_NAV_CATEGORIES.map((cat) => (
+          <form onSubmit={handleSearchSubmit} style={{ marginBottom: '12px' }}>
+            <input
+              type="text"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder="Search research..."
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '12px',
+                color: 'var(--text-primary)',
+                background: 'transparent',
+                border: '1px solid var(--border)',
+                borderRadius: '4px',
+                padding: '7px 12px',
+                width: '100%',
+                outline: 'none',
+              }}
+            />
+          </form>
+          {[...MAIN_NAV_CATEGORIES, ...EXTRA_LINKS].map((cat) => (
             <Link
               key={cat.slug}
-              href={`/${cat.slug}`}
+              href={'href' in cat ? cat.href : `/${cat.slug}`}
               onClick={() => setMobileOpen(false)}
               style={{
                 display: 'block',
@@ -182,31 +231,7 @@ export function Navbar() {
               {cat.label}
             </Link>
           ))}
-          <div className="flex items-center gap-3 mt-4">
-            <Link
-              href="/search"
-              onClick={() => setMobileOpen(false)}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
-                color: 'var(--text-dim)',
-                textDecoration: 'none',
-              }}
-            >
-              Search
-            </Link>
-            <Link
-              href="/account"
-              onClick={() => setMobileOpen(false)}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
-                color: 'var(--text-dim)',
-                textDecoration: 'none',
-              }}
-            >
-              Account
-            </Link>
+          <div style={{ marginTop: '12px' }}>
             <Link
               href="/newsletter"
               onClick={() => setMobileOpen(false)}
@@ -215,9 +240,10 @@ export function Navbar() {
                 fontSize: '10px',
                 background: 'var(--text-primary)',
                 color: 'var(--bg-void)',
-                padding: '5px 12px',
+                padding: '6px 14px',
                 borderRadius: '20px',
                 textDecoration: 'none',
+                display: 'inline-block',
               }}
             >
               Subscribe
@@ -226,5 +252,30 @@ export function Navbar() {
         </div>
       )}
     </header>
+  )
+}
+
+function NavLink({ href, label, active }: { href: string; label: string; active: boolean }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        fontFamily: 'var(--font-mono)',
+        fontSize: '12px',
+        textTransform: 'uppercase',
+        letterSpacing: '1.2px',
+        color: active ? 'var(--text-primary)' : 'var(--text-dim)',
+        padding: '4px 10px',
+        height: '52px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        borderBottom: active ? '1.5px solid var(--text-primary)' : '1.5px solid transparent',
+        transition: 'color 0.15s, border-color 0.15s',
+        textDecoration: 'none',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {label}
+    </Link>
   )
 }

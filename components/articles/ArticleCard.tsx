@@ -152,7 +152,7 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
             className="line-clamp-2"
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '14px',
+              fontSize: '15px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               lineHeight: 1.45,
@@ -205,7 +205,7 @@ function CompactCard({
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '14px',
-            color: 'var(--text-faint)',
+            color: 'rgba(232,232,198,0.45)',
             fontWeight: 500,
             flexShrink: 0,
             minWidth: '20px',
@@ -227,7 +227,7 @@ function CompactCard({
             className="line-clamp-2"
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               lineHeight: 1.4,
@@ -240,7 +240,7 @@ function CompactCard({
           <span
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               color: 'var(--text-dim)',
             }}
           >
@@ -332,17 +332,17 @@ function MetaRow({ article }: { article: ArticlePreview }) {
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
+          fontSize: '11px',
           color: 'var(--text-dim)',
         }}
       >
         {timeAgo(article.publishedAt)}
       </span>
-      <span style={{ color: 'var(--border)', fontSize: '10px' }}>·</span>
+      <span style={{ color: 'var(--border)', fontSize: '11px' }}>·</span>
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
+          fontSize: '11px',
           color: 'var(--text-dim)',
         }}
       >
@@ -351,8 +351,8 @@ function MetaRow({ article }: { article: ArticlePreview }) {
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
-          color: 'var(--text-faint)',
+          fontSize: '11px',
+          color: 'rgba(232,232,198,0.35)',
         }}
       >
         {article.sourceAttribution}
