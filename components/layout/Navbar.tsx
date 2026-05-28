@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useState, useRef } from 'react'
 import { BarChart2, Menu, X } from 'lucide-react'
 import { MAIN_NAV_CATEGORIES } from '@/lib/constants/categories'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const EXTRA_LINKS = [
   { slug: 'tools', label: 'Tools', href: '/tools' },
@@ -140,6 +141,11 @@ export function Navbar() {
             [/]
           </span>
         </form>
+
+        {/* Theme toggle */}
+        <div className="hidden md:block">
+          <ThemeToggle />
+        </div>
 
         {/* Subscribe pill */}
         <Link

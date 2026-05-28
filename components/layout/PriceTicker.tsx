@@ -61,16 +61,18 @@ export function PriceTicker() {
           <div
             key={m.label}
             style={{
-              flex: 1,
+              flex: '1 1 0',
+              minWidth: 0,
+              overflow: 'hidden',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              padding: '0 20px',
+              padding: '0 12px',
               borderRight: i < METRICS.length - 1 ? '1px solid var(--border)' : 'none',
               gap: '2px',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', minWidth: 0 }}>
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
@@ -78,6 +80,7 @@ export function PriceTicker() {
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   letterSpacing: '-0.3px',
+                  flexShrink: 0,
                 }}
               >
                 {m.value}
@@ -88,15 +91,16 @@ export function PriceTicker() {
                   fontSize: '12px',
                   color: m.changeUp ? 'var(--color-positive)' : 'var(--color-negative)',
                   fontWeight: 500,
+                  flexShrink: 0,
                 }}
               >
                 {m.change}
               </span>
-              <span style={{ marginLeft: 'auto' }}>
+              <span style={{ marginLeft: 'auto', flexShrink: 0 }}>
                 {m.changeUp ? SPARKLINE_UP : SPARKLINE_DOWN}
               </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', overflow: 'hidden' }}>
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
@@ -104,6 +108,9 @@ export function PriceTicker() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.8px',
                   color: 'var(--text-dim)',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
                 }}
               >
                 {m.label}
@@ -116,6 +123,8 @@ export function PriceTicker() {
                   letterSpacing: '0.6px',
                   color: 'var(--text-dim)',
                   opacity: 0.6,
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                 }}
               >
                 {m.trendLabel}

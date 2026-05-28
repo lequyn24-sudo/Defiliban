@@ -26,6 +26,7 @@ export interface CoinPrice {
   price_change_percentage_24h: number
   market_cap: number
   total_volume: number
+  imageUrl?: string
 }
 
 export interface MockUser {
