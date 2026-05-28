@@ -216,7 +216,7 @@ export function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden ml-auto"
+          className="flex md:hidden ml-auto items-center"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Menu"
           style={{
@@ -224,8 +224,6 @@ export function Navbar() {
             border: 'none',
             cursor: 'pointer',
             color: 'var(--text-dim)',
-            display: 'flex',
-            alignItems: 'center',
             padding: '4px',
           }}
         >
