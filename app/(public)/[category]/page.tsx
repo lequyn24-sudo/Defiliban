@@ -38,7 +38,7 @@ export default async function CategoryPage({ params }: Props) {
   const rest = articles.filter((a) => !a.isFeatured)
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }}>
+    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 var(--sp-4) var(--sp-16)' }}>
       {/* Category header */}
       <div
         style={{
@@ -50,11 +50,11 @@ export default async function CategoryPage({ params }: Props) {
         <CategoryBadge category={category} size="md" />
         <h1
           style={{
-            fontFamily: 'var(--font-mono)',
+            fontFamily: 'var(--font-sans)',
             fontSize: '28px',
-            fontWeight: 500,
+            fontWeight: 700,
             color: 'var(--text-primary)',
-            letterSpacing: '-0.3px',
+            letterSpacing: '-0.4px',
             marginTop: '12px',
             marginBottom: '8px',
           }}

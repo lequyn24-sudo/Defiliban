@@ -22,7 +22,7 @@ export default function SearchPage() {
 
   return (
     <div
-      style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px' }}
+      style={{ maxWidth: '1280px', margin: '0 auto', padding: 'var(--sp-8) var(--sp-4) var(--sp-16)' }}
     >
       <h1
         style={{
