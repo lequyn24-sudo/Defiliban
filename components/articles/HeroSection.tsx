@@ -18,7 +18,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
   return (
     <div
       style={{ gap: 'var(--sp-4)', padding: 'var(--sp-4) 0' }}
-      className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px] lg:h-[310px]"
+      className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px] lg:h-[324px]"
     >
       {/* ── Research Spotlight ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
@@ -216,7 +216,7 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
       </div>
 
       {/* Rows */}
-      <div style={{ flex: 1, overflowY: 'auto' }}>
+      <div style={{ flex: 1 }}>
         {top10.map((coin, i) => {
           const mock7d = coin.price_change_percentage_24h * 3.5
           const { text, up } = fmt7d(mock7d)
