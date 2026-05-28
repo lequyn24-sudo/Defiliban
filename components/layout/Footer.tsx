@@ -64,7 +64,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--text-dim)',
               lineHeight: 1.65,
               marginBottom: '4px',
@@ -75,7 +75,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '0.6px',
               color: 'var(--text-dim)',
@@ -91,7 +91,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -112,7 +112,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -133,7 +133,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -176,7 +176,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               color: 'var(--text-dim)',
               opacity: 0.55,
             }}
@@ -186,7 +186,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               color: 'var(--text-dim)',
               opacity: 0.55,
             }}
@@ -205,7 +205,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
       href={href}
       style={{
         fontFamily: 'var(--font-sans)',
-        fontSize: '13px',
+        fontSize: '14px',
         color: 'var(--text-dim)',
         textDecoration: 'none',
         transition: 'color 0.15s',

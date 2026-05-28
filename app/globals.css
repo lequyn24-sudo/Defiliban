@@ -26,6 +26,17 @@
 
   --font-mono: 'DM Mono', 'Courier New', monospace;
   --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* Type scale — 5 tiers from microcopy → display */
+  --text-2xs:  11px;   /* badges · signal labels · section eyebrows */
+  --text-xs:   12px;   /* captions · timestamps · metadata */
+  --text-sm:   14px;   /* UI labels · compact article titles */
+  --text-base: 16px;   /* body copy · card descriptions */
+  --text-lg:   18px;   /* featured excerpts · larger body */
+  --text-xl:   20px;   /* data values · ticker metrics */
+  --text-2xl:  24px;   /* H3 · column headlines · article spotlight title */
+  --text-3xl:  28px;   /* H2 · section headlines */
+  --text-4xl:  48px;   /* H1 · hero display (reserved) */
 }
 
 /* ── Dark theme (default) ──────────────────────────────────── */

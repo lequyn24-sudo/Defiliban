@@ -97,7 +97,7 @@ export function ResearchCoverageSection() {
           <h2
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '22px',
+              fontSize: '28px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               letterSpacing: '-0.2px',
@@ -191,7 +191,7 @@ export function ResearchCoverageSection() {
                 className="line-clamp-3"
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '14px',
+                  fontSize: '16px',
                   color: 'var(--text-dim)',
                   lineHeight: 1.6,
                   flex: 1,
@@ -206,7 +206,7 @@ export function ResearchCoverageSection() {
                     key={tag}
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
+                      fontSize: '12px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.6px',
                       color: 'var(--text-dim)',
@@ -239,7 +239,7 @@ export function ResearchCoverageSection() {
           <span
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
             }}
           >

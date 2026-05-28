@@ -63,7 +63,7 @@ export function Navbar() {
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '9px',
+                fontSize: '11px',
                 letterSpacing: '0.4px',
                 color: 'var(--text-dim)',
                 lineHeight: 1,
@@ -131,7 +131,7 @@ export function Navbar() {
               position: 'absolute',
               right: '8px',
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               color: 'var(--text-dim)',
               pointerEvents: 'none',
               letterSpacing: '0',
@@ -147,7 +147,7 @@ export function Navbar() {
           className="hidden md:block"
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '11px',
             textTransform: 'uppercase',
             letterSpacing: '0.8px',
             background: 'var(--text-primary)',
@@ -237,7 +237,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '11px',
                 background: 'var(--text-primary)',
                 color: 'var(--bg-void)',
                 padding: '6px 14px',

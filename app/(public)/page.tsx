@@ -131,7 +131,7 @@ function TrustBar() {
                 <p
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--text-primary)',
                     marginBottom: '5px',
@@ -144,7 +144,7 @@ function TrustBar() {
               <p
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '14px',
+                  fontSize: '16px',
                   color: 'var(--text-dim)',
                   lineHeight: 1.55,
                 }}
@@ -271,7 +271,7 @@ function ResearchFrameworkSection() {
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '15px',
+                      fontSize: '16px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                       marginBottom: '5px',
@@ -282,7 +282,7 @@ function ResearchFrameworkSection() {
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '14px',
+                      fontSize: '16px',
                       color: 'var(--text-dim)',
                       lineHeight: 1.5,
                       marginBottom: '8px',
@@ -322,7 +322,7 @@ function ResearchFrameworkSection() {
           <h2
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '20px',
+              fontSize: '24px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               marginBottom: '24px',
@@ -351,7 +351,7 @@ function ResearchFrameworkSection() {
                 <span
                   style={{
                     fontFamily: 'var(--font-sans)',
-                    fontSize: '15px',
+                    fontSize: '16px',
                     color: 'var(--text-primary)',
                     lineHeight: 1.55,
                   }}
@@ -373,7 +373,7 @@ function ResearchFrameworkSection() {
             <p
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '15px',
+                fontSize: '16px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
                 marginBottom: '6px',
@@ -384,7 +384,7 @@ function ResearchFrameworkSection() {
             <p
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '14px',
+                fontSize: '16px',
                 color: 'var(--text-dim)',
                 lineHeight: 1.55,
                 marginBottom: '12px',
@@ -423,7 +423,7 @@ function ResearchFrameworkSection() {
           <h2
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '20px',
+              fontSize: '24px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               marginBottom: '24px',
@@ -456,7 +456,7 @@ function ResearchFrameworkSection() {
                   <span
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '14px',
+                      fontSize: '15px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                     }}
@@ -540,7 +540,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
             <h2
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '18px',
+                fontSize: '24px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
               }}
@@ -612,7 +612,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                   <h3
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '18px',
+                      fontSize: '20px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                       lineHeight: 1.4,
@@ -625,7 +625,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                     className="line-clamp-2"
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '14px',
+                      fontSize: '16px',
                       color: 'var(--text-dim)',
                       lineHeight: 1.55,
                       marginBottom: '12px',
@@ -702,7 +702,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       className="line-clamp-2"
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '14px',
+                        fontSize: '15px',
                         fontWeight: 500,
                         color: 'var(--text-primary)',
                         lineHeight: 1.4,
@@ -732,7 +732,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
             <h2
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '18px',
+                fontSize: '24px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
               }}
@@ -806,7 +806,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       className="line-clamp-2"
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '14px',
+                        fontSize: '15px',
                         fontWeight: 500,
                         color: 'var(--text-primary)',
                         lineHeight: 1.4,
@@ -818,7 +818,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '11px',
+                        fontSize: '12px',
                         color: 'var(--text-dim)',
                       }}
                     >
@@ -869,7 +869,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '14px',
+                      fontSize: '15px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                       marginBottom: '3px',
@@ -893,7 +893,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                     <p
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '13px',
+                        fontSize: '14px',
                         color: 'var(--text-dim)',
                         lineHeight: 1.5,
                       }}

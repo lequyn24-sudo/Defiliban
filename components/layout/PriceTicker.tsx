@@ -74,7 +74,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '18px',
+                  fontSize: '20px',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   letterSpacing: '-0.3px',

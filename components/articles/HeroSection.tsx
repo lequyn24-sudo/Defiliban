@@ -68,7 +68,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
           <span
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '9px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               background: 'var(--color-positive)',
@@ -168,11 +168,11 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
           className="line-clamp-3"
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '22px',
+            fontSize: '28px',
             fontWeight: 500,
             letterSpacing: '-0.3px',
             color: 'var(--text-primary)',
-            lineHeight: 1.3,
+            lineHeight: 1.25,
           }}
         >
           {article.title}
@@ -197,7 +197,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
             className="line-clamp-3"
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '14px',
+              fontSize: '16px',
               color: 'var(--text-dim)',
               lineHeight: 1.65,
             }}
@@ -304,7 +304,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
                 className="line-clamp-2"
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '14px',
+                  fontSize: '16px',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   lineHeight: 1.45,
@@ -317,7 +317,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '11px',
+                    fontSize: '12px',
                     color: 'var(--text-dim)',
                   }}
                 >
@@ -421,7 +421,7 @@ function MarketLeaders({ coins }: { coins: CoinPrice[] }) {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: 'rgba(232,232,198,0.35)',
                 }}
               >
@@ -443,7 +443,7 @@ function MarketLeaders({ coins }: { coins: CoinPrice[] }) {
                   <span
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                       display: 'block',
@@ -457,7 +457,7 @@ function MarketLeaders({ coins }: { coins: CoinPrice[] }) {
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
+                      fontSize: '12px',
                       color: 'var(--text-dim)',
                     }}
                   >
@@ -468,7 +468,7 @@ function MarketLeaders({ coins }: { coins: CoinPrice[] }) {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontWeight: 500,
                   color: up ? 'var(--color-positive)' : 'var(--color-negative)',
                   textAlign: 'right',
@@ -492,7 +492,7 @@ function MarketLeaders({ coins }: { coins: CoinPrice[] }) {
         <span
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--text-dim)',
           }}
         >
