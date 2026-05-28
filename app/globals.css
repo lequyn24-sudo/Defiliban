@@ -17,17 +17,17 @@
 /* ── Dark theme (default) ── */
 :root,
 [data-theme="dark"] {
-  --bg-page:      #252525;
-  --bg-void:      #1A1A18;
-  --bg-surface:   #474744;
-  --bg-surface2:  #323230;
+  --bg-page:      #252523;   /* card / section background — warm charcoal */
+  --bg-void:      #161614;   /* body / navbar / footer — deepest dark */
+  --bg-surface:   #313130;   /* elevated surfaces, hover targets */
+  --bg-surface2:  #2A2A28;   /* subtle raised panels */
   --text-primary: #E8E8C6;
   --text-dim:     rgba(232, 232, 198, 0.72);
-  --text-faint:   rgba(232, 232, 198, 0.12);
-  --text-ghost:   rgba(232, 232, 198, 0.06);
-  --border:       rgba(232, 232, 198, 0.18);
-  --border-mid:   rgba(232, 232, 198, 0.28);
-  --border-strong: rgba(232, 232, 198, 0.45);
+  --text-faint:   rgba(232, 232, 198, 0.18);
+  --text-ghost:   rgba(232, 232, 198, 0.07);
+  --border:       rgba(232, 232, 198, 0.22);
+  --border-mid:   rgba(232, 232, 198, 0.35);
+  --border-strong: rgba(232, 232, 198, 0.54);
 }
 
 /* ── Light theme ── */
@@ -58,7 +58,7 @@ html {
 }
 
 body {
-  background-color: var(--bg-page);
+  background-color: var(--bg-void);
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
