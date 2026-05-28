@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useState, useRef } from 'react'
-import { BarChart2, Menu, X } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { BarChart2, Menu, X, User } from 'lucide-react'
 import { MAIN_NAV_CATEGORIES } from '@/lib/constants/categories'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
@@ -17,7 +17,24 @@ export function Navbar() {
   const router = useRouter()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
+  const [userInitials, setUserInitials] = useState<string | null>(null)
   const searchRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    const raw = localStorage.getItem('defiliban-user')
+    if (raw) {
+      try {
+        const u = JSON.parse(raw)
+        const initials = (u.displayName as string)
+          .split(' ')
+          .map((n: string) => n[0])
+          .join('')
+          .toUpperCase()
+          .slice(0, 2)
+        setUserInitials(initials)
+      } catch { /* ignore */ }
+    }
+  }, [])
 
   function handleSearchSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -146,6 +163,34 @@ export function Navbar() {
         <div className="hidden md:block">
           <ThemeToggle />
         </div>
+
+        {/* Profile button */}
+        <Link
+          href="/account"
+          className="hidden md:flex"
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            border: '1px solid var(--border)',
+            background: userInitials ? 'var(--bg-surface)' : 'transparent',
+            color: 'var(--text-primary)',
+            textDecoration: 'none',
+            flexShrink: 0,
+            cursor: 'pointer',
+          }}
+          title={userInitials ? 'My Account' : 'Sign In'}
+        >
+          {userInitials ? (
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500 }}>
+              {userInitials}
+            </span>
+          ) : (
+            <User size={14} />
+          )}
+        </Link>
 
         {/* Subscribe pill */}
         <Link
