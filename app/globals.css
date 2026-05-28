@@ -17,10 +17,10 @@
 /* ── Dark theme (default) ── */
 :root,
 [data-theme="dark"] {
-  --bg-page:      #252523;   /* card / section background — warm charcoal */
-  --bg-void:      #161614;   /* body / navbar / footer — deepest dark */
-  --bg-surface:   #313130;   /* elevated surfaces, hover targets */
-  --bg-surface2:  #2A2A28;   /* subtle raised panels */
+  --bg-page:      #252523;   /* section / card background */
+  --bg-void:      #161614;   /* body, navbar, footer — deepest dark */
+  --bg-surface:   #474744;   /* clearly elevated surfaces — reference's middle swatch */
+  --bg-surface2:  #323230;   /* raised panels, methodology card */
   --text-primary: #E8E8C6;
   --text-dim:     rgba(232, 232, 198, 0.72);
   --text-faint:   rgba(232, 232, 198, 0.18);
