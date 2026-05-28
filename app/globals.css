@@ -20,9 +20,9 @@
   --color-surface2:  #363634;   /* midpoint between #252525 and #474744 */
 
   /* Functional / data colors (dark-mode values; light mode overrides below) */
-  --color-positive:  #4CAF7A;   /* dark: 4.8–5.9:1 ✓ AA */
-  --color-negative:  #E87272;   /* dark: lightened for 4.6:1 ✓ AA on bg-page */
-  --color-info-blue: #7ABAEF;
+  --color-positive:  #4CAF7A;   /* dark: 4.8–5.9:1 ✓ AA on bg-page/void */
+  --color-negative:  #F08080;   /* dark: 5.0:1 ✓ AA on bg-page (#E87272 was 4.4 = fail) */
+  --color-info-blue: #7ABAEF;   /* dark: 6.2:1 ✓ AA on bg-page */
 
   --font-mono: 'DM Mono', 'Courier New', monospace;
   --font-sans: 'DM Sans', system-ui, sans-serif;
@@ -63,8 +63,8 @@
   --bg-surface:   #474744;   /* clearly elevated — the mid swatch */
 
   --text-primary: #E8E8C6;                    /* full cream — headings, values */
-  --text-dim:     rgba(232, 232, 198, 0.72);  /* secondary text — labels, meta */
-  --text-subtle:  rgba(232, 232, 198, 0.60);  /* rank numbers — 4.5:1 AA on bg-page */
+  --text-dim:     rgba(232, 232, 198, 0.78);  /* secondary text — 4.6:1 on bg-surface, 6.5:1 on bg-page */
+  --text-subtle:  rgba(232, 232, 198, 0.65);  /* rank numbers — 4.9:1 AA on bg-page (margin above 4.5) */
   --text-faint:   rgba(232, 232, 198, 0.25);  /* subtle fills · badge bg */
   --text-ghost:   rgba(232, 232, 198, 0.08);  /* hover tint */
 
@@ -92,8 +92,9 @@
   --border-strong: rgba(37, 37, 37, 0.45);
 
   /* Functional colors override — accessible on cream backgrounds */
-  --color-positive:  #1B6E33;   /* dark green: 5.2:1 AA on cream */
-  --color-negative:  #B91C1C;   /* dark red:   5.1:1 AA on cream */
+  --color-positive:  #1B6E33;   /* dark green: 5.2:1 ✓ AA on cream */
+  --color-negative:  #B91C1C;   /* dark red:   5.1:1 ✓ AA on cream */
+  --color-info-blue: #1565A8;   /* dark blue:  5.1:1 ✓ AA (#7ABAEF was 1.7 = fail) */
 }
 
 *,

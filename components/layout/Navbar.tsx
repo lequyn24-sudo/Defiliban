@@ -314,7 +314,7 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
         textTransform: 'uppercase',
         letterSpacing: '0.6px',
         color: 'var(--text-primary)',
-        opacity: active ? 1 : 0.65,
+        opacity: active ? 1 : 0.72,
         fontWeight: 700,
         padding: 'var(--sp-1) var(--sp-2)',
         height: '64px',

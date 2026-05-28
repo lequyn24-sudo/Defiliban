@@ -68,7 +68,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
           <span style={{
             fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
             textTransform: 'uppercase', letterSpacing: '1px',
-            color: 'var(--color-positive)', border: '1px solid var(--color-positive)',
+            background: 'var(--color-positive)', color: '#1A1A18',
             borderRadius: '2px', padding: '2px 8px',
           }}>
             Research Spotlight
