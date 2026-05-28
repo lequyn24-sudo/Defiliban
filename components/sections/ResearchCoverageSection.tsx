@@ -120,9 +120,9 @@ export function ResearchCoverageSection() {
         </Link>
       </div>
 
-      {/* 6-card grid — 1 col mobile, 2 col tablet, 3 col desktop */}
+      {/* 6-card grid — 1 row, 12-col system (each card = 2 cols) */}
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
         style={{ gap: 'var(--sp-4)' }}
       >
         {SIGNAL_CARDS.map((card) => (
@@ -141,7 +141,7 @@ export function ResearchCoverageSection() {
             <div
               style={{
                 position: 'relative',
-                height: '148px',
+                height: '120px',
                 background: 'var(--bg-surface)',
                 flexShrink: 0,
               }}
@@ -151,21 +151,21 @@ export function ResearchCoverageSection() {
                 alt={card.title}
                 fill
                 style={{ objectFit: 'cover', opacity: 0.65 }}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
               />
               {/* Signal badge */}
               <div
                 style={{
                   position: 'absolute',
-                  top: '10px',
-                  left: '10px',
+                  top: '8px',
+                  left: '8px',
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '10px',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.8px',
+                  letterSpacing: '0.6px',
                   color: '#1A1A18',
                   background: signalColor(card.signal),
-                  padding: '3px 8px',
+                  padding: '2px 6px',
                   borderRadius: '2px',
                   fontWeight: 500,
                 }}
@@ -175,12 +175,12 @@ export function ResearchCoverageSection() {
             </div>
 
             {/* Card content */}
-            <div style={{ padding: 'var(--sp-4)', flex: 1, display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)' }}>
+            <div style={{ padding: 'var(--sp-3)', flex: 1, display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)' }}>
               <h3
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '16px',
-                  fontWeight: 500,
+                  fontSize: '13px',
+                  fontWeight: 700,
                   color: 'var(--text-primary)',
                   lineHeight: 1.35,
                 }}
@@ -188,31 +188,31 @@ export function ResearchCoverageSection() {
                 {card.title}
               </h3>
               <p
-                className="line-clamp-3"
+                className="line-clamp-4"
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '16px',
+                  fontSize: '12px',
                   color: 'var(--text-dim)',
-                  lineHeight: 1.6,
+                  lineHeight: 1.55,
                   flex: 1,
                 }}
               >
                 {card.description}
               </p>
               {/* Tags */}
-              <div style={{ display: 'flex', gap: 'var(--sp-2)', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 'var(--sp-1)', flexWrap: 'wrap' }}>
                 {card.tags.map((tag) => (
                   <span
                     key={tag}
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '12px',
+                      fontSize: '10px',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.6px',
+                      letterSpacing: '0.4px',
                       color: 'var(--text-dim)',
                       border: '1px solid var(--border)',
                       borderRadius: '2px',
-                      padding: 'var(--sp-1) var(--sp-2)',
+                      padding: '1px 5px',
                     }}
                   >
                     {tag}
