@@ -15,13 +15,13 @@ export default function HomePage() {
 
   const sponsoredArticles = allPreviews
     .filter((a) => a.isSponsor || a.tier1 === 'sponsored-articles')
-    .concat(allPreviews.filter((a) => a.tier1 === 'protocols').slice(0, 3))
-    .slice(0, 4)
+    .concat(allPreviews.filter((a) => a.tier1 === 'protocols').slice(0, 6))
+    .slice(0, 6)
 
   const pressReleaseArticles = allPreviews
     .filter((a) => a.tier1 === 'press-release')
-    .concat(allPreviews.filter((a) => a.tier1 === 'infrastructure').slice(0, 4))
-    .slice(0, 5)
+    .concat(allPreviews.filter((a) => a.tier1 === 'infrastructure').slice(0, 6))
+    .slice(0, 6)
 
   return (
     <div>
@@ -314,9 +314,14 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         {/* ── Press Release ── */}
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
-            <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
-              Press Release
-            </h2>
+            <div>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
+                Official Announcements
+              </p>
+              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Press Release
+              </h2>
+            </div>
             <Link href="/press-release" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               View all →
             </Link>
@@ -338,7 +343,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
               { icon: '⬡', label: 'No affiliate links', desc: 'We do not use affiliate or referral links in research.' },
               { icon: '○', label: 'Have feedback?', desc: 'Help us improve →', isLink: true },
             ].map(({ icon, label, desc, isLink }) => (
-              <div key={label} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start', padding: 'var(--sp-3)', background: 'var(--bg-void)' }}>
+              <div key={label} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start', padding: 'var(--sp-4) var(--sp-3)', background: 'var(--bg-void)' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--text-dim)', flexShrink: 0, marginTop: '2px' }}>{icon}</span>
                 <div>
                   <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>{label}</p>
