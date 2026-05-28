@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
-import { CategoryNewsSection } from '@/components/sections/CategoryNewsSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
 import { MOCK_PRICES } from '@/lib/mock/prices'
 import { timeAgo } from '@/lib/utils/format'
@@ -13,12 +12,6 @@ export default function HomePage() {
   const allPreviews = MOCK_ARTICLES.map(toPreview)
   const featured = allPreviews.find((a) => a.isFeatured && a.tier1 === 'protocols') ?? allPreviews[0]
   const latest = getLatestArticles(8).map(toPreview)
-  const mostRead = latest.slice(3, 8)
-
-  const protocolArticles  = allPreviews.filter((a) => a.tier1 === 'protocols').slice(0, 3)
-  const yieldArticles     = allPreviews.filter((a) => a.tier1 === 'yield').slice(0, 3)
-  const liquidityArticles = allPreviews.filter((a) => a.tier1 === 'liquidity').slice(0, 3)
-  const riskArticles      = allPreviews.filter((a) => a.tier1 === 'risk').slice(0, 3)
 
   const sponsoredArticles = allPreviews
     .filter((a) => a.isSponsor || a.tier1 === 'sponsored-articles')
@@ -32,44 +25,10 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* ── Hero: Latest Insights | Featured Spotlight | Most Read ── */}
+      {/* ── Hero: Research Spotlight | Latest Insights | Market Leaders ── */}
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        <HeroSection featured={featured} latest={latest} mostRead={mostRead} />
+        <HeroSection featured={featured} latest={latest} prices={MOCK_PRICES} />
       </div>
-
-      {/* ── Market Overview Strip ── */}
-      <MarketOverviewStrip prices={MOCK_PRICES} />
-
-      {/* ── Category News Sections ── */}
-      <div style={{ background: 'var(--bg-page)' }}>
-        <CategoryNewsSection
-          eyebrow="PROTOCOLS"
-          title="Protocol Deep-Dives"
-          slug="protocols"
-          articles={protocolArticles}
-        />
-        <CategoryNewsSection
-          eyebrow="YIELD"
-          title="Yield & Returns"
-          slug="yield"
-          articles={yieldArticles}
-        />
-        <CategoryNewsSection
-          eyebrow="LIQUIDITY"
-          title="Liquidity Architecture"
-          slug="liquidity"
-          articles={liquidityArticles}
-        />
-        <CategoryNewsSection
-          eyebrow="RISK"
-          title="Risk & Exploits"
-          slug="risk"
-          articles={riskArticles}
-        />
-      </div>
-
-      {/* ── Research Framework (compact strip) ── */}
-      <ResearchFrameworkSection />
 
       {/* ── Trust Bar ── */}
       <TrustBar />
@@ -77,153 +36,14 @@ export default function HomePage() {
       {/* ── Research Coverage ── */}
       <ResearchCoverageSection />
 
+      {/* ── Research Framework: cluster cards | why defiliban | confidence scale ── */}
+      <ResearchFrameworkSection />
+
       {/* ── Commercial Content: Sponsored + Press Release + Transparency ── */}
       <CommercialSection
         sponsored={sponsoredArticles}
         pressRelease={pressReleaseArticles}
       />
-    </div>
-  )
-}
-
-/* ─────────────────────────────────────────── */
-/*  Market Overview Strip                      */
-/* ─────────────────────────────────────────── */
-function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
-  const top6 = [...prices].sort((a, b) => b.market_cap - a.market_cap).slice(0, 6)
-
-  function fmt(price: number) {
-    if (price >= 1000) return `$${price.toLocaleString('en-US', { maximumFractionDigits: 0 })}`
-    if (price >= 1) return `$${price.toFixed(2)}`
-    return `$${price.toFixed(4)}`
-  }
-
-  return (
-    <div
-      style={{
-        background: 'var(--bg-void)',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: 'var(--sp-3) var(--sp-4)',
-        }}
-      >
-        {/* Header row */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: 'var(--sp-3)',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
-              textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-dim)',
-            }}
-          >
-            Market Overview
-          </span>
-          <Link
-            href="/cmc"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
-              color: 'var(--text-dim)',
-              textDecoration: 'none',
-            }}
-          >
-            View full market data →
-          </Link>
-        </div>
-
-        {/* 6-coin grid */}
-        <div
-          className="grid grid-cols-3 lg:grid-cols-6"
-          style={{ gap: '0', background: 'var(--bg-void)' }}
-        >
-          {top6.map((coin) => {
-            const up = coin.price_change_percentage_24h >= 0
-            return (
-              <div
-                key={coin.id}
-                style={{
-                  background: 'var(--bg-void)',
-                  padding: 'var(--sp-2) var(--sp-3)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 'var(--sp-2)',
-                }}
-              >
-                {/* Logo */}
-                <div
-                  style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    flexShrink: 0,
-                    position: 'relative',
-                    background: 'var(--bg-surface)',
-                  }}
-                >
-                  {coin.imageUrl ? (
-                    <Image
-                      src={coin.imageUrl}
-                      alt={coin.name}
-                      fill
-                      sizes="32px"
-                      style={{ objectFit: 'cover' }}
-                    />
-                  ) : null}
-                </div>
-                <div style={{ minWidth: 0 }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                        color: 'var(--text-primary)',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {coin.symbol}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '11px',
-                        color: up ? 'var(--color-positive)' : 'var(--color-negative)',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {up ? '+' : ''}{coin.price_change_percentage_24h.toFixed(1)}%
-                    </span>
-                  </div>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '13px',
-                      color: 'var(--text-dim)',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {fmt(coin.current_price)}
-                  </span>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
     </div>
   )
 }
@@ -332,214 +152,130 @@ function TrustBar() {
 }
 
 /* ─────────────────────────────────────────── */
-/*  Research Framework — compact 3-col strip   */
+/*  Research Framework — 3-col with cluster    */
 /* ─────────────────────────────────────────── */
 function ResearchFrameworkSection() {
-  const topics = ['Protocol structure', 'Yield systems', 'Liquidity architecture', 'Risk surfaces']
+  const clusters = [
+    { slug: 'protocol-structure', label: 'Protocol structure', desc: 'How products are built, governed, and economically aligned.', img: 'proto01', href: '/protocols' },
+    { slug: 'yield-systems',      label: 'Yield systems',      desc: 'Where yield comes from and who ultimately carries the cost.', img: 'yield01', href: '/yield' },
+    { slug: 'liquidity-arch',     label: 'Liquidity architecture', desc: 'How usable liquidity behaves when capital conditions change.', img: 'liq01', href: '/liquidity' },
+    { slug: 'risk-surfaces',      label: 'Risk surfaces',      desc: 'Where governance, contracts, and incentives can fall first.', img: 'risk01', href: '/risk' },
+  ]
+
+  const whyPoints = [
+    'Not a generic crypto feed.',
+    'Not a broad market portal chasing every narrative equally.',
+    'Built to explain how DeFi systems are designed, where they fail, and what actually matters beneath the surface.',
+    'Research first. Structure second. Headlines last.',
+  ]
 
   const confidenceLevels = [
-    { range: '80–100', label: 'High', color: 'var(--color-positive)' },
-    { range: '60–79',  label: 'Moderate', color: '#E8C84A' },
-    { range: '40–59',  label: 'Low', color: '#E8A04A' },
-    { range: '0–39',   label: 'Very low', color: 'var(--color-negative)' },
+    { range: '80 – 100', label: 'High confidence',      desc: 'Strong data & clear signal',      color: 'var(--color-positive)' },
+    { range: '60 – 79',  label: 'Moderate confidence',  desc: 'Good data, some uncertainty',     color: '#E8C84A' },
+    { range: '40 – 59',  label: 'Low confidence',       desc: 'Limited data or mixed signals',   color: '#E8A04A' },
+    { range: '0 – 39',   label: 'Very low confidence',  desc: 'Speculative / early signal',      color: 'var(--color-negative)' },
   ]
 
   return (
-    <section
-      style={{
-        borderTop: '1px solid var(--border)',
-        background: 'var(--bg-page)',
-      }}
-    >
+    <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-page)' }}>
       <div
-        style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          gap: '1px',
-          background: 'var(--border)',
-        }}
+        style={{ maxWidth: '1280px', margin: '0 auto', gap: '1px', background: 'var(--border)' }}
         className="grid grid-cols-1 lg:grid-cols-3"
       >
-        {/* Col 1: Research Framework */}
+        {/* ── Col 1: Cluster cards ── */}
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
-              textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-dim)',
-              marginBottom: 'var(--sp-2)',
-            }}
-          >
-            Research Framework
-          </p>
-          <h2
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '18px',
-              fontWeight: 600,
-              color: 'var(--text-primary)',
-              marginBottom: 'var(--sp-4)',
-            }}
-          >
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-2)' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)' }}>
+              Research Framework
+            </p>
+            <Link href="/protocols" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              Explore framework →
+            </Link>
+          </div>
+          <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             How We Break Down DeFi
           </h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
-            {topics.map((t) => (
-              <span
-                key={t}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  color: 'var(--text-dim)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '2px',
-                  padding: 'var(--sp-1) var(--sp-2)',
-                }}
-              >
-                {t}
-              </span>
+          <div className="grid grid-cols-2" style={{ gap: 'var(--sp-3)' }}>
+            {clusters.map((c) => (
+              <Link key={c.slug} href={c.href} style={{ textDecoration: 'none' }}>
+                <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden' }} className="card-hover">
+                  <div style={{ position: 'relative', height: '72px', background: 'var(--bg-surface)', flexShrink: 0 }}>
+                    <Image
+                      src={`https://picsum.photos/seed/${c.img}/200/100`}
+                      alt={c.label}
+                      fill
+                      style={{ objectFit: 'cover', opacity: 0.6 }}
+                      sizes="160px"
+                    />
+                  </div>
+                  <div style={{ padding: 'var(--sp-3)' }}>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-1)', lineHeight: 1.3 }}>
+                      {c.label}
+                    </p>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'var(--text-dim)', lineHeight: 1.5, marginBottom: 'var(--sp-2)' }}>
+                      {c.desc}
+                    </p>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>Explore cluster →</span>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
-          <Link
-            href="/protocols"
-            style={{
-              display: 'inline-block',
-              marginTop: 'var(--sp-3)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
-              color: 'var(--text-dim)',
-              textDecoration: 'none',
-            }}
-          >
-            Explore framework →
-          </Link>
         </div>
 
-        {/* Col 2: Why Defiliban */}
+        {/* ── Col 2: Why Defiliban ── */}
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
-              textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-dim)',
-              marginBottom: '6px',
-            }}
-          >
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
             Why Defiliban
           </p>
-          <h2
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '18px',
-              fontWeight: 600,
-              color: 'var(--text-primary)',
-              marginBottom: 'var(--sp-3)',
-            }}
-          >
+          <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             Why this site feels different
           </h2>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '14px',
-              color: 'var(--text-dim)',
-              lineHeight: 1.6,
-              marginBottom: 'var(--sp-3)',
-            }}
-          >
-            Built to explain how DeFi systems are designed, where they fail, and what actually matters — not a generic crypto feed, not a broad market portal.
-          </p>
-          <Link
-            href="/about"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
-              color: 'var(--text-dim)',
-              textDecoration: 'none',
-            }}
-          >
-            Our methodology →
-          </Link>
-        </div>
-
-        {/* Col 3: Confidence Scale */}
-        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
-              textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-dim)',
-              marginBottom: '6px',
-            }}
-          >
-            How We Rate Our Research
-          </p>
-          <h2
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: '18px',
-              fontWeight: 600,
-              color: 'var(--text-primary)',
-              marginBottom: 'var(--sp-4)',
-            }}
-          >
-            Confidence scale
-          </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)' }}>
-            {confidenceLevels.map((lvl) => (
-              <div key={lvl.range} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
-                <span
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    background: lvl.color,
-                    flexShrink: 0,
-                    display: 'inline-block',
-                  }}
-                />
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '12px',
-                    color: 'var(--text-dim)',
-                    minWidth: '52px',
-                  }}
-                >
-                  {lvl.range}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)', marginBottom: 'var(--sp-6)' }}>
+            {whyPoints.map((pt) => (
+              <div key={pt} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
+                <span style={{ width: '16px', height: '16px', borderRadius: '50%', border: '1.5px solid var(--color-positive)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-positive)', display: 'block' }} />
                 </span>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '13px',
-                    color: 'var(--text-primary)',
-                  }}
-                >
-                  {lvl.label}
-                </span>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.6 }}>{pt}</p>
               </div>
             ))}
           </div>
-          <Link
-            href="/about"
-            style={{
-              display: 'inline-block',
-              marginTop: 'var(--sp-3)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
-              color: 'var(--text-dim)',
-              textDecoration: 'none',
-            }}
-          >
-            Learn methodology →
+          <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-4)' }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Methodology transparency</p>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-3)' }}>
+              Every research piece includes our methodology, data sources, assumptions, and limitations.
+            </p>
+            <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>
+              View methodology →
+            </Link>
+          </div>
+        </div>
+
+        {/* ── Col 3: Confidence Scale ── */}
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
+            Confidence Scale
+          </p>
+          <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
+            How we rate our research
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)', marginBottom: 'var(--sp-6)' }}>
+            {confidenceLevels.map((lvl) => (
+              <div key={lvl.range} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
+                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: lvl.color, flexShrink: 0, marginTop: '3px', display: 'block' }} />
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--sp-2)', marginBottom: '2px' }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', minWidth: '52px' }}>{lvl.range}</span>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>{lvl.label}</span>
+                  </div>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)' }}>{lvl.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>
+            Learn more about our confidence methodology →
           </Link>
         </div>
       </div>
