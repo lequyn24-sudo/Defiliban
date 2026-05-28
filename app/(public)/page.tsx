@@ -195,10 +195,10 @@ function ResearchFrameworkSection() {
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             How We Break Down DeFi
           </h2>
-          <div className="grid grid-cols-2" style={{ gap: 'var(--sp-3)' }}>
+          <div className="grid grid-cols-2" style={{ gap: 'var(--sp-3)', gridAutoRows: '1fr' }}>
             {clusters.map((c) => (
-              <Link key={c.slug} href={c.href} style={{ textDecoration: 'none' }}>
-                <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden' }} className="card-hover">
+              <Link key={c.slug} href={c.href} style={{ textDecoration: 'none', display: 'flex' }}>
+                <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', width: '100%' }} className="card-hover">
                   <div style={{ position: 'relative', height: '72px', background: 'var(--bg-surface)', flexShrink: 0 }}>
                     <Image
                       src={`https://picsum.photos/seed/${c.img}/200/100`}
@@ -208,11 +208,11 @@ function ResearchFrameworkSection() {
                       sizes="160px"
                     />
                   </div>
-                  <div style={{ padding: 'var(--sp-3)' }}>
+                  <div style={{ padding: 'var(--sp-3)', flex: 1, display: 'flex', flexDirection: 'column' }}>
                     <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-1)', lineHeight: 1.3 }}>
                       {c.label}
                     </p>
-                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'var(--text-dim)', lineHeight: 1.5, marginBottom: 'var(--sp-2)' }}>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'var(--text-dim)', lineHeight: 1.5, marginBottom: 'var(--sp-2)', flex: 1 }}>
                       {c.desc}
                     </p>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>Explore cluster →</span>
@@ -496,92 +496,65 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
 
         {/* ── Press Release ── */}
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-8) var(--sp-6)' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              justifyContent: 'space-between',
-              marginBottom: 'var(--sp-5)',
-              marginTop: '15px',
-            }}
-          >
-            <h2
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '24px',
-                fontWeight: 700,
-                color: 'var(--text-primary)',
-              }}
-            >
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-5)' }}>
+            <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)' }}>
               Press Release
             </h2>
-            <Link
-              href="/press-release"
-              style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}
-            >
+            <Link href="/press-release" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}>
               View all →
             </Link>
           </div>
+
+          {/* Featured press release — large format */}
+          {pressRelease[0] && (
+            <Link href={`/article/${pressRelease[0].slug}`} style={{ textDecoration: 'none', display: 'block', marginBottom: '1px' }}>
+              <div style={{ background: 'var(--bg-page)' }} className="row-hover">
+                <div style={{ position: 'relative', height: '180px', background: 'var(--bg-surface)', overflow: 'hidden' }}>
+                  <Image
+                    src={pressRelease[0].coverImage}
+                    alt={pressRelease[0].title}
+                    fill
+                    style={{ objectFit: 'cover', opacity: 0.8 }}
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,26,24,0.7) 0%, transparent 60%)' }} />
+                  <span style={{
+                    position: 'absolute', top: '10px', left: '10px',
+                    fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase',
+                    letterSpacing: '0.8px', background: 'var(--text-primary)', color: 'var(--bg-void)',
+                    padding: 'var(--sp-1) var(--sp-2)', borderRadius: '2px', fontWeight: 500,
+                  }}>
+                    Press Release
+                  </span>
+                </div>
+                <div style={{ padding: 'var(--sp-4) var(--sp-3)' }}>
+                  <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: 'var(--sp-2)' }}>
+                    {pressRelease[0].title}
+                  </h3>
+                  <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-2)' }}>
+                    {pressRelease[0].excerpt}
+                  </p>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
+                    {timeAgo(pressRelease[0].publishedAt)} · Read more →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {/* Smaller press release list */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
-            {pressRelease.map((article) => (
+            {pressRelease.slice(1).map((article) => (
               <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: 'var(--sp-3)',
-                    padding: 'var(--sp-3)',
-                    background: 'var(--bg-page)',
-                    alignItems: 'flex-start',
-                  }}
-                  className="row-hover"
-                >
-                  <div
-                    style={{
-                      position: 'relative',
-                      width: '84px',
-                      height: '64px',
-                      flexShrink: 0,
-                      background: 'var(--bg-surface)',
-                      borderRadius: '3px',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <Image
-                      src={article.coverImage}
-                      alt={article.title}
-                      fill
-                      style={{ objectFit: 'cover', opacity: 0.75 }}
-                      sizes="84px"
-                    />
+                <div style={{ display: 'flex', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--bg-page)', alignItems: 'flex-start' }} className="row-hover">
+                  <div style={{ position: 'relative', width: '72px', height: '54px', flexShrink: 0, background: 'var(--bg-surface)', borderRadius: '3px', overflow: 'hidden' }}>
+                    <Image src={article.coverImage} alt={article.title} fill style={{ objectFit: 'cover', opacity: 0.75 }} sizes="72px" />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '11px',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.6px',
-                        color: 'var(--text-dim)',
-                        display: 'block',
-                        marginBottom: 'var(--sp-1)',
-                      }}
-                    >
-                      Press Release
-                    </span>
-                    <p
-                      className="line-clamp-2"
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '15px',
-                        fontWeight: 500,
-                        color: 'var(--text-primary)',
-                        lineHeight: 1.4,
-                        marginBottom: 'var(--sp-2)',
-                      }}
-                    >
+                    <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: 'var(--sp-1)' }}>
                       {article.title}
                     </p>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
                       {timeAgo(article.publishedAt)}
                     </span>
                   </div>

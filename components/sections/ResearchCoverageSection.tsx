@@ -123,16 +123,16 @@ export function ResearchCoverageSection() {
       {/* 6-card grid — 1 col mobile, 2 col tablet, 3 col desktop */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-        style={{
-          gap: '1px',
-          background: 'var(--border)',
-        }}
+        style={{ gap: 'var(--sp-4)' }}
       >
         {SIGNAL_CARDS.map((card) => (
           <div
             key={card.title}
             style={{
-              background: 'var(--bg-page)',
+              background: 'var(--bg-surface2)',
+              border: '1px solid var(--border)',
+              borderRadius: '4px',
+              overflow: 'hidden',
               display: 'flex',
               flexDirection: 'column',
             }}

@@ -163,23 +163,25 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         {/* Image (right side) */}
         <div
           style={{
-            width: '200px',
+            width: '220px',
             flexShrink: 0,
+            alignSelf: 'stretch',
             position: 'relative',
             background: 'var(--bg-surface)',
             overflow: 'hidden',
+            minHeight: '320px',
           }}
-          className="hidden md:block"
+          className="hidden lg:block"
         >
           <Image
             src={article.coverImage}
             alt={article.title}
             fill
-            style={{ objectFit: 'cover', opacity: 0.8 }}
-            sizes="200px"
+            style={{ objectFit: 'cover', opacity: 0.75 }}
+            sizes="220px"
             priority
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, var(--bg-page) 0%, transparent 30%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, var(--bg-page) 0%, transparent 25%)' }} />
         </div>
       </div>
     </div>
