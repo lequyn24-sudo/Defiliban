@@ -30,7 +30,7 @@ export function ArticleGrid({
 
   if (variant === 'horizontal') {
     return (
-      <div className="flex flex-col gap-3">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
         {articles.map((article) => (
           <ArticleCard
             key={article.slug}
@@ -52,17 +52,11 @@ export function ArticleGrid({
       style={{
         display: 'grid',
         gridTemplateColumns: gridCols,
-        gap: '1px',
-        background: 'var(--border)',
+        gap: 'var(--sp-4)',
       }}
     >
       {articles.map((article) => (
-        <div
-          key={article.slug}
-          style={{ background: 'var(--bg-page)' }}
-        >
-          <ArticleCard article={article} variant="default" />
-        </div>
+        <ArticleCard key={article.slug} article={article} variant="default" />
       ))}
     </div>
   )
