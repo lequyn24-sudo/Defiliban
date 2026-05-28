@@ -287,347 +287,65 @@ function ResearchFrameworkSection() {
 /*  Commercial Section                         */
 /* ─────────────────────────────────────────── */
 function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePreview[]; pressRelease: ArticlePreview[] }) {
-  const featuredSponsored = sponsored[0]
-  const restSponsored = sponsored.slice(1)
-
   return (
-    <section
-      style={{
-        borderTop: '1px solid var(--border)',
-        background: 'var(--bg-page)',
-      }}
-    >
+    <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-page)' }}>
       <div
-        style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          gap: '1px',
-          background: 'var(--border)',
-        }}
-        className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_300px]"
+        style={{ maxWidth: '1280px', margin: '0 auto', gap: '1px', background: 'var(--border)' }}
+        className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_280px]"
       >
         {/* ── Sponsored Articles ── */}
-        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-8) var(--sp-6)' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
-              textTransform: 'uppercase',
-              letterSpacing: '1px',
-              color: 'var(--text-dim)',
-              marginBottom: '6px',
-            }}
-          >
-            Commercial Content
-          </p>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              justifyContent: 'space-between',
-              marginBottom: 'var(--sp-5)',
-            }}
-          >
-            <h2
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '24px',
-                fontWeight: 700,
-                color: 'var(--text-primary)',
-              }}
-            >
-              Sponsored Articles
-            </h2>
-            <Link
-              href="/sponsored-articles"
-              style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}
-            >
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
+            <div>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
+                Commercial Content
+              </p>
+              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Sponsored Articles
+              </h2>
+            </div>
+            <Link href="/sponsored-articles" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               View all →
             </Link>
           </div>
-
-          {/* Featured sponsored article */}
-          {featuredSponsored && (
-            <Link
-              href={`/article/${featuredSponsored.slug}`}
-              style={{ textDecoration: 'none', display: 'block', marginBottom: '1px' }}
-            >
-              <div style={{ background: 'var(--bg-page)' }} className="row-hover">
-                <div
-                  style={{
-                    position: 'relative',
-                    height: '180px',
-                    background: 'var(--bg-surface)',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <Image
-                    src={featuredSponsored.coverImage}
-                    alt={featuredSponsored.title}
-                    fill
-                    style={{ objectFit: 'cover', opacity: 0.8 }}
-                    sizes="(max-width: 1024px) 100vw, 400px"
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(to top, rgba(26,26,24,0.7) 0%, transparent 60%)',
-                    }}
-                  />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '10px',
-                      left: '10px',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.8px',
-                      background: 'var(--text-primary)',
-                      color: 'var(--bg-void)',
-                      padding: 'var(--sp-1) var(--sp-2)',
-                      borderRadius: '2px',
-                      fontWeight: 500,
-                    }}
-                  >
-                    Sponsored
-                  </span>
-                </div>
-                <div style={{ padding: 'var(--sp-4) var(--sp-3) var(--sp-4)' }}>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '20px',
-                      fontWeight: 500,
-                      color: 'var(--text-primary)',
-                      lineHeight: 1.4,
-                      marginBottom: 'var(--sp-2)',
-                    }}
-                  >
-                    {featuredSponsored.title.replace('[Sponsored] ', '')}
-                  </h3>
-                  <p
-                    className="line-clamp-2"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '16px',
-                      color: 'var(--text-dim)',
-                      lineHeight: 1.55,
-                      marginBottom: 'var(--sp-3)',
-                    }}
-                  >
-                    {featuredSponsored.excerpt}
-                  </p>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>
-                    Read Full Article →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          )}
-
-          {/* Smaller sponsored articles */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
-            {restSponsored.map((article) => (
-              <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: 'var(--sp-3)',
-                    padding: 'var(--sp-3)',
-                    background: 'var(--bg-page)',
-                    alignItems: 'center',
-                  }}
-                  className="row-hover"
-                >
-                  <div
-                    style={{
-                      position: 'relative',
-                      width: '64px',
-                      height: '48px',
-                      flexShrink: 0,
-                      background: 'var(--bg-surface)',
-                      borderRadius: '2px',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <Image
-                      src={article.coverImage}
-                      alt={article.title}
-                      fill
-                      style={{ objectFit: 'cover', opacity: 0.8 }}
-                      sizes="64px"
-                    />
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '11px',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.6px',
-                        color: 'var(--text-dim)',
-                        display: 'block',
-                        marginBottom: 'var(--sp-1)',
-                      }}
-                    >
-                      Sponsored
-                    </span>
-                    <p
-                      className="line-clamp-2"
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '15px',
-                        fontWeight: 500,
-                        color: 'var(--text-primary)',
-                        lineHeight: 1.4,
-                      }}
-                    >
-                      {article.title.replace('[Sponsored] ', '')}
-                    </p>
-                  </div>
-                  <span style={{ color: 'var(--text-dim)', flexShrink: 0, fontSize: '16px' }}>›</span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <CommercialList articles={sponsored} label="Sponsored" />
         </div>
 
         {/* ── Press Release ── */}
-        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-8) var(--sp-6)' }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-5)' }}>
-            <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
+            <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
               Press Release
             </h2>
-            <Link href="/press-release" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}>
+            <Link href="/press-release" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               View all →
             </Link>
           </div>
-
-          {/* Featured press release — large format */}
-          {pressRelease[0] && (
-            <Link href={`/article/${pressRelease[0].slug}`} style={{ textDecoration: 'none', display: 'block', marginBottom: '1px' }}>
-              <div style={{ background: 'var(--bg-page)' }} className="row-hover">
-                <div style={{ position: 'relative', height: '180px', background: 'var(--bg-surface)', overflow: 'hidden' }}>
-                  <Image
-                    src={pressRelease[0].coverImage}
-                    alt={pressRelease[0].title}
-                    fill
-                    style={{ objectFit: 'cover', opacity: 0.8 }}
-                    sizes="(max-width: 1024px) 100vw, 400px"
-                  />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,26,24,0.7) 0%, transparent 60%)' }} />
-                  <span style={{
-                    position: 'absolute', top: '10px', left: '10px',
-                    fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase',
-                    letterSpacing: '0.8px', background: 'var(--text-primary)', color: 'var(--bg-void)',
-                    padding: 'var(--sp-1) var(--sp-2)', borderRadius: '2px', fontWeight: 500,
-                  }}>
-                    Press Release
-                  </span>
-                </div>
-                <div style={{ padding: 'var(--sp-4) var(--sp-3)' }}>
-                  <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: 'var(--sp-2)' }}>
-                    {pressRelease[0].title}
-                  </h3>
-                  <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-2)' }}>
-                    {pressRelease[0].excerpt}
-                  </p>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
-                    {timeAgo(pressRelease[0].publishedAt)} · Read more →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          )}
-
-          {/* Smaller press release list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
-            {pressRelease.slice(1).map((article) => (
-              <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-                <div style={{ display: 'flex', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--bg-page)', alignItems: 'flex-start' }} className="row-hover">
-                  <div style={{ position: 'relative', width: '72px', height: '54px', flexShrink: 0, background: 'var(--bg-surface)', borderRadius: '3px', overflow: 'hidden' }}>
-                    <Image src={article.coverImage} alt={article.title} fill style={{ objectFit: 'cover', opacity: 0.75 }} sizes="72px" />
-                  </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: 'var(--sp-1)' }}>
-                      {article.title}
-                    </p>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
-                      {timeAgo(article.publishedAt)}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <CommercialList articles={pressRelease} label="Press Release" />
         </div>
 
         {/* ── Trust & Transparency ── */}
-        <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-8) var(--sp-6)' }}>
-          <h3
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '14px',
-              fontWeight: 500,
-              color: 'var(--text-primary)',
-              marginBottom: 'var(--sp-5)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.8px',
-            }}
-          >
+        <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
+          <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-4)', letterSpacing: '-0.1px' }}>
             Trust & Transparency
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
             {[
               { icon: '◉', label: 'Editorial independence', desc: 'We do not accept payment for editorial coverage.' },
               { icon: '◈', label: 'Source transparency', desc: 'All data sources are cited in every research piece.' },
               { icon: '◫', label: 'Last updated', desc: 'All timestamps reflect real update time.' },
-              { icon: '◌', label: 'Have feedback?', desc: 'Help us improve →', isLink: true },
+              { icon: '◌', label: 'AI-generated content', desc: 'All articles are AI-written from primary sources and reviewed editorially.' },
+              { icon: '⬡', label: 'No affiliate links', desc: 'We do not use affiliate or referral links in research.' },
+              { icon: '○', label: 'Have feedback?', desc: 'Help us improve →', isLink: true },
             ].map(({ icon, label, desc, isLink }) => (
-              <div key={label} style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'flex-start' }}>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '14px',
-                    color: 'var(--text-dim)',
-                    flexShrink: 0,
-                    marginTop: '1px',
-                  }}
-                >
-                  {icon}
-                </span>
+              <div key={label} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start', padding: 'var(--sp-3)', background: 'var(--bg-void)' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--text-dim)', flexShrink: 0, marginTop: '2px' }}>{icon}</span>
                 <div>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '15px',
-                      fontWeight: 500,
-                      color: 'var(--text-primary)',
-                      marginBottom: 'var(--sp-1)',
-                    }}
-                  >
-                    {label}
-                  </p>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>{label}</p>
                   {isLink ? (
-                    <Link
-                      href="/about"
-                      style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}
-                    >
-                      {desc}
-                    </Link>
+                    <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>{desc}</Link>
                   ) : (
-                    <p
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '14px',
-                        color: 'var(--text-dim)',
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      {desc}
-                    </p>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.5 }}>{desc}</p>
                   )}
                 </div>
               </div>
@@ -636,5 +354,31 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         </div>
       </div>
     </section>
+  )
+}
+
+/* Shared compact article row — used by Sponsored + Press Release */
+function CommercialList({ articles, label }: { articles: ArticlePreview[]; label: string }) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
+      {articles.map((article) => (
+        <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
+          <div style={{ display: 'flex', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--bg-page)', alignItems: 'center' }} className="row-hover">
+            <div style={{ position: 'relative', width: '72px', height: '54px', flexShrink: 0, background: 'var(--bg-surface)', borderRadius: '3px', overflow: 'hidden' }}>
+              <Image src={article.coverImage} alt={article.title} fill style={{ objectFit: 'cover', opacity: 0.8 }} sizes="72px" />
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', display: 'block', marginBottom: '3px' }}>
+                {label}
+              </span>
+              <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4 }}>
+                {article.title.replace('[Sponsored] ', '')}
+              </p>
+            </div>
+            <span style={{ color: 'var(--text-dim)', flexShrink: 0, fontSize: '14px' }}>›</span>
+          </div>
+        </Link>
+      ))}
+    </div>
   )
 }
