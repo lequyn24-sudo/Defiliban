@@ -6,7 +6,6 @@ export type Tier1Slug =
   | 'infrastructure'
   | 'sponsored-articles'
   | 'press-release'
-  | 'cmc'
 
 export interface SubCategory {
   slug: string
@@ -99,19 +98,12 @@ export const CATEGORIES: CategoryMeta[] = [
     badgeClass: 'badge-infra',
     subcategories: [],
   },
-  {
-    slug: 'cmc',
-    label: 'CMC Data',
-    description: 'CoinMarketCap data integration — market cap, volume, and token metrics.',
-    badgeClass: 'badge-protocols',
-    subcategories: [],
-  },
 ]
 
 export const TIER1_SLUGS: Tier1Slug[] = CATEGORIES.map((c) => c.slug)
 
 export const MAIN_NAV_CATEGORIES = CATEGORIES.filter(
-  (c) => !['sponsored-articles', 'press-release', 'cmc'].includes(c.slug)
+  (c) => !['sponsored-articles', 'press-release'].includes(c.slug)
 )
 
 export function getCategoryMeta(slug: string): CategoryMeta | undefined {
