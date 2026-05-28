@@ -18,7 +18,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
   return (
     <div
       style={{ gap: 'var(--sp-4)', padding: 'var(--sp-4) 0' }}
-      className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px] lg:h-[324px]"
+      className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px]"
     >
       {/* ── Research Spotlight ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
