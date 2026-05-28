@@ -21,7 +21,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
       className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px]"
     >
       {/* ── Research Spotlight ── */}
-      <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)' }}>
+      <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
         <ResearchSpotlight article={featured} />
       </div>
 
@@ -44,15 +44,14 @@ export function HeroSection({ featured, latest, prices }: Props) {
 function ResearchSpotlight({ article }: { article: ArticlePreview }) {
   const confidence = 82
   const confidenceColor = 'var(--color-positive)'
-  // Rebuild picsum URL as portrait (3:4) — original articles use 800/450 landscape
-  const seed = article.coverImage.split('/seed/')[1]?.split('/')[0] ?? 'art001'
-  const portraitSrc = `https://picsum.photos/seed/${seed}/480/640`
+  // Portrait crypto image — fixed seed for relevant visual
+  const portraitSrc = 'https://picsum.photos/seed/crypto88/480/640'
 
   return (
-    /* position:relative → image absolutely fills the right side */
-    <div style={{ position: 'relative' }}>
-      {/* Text — right padding reserves 260px for the image on desktop */}
-      <div style={{ padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
+    /* height:100% fills the grid cell; flex-col so text can use flex:1 */
+    <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+      {/* Text — flex:1 stretches to fill card height; right padding reserves image space */}
+      <div style={{ flex: 1, padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
            className="lg:pr-[272px]"
       >
         <div>
@@ -109,8 +108,8 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
           </div>
         </div>
 
-        {/* Why it matters — no flex:1 so no empty gap */}
-        <div>
+        {/* Why it matters — flex:1 fills vertical space between metadata and CTAs */}
+        <div style={{ flex: 1 }}>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Why it matters:</p>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.65 }}>
             {article.excerpt}
