@@ -1,11 +1,25 @@
 @import "tailwindcss";
 
+/*
+ * ─────────────────────────────────────────────────────────────
+ *  COLOR SYSTEM — derived from 3 primary swatches
+ *    LIGHT   #E8E8C6   warm cream
+ *    DARK    #252525   warm charcoal
+ *    MID     #474744   warm gray surface
+ * ─────────────────────────────────────────────────────────────
+ */
+
 @theme {
-  --color-void:      #1A1A18;
-  --color-charcoal:  #252525;
-  --color-surface:   #474744;
-  --color-surface2:  #323230;
+  /* 3 primary swatches */
   --color-cream:     #E8E8C6;
+  --color-dark:      #252525;
+  --color-surface:   #474744;
+
+  /* Derived dark levels */
+  --color-void:      #1A1A18;   /* #252525 darkened — deepest bg */
+  --color-surface2:  #363634;   /* midpoint between #252525 and #474744 */
+
+  /* Functional / data colors — unchanged */
   --color-positive:  #4CAF7A;
   --color-negative:  #CF5C5C;
   --color-info-blue: #7ABAEF;
@@ -14,35 +28,43 @@
   --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 
-/* ── Dark theme (default) ── */
+/* ── Dark theme (default) ──────────────────────────────────── */
+/*  Background: 4 levels from dark swatch → void
+ *  Text:       cream swatch at 4 opacity levels
+ *  Border:     cream at low opacity on dark bg               */
 :root,
 [data-theme="dark"] {
-  --bg-page:      #252523;   /* section / card background */
-  --bg-void:      #161614;   /* body, navbar, footer — deepest dark */
-  --bg-surface:   #474744;   /* clearly elevated surfaces — reference's middle swatch */
-  --bg-surface2:  #323230;   /* raised panels, methodology card */
-  --text-primary: #E8E8C6;
-  --text-dim:     rgba(232, 232, 198, 0.72);
-  --text-faint:   rgba(232, 232, 198, 0.18);
-  --text-ghost:   rgba(232, 232, 198, 0.07);
-  --border:       rgba(232, 232, 198, 0.22);
-  --border-mid:   rgba(232, 232, 198, 0.35);
-  --border-strong: rgba(232, 232, 198, 0.54);
+  --bg-void:      #1A1A18;   /* body · navbar · footer — deepest */
+  --bg-page:      #252525;   /* sections · card backgrounds */
+  --bg-surface2:  #363634;   /* raised panels · methodology card */
+  --bg-surface:   #474744;   /* clearly elevated — the mid swatch */
+
+  --text-primary: #E8E8C6;                    /* full cream — headings, values */
+  --text-dim:     rgba(232, 232, 198, 0.72);  /* secondary text — labels, meta */
+  --text-faint:   rgba(232, 232, 198, 0.25);  /* subtle fills · badge bg */
+  --text-ghost:   rgba(232, 232, 198, 0.08);  /* hover tint */
+
+  --border:        rgba(232, 232, 198, 0.20); /* default dividers */
+  --border-mid:    rgba(232, 232, 198, 0.35); /* section borders */
+  --border-strong: rgba(232, 232, 198, 0.55); /* active / emphasis */
 }
 
-/* ── Light theme ── */
+/* ── Light theme ───────────────────────────────────────────── */
+/*  Flip: cream → background, dark → text                      */
 [data-theme="light"] {
-  --bg-page:      #F5F3EE;
-  --bg-void:      #ECEAE5;
-  --bg-surface:   #E0DDD6;
-  --bg-surface2:  #E8E6E0;
-  --text-primary: #1A1A1A;
-  --text-dim:     rgba(26, 26, 26, 0.60);
-  --text-faint:   rgba(26, 26, 26, 0.10);
-  --text-ghost:   rgba(26, 26, 26, 0.05);
-  --border:       rgba(26, 26, 26, 0.14);
-  --border-mid:   rgba(26, 26, 26, 0.22);
-  --border-strong: rgba(26, 26, 26, 0.38);
+  --bg-void:      #F5F3EA;   /* body · lightest cream wash */
+  --bg-page:      #EDEBD8;   /* sections · cream-tinted bg */
+  --bg-surface2:  #E2E0CE;   /* raised panels */
+  --bg-surface:   #D6D4C2;   /* elevated cards */
+
+  --text-primary: #252525;                   /* dark swatch — all primary text */
+  --text-dim:     rgba(37, 37, 37, 0.65);    /* secondary text */
+  --text-faint:   rgba(37, 37, 37, 0.18);    /* subtle fills */
+  --text-ghost:   rgba(37, 37, 37, 0.06);    /* hover tint */
+
+  --border:        rgba(37, 37, 37, 0.14);
+  --border-mid:    rgba(37, 37, 37, 0.26);
+  --border-strong: rgba(37, 37, 37, 0.45);
 }
 
 *,
