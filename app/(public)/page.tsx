@@ -358,12 +358,10 @@ function ResearchFrameworkSection() {
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1fr',
           gap: '1px',
           background: 'var(--border)',
         }}
-        className="lg:grid-cols-3"
+        className="grid grid-cols-1 lg:grid-cols-3"
       >
         {/* Col 1: Research Framework */}
         <div style={{ background: 'var(--bg-page)', padding: '24px 28px' }}>
@@ -570,12 +568,10 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1fr',
           gap: '1px',
           background: 'var(--border)',
         }}
-        className="lg:grid-cols-[1fr_1fr_300px]"
+        className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_300px]"
       >
         {/* ── Sponsored Articles ── */}
         <div style={{ background: 'var(--bg-page)', padding: '32px 24px' }}>

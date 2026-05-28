@@ -15,12 +15,10 @@ export function HeroSection({ featured, latest, mostRead }: Props) {
   return (
     <div
       style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr',
         gap: '1px',
         background: 'var(--border)',
       }}
-      className="lg:grid-cols-[260px_1fr_240px]"
+      className="grid grid-cols-1 lg:grid-cols-[260px_1fr_240px]"
     >
       {/* ── Left: Latest Insights ── */}
       <div style={{ background: 'var(--bg-page)' }}>
