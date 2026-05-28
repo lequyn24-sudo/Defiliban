@@ -69,7 +69,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         <span style={{
           fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
           textTransform: 'uppercase', letterSpacing: '1px',
-          background: 'var(--color-positive)', color: '#1A1A18',
+          background: 'var(--color-positive)', color: 'var(--color-on-positive)',
           borderRadius: '2px', padding: '2px 8px', alignSelf: 'flex-start',
         }}>
           Research Spotlight
@@ -121,7 +121,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap' }}>
           <Link href={`/article/${article.slug}`} style={{
             fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, letterSpacing: '0.5px',
-            background: 'var(--color-positive)', color: '#1A1A18',
+            background: 'var(--color-positive)', color: 'var(--color-on-positive)',
             padding: 'var(--sp-2) var(--sp-5)', borderRadius: '20px',
             textDecoration: 'none', whiteSpace: 'nowrap',
           }}>

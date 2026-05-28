@@ -20,9 +20,10 @@
   --color-surface2:  #363634;   /* midpoint between #252525 and #474744 */
 
   /* Functional / data colors (dark-mode values; light mode overrides below) */
-  --color-positive:  #4CAF7A;   /* dark: 4.8–5.9:1 ✓ AA on bg-page/void */
-  --color-negative:  #F08080;   /* dark: 5.0:1 ✓ AA on bg-page (#E87272 was 4.4 = fail) */
-  --color-info-blue: #7ABAEF;   /* dark: 6.2:1 ✓ AA on bg-page */
+  --color-positive:    #4CAF7A;   /* dark: 4.8–5.9:1 ✓ AA on bg-page/void */
+  --color-on-positive: #1A1A18;   /* dark: text ON positive bg — 5.9:1 ✓ (dark text on light green) */
+  --color-negative:    #F08080;   /* dark: 5.0:1 ✓ AA on bg-page */
+  --color-info-blue:   #7ABAEF;   /* dark: 6.2:1 ✓ AA on bg-page */
 
   --font-mono: 'DM Mono', 'Courier New', monospace;
   --font-sans: 'DM Sans', system-ui, sans-serif;
@@ -92,9 +93,10 @@
   --border-strong: rgba(37, 37, 37, 0.45);
 
   /* Functional colors override — accessible on cream backgrounds */
-  --color-positive:  #1B6E33;   /* dark green: 5.2:1 ✓ AA on cream */
-  --color-negative:  #B91C1C;   /* dark red:   5.1:1 ✓ AA on cream */
-  --color-info-blue: #1565A8;   /* dark blue:  5.1:1 ✓ AA (#7ABAEF was 1.7 = fail) */
+  --color-positive:    #1B6E33;   /* dark green: 5.2:1 ✓ AA on cream */
+  --color-on-positive: #FFFFFF;   /* light: text ON positive bg — 6.2:1 ✓ (white on dark green) */
+  --color-negative:    #B91C1C;   /* dark red:   5.1:1 ✓ AA on cream */
+  --color-info-blue:   #1565A8;   /* dark blue:  5.1:1 ✓ AA */
 }
 
 *,

@@ -60,6 +60,14 @@ function signalColor(score: number): string {
   return 'var(--color-negative)'
 }
 
+// Text ON signal badge:
+// Yellow #E8C84A → always dark text (9.2:1 both modes)
+// Green/Red → var(--color-on-positive): #1A1A18 dark / #FFFFFF light
+function signalTextColor(score: number): string {
+  if (score >= 60 && score < 80) return '#1A1A18'
+  return 'var(--color-on-positive)'
+}
+
 export function ResearchCoverageSection() {
   return (
     <section
@@ -163,7 +171,7 @@ export function ResearchCoverageSection() {
                   fontSize: '10px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.6px',
-                  color: '#1A1A18',
+                  color: signalTextColor(card.signal),
                   background: signalColor(card.signal),
                   padding: '2px 6px',
                   borderRadius: '2px',
