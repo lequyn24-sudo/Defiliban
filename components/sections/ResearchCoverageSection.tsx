@@ -85,7 +85,7 @@ export function ResearchCoverageSection() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
@@ -110,7 +110,7 @@ export function ResearchCoverageSection() {
           href="/protocols"
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--text-dim)',
             textDecoration: 'none',
             whiteSpace: 'nowrap',
@@ -120,11 +120,10 @@ export function ResearchCoverageSection() {
         </Link>
       </div>
 
-      {/* 6-card grid */}
+      {/* 6-card grid — 1 col mobile, 2 col tablet, 3 col desktop */}
       <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '1px',
           background: 'var(--border)',
         }}
@@ -142,7 +141,7 @@ export function ResearchCoverageSection() {
             <div
               style={{
                 position: 'relative',
-                height: '140px',
+                height: '148px',
                 background: 'var(--bg-surface)',
                 flexShrink: 0,
               }}
@@ -152,7 +151,7 @@ export function ResearchCoverageSection() {
                 alt={card.title}
                 fill
                 style={{ objectFit: 'cover', opacity: 0.65 }}
-                sizes="(max-width: 640px) 100vw, 33vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Signal badge */}
               <div
@@ -161,12 +160,12 @@ export function ResearchCoverageSection() {
                   top: '10px',
                   left: '10px',
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '9px',
+                  fontSize: '11px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.8px',
                   color: '#1A1A18',
                   background: signalColor(card.signal),
-                  padding: '2px 7px',
+                  padding: '3px 8px',
                   borderRadius: '2px',
                   fontWeight: 500,
                 }}
@@ -176,11 +175,11 @@ export function ResearchCoverageSection() {
             </div>
 
             {/* Card content */}
-            <div style={{ padding: '14px 16px 16px', flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ padding: '16px 18px 18px', flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <h3
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '15px',
+                  fontSize: '16px',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   lineHeight: 1.35,
@@ -192,7 +191,7 @@ export function ResearchCoverageSection() {
                 className="line-clamp-3"
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--text-dim)',
                   lineHeight: 1.6,
                   flex: 1,
@@ -207,13 +206,13 @@ export function ResearchCoverageSection() {
                     key={tag}
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '9px',
+                      fontSize: '11px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.6px',
                       color: 'var(--text-dim)',
                       border: '1px solid var(--border)',
                       borderRadius: '2px',
-                      padding: '2px 6px',
+                      padding: '2px 7px',
                     }}
                   >
                     {tag}
@@ -240,7 +239,7 @@ export function ResearchCoverageSection() {
           <span
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               color: 'var(--text-dim)',
             }}
           >
@@ -255,7 +254,7 @@ export function ResearchCoverageSection() {
               key={label}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '11px',
                 color: 'var(--text-dim)',
                 display: 'flex',
                 alignItems: 'center',
@@ -279,7 +278,7 @@ export function ResearchCoverageSection() {
         <span
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '11px',
             color: 'var(--text-dim)',
           }}
         >

@@ -4,6 +4,7 @@ import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
 import { MOCK_PRICES } from '@/lib/mock/prices'
+import { timeAgo } from '@/lib/utils/format'
 import type { ArticlePreview } from '@/lib/types'
 
 export default function HomePage() {
@@ -92,7 +93,7 @@ function TrustBar() {
           <div
             key={item.title}
             style={{
-              padding: '20px 24px',
+              padding: '22px 24px',
               borderRight: i < items.length - 1 ? '1px solid var(--border)' : 'none',
               display: 'flex',
               alignItems: 'flex-start',
@@ -117,11 +118,11 @@ function TrustBar() {
                 <p
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '22px',
+                    fontSize: '28px',
                     fontWeight: 500,
                     color: 'var(--text-primary)',
                     letterSpacing: '-0.3px',
-                    marginBottom: '2px',
+                    marginBottom: '4px',
                   }}
                 >
                   {item.title}
@@ -130,10 +131,10 @@ function TrustBar() {
                 <p
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '11px',
+                    fontSize: '13px',
                     fontWeight: 500,
                     color: 'var(--text-primary)',
-                    marginBottom: '4px',
+                    marginBottom: '5px',
                     letterSpacing: '0.2px',
                   }}
                 >
@@ -143,7 +144,7 @@ function TrustBar() {
               <p
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--text-dim)',
                   lineHeight: 1.55,
                 }}
@@ -212,7 +213,7 @@ function ResearchFrameworkSection() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
@@ -234,7 +235,7 @@ function ResearchFrameworkSection() {
             <h2
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '18px',
+                fontSize: '20px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
               }}
@@ -245,7 +246,7 @@ function ResearchFrameworkSection() {
               href="/protocols"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
                 textDecoration: 'none',
               }}
@@ -263,7 +264,6 @@ function ResearchFrameworkSection() {
                 <div
                   style={{
                     padding: '14px',
-                    border: '1px solid var(--border)',
                     cursor: 'pointer',
                   }}
                   className="cluster-card"
@@ -271,10 +271,10 @@ function ResearchFrameworkSection() {
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '14px',
+                      fontSize: '15px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
-                      marginBottom: '4px',
+                      marginBottom: '5px',
                     }}
                   >
                     {c.title}
@@ -282,7 +282,7 @@ function ResearchFrameworkSection() {
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: 'var(--text-dim)',
                       lineHeight: 1.5,
                       marginBottom: '8px',
@@ -293,7 +293,7 @@ function ResearchFrameworkSection() {
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '10px',
+                      fontSize: '12px',
                       color: 'var(--text-dim)',
                     }}
                   >
@@ -310,7 +310,7 @@ function ResearchFrameworkSection() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
@@ -322,7 +322,7 @@ function ResearchFrameworkSection() {
           <h2
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               marginBottom: '24px',
@@ -330,7 +330,7 @@ function ResearchFrameworkSection() {
           >
             Why this site feels different
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
             {[
               { icon: '✗', text: 'Not a generic crypto feed.' },
               { icon: '✗', text: 'Not a broad market portal chasing every narrative equally.' },
@@ -340,7 +340,7 @@ function ResearchFrameworkSection() {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: icon === '✓' ? 'var(--color-positive)' : 'var(--text-dim)',
                     flexShrink: 0,
                     marginTop: '2px',
@@ -351,7 +351,7 @@ function ResearchFrameworkSection() {
                 <span
                   style={{
                     fontFamily: 'var(--font-sans)',
-                    fontSize: '14px',
+                    fontSize: '15px',
                     color: 'var(--text-primary)',
                     lineHeight: 1.55,
                   }}
@@ -364,7 +364,7 @@ function ResearchFrameworkSection() {
           {/* Methodology card */}
           <div
             style={{
-              padding: '16px',
+              padding: '18px',
               border: '1px solid var(--border)',
               borderRadius: '4px',
               background: 'var(--bg-surface2)',
@@ -373,7 +373,7 @@ function ResearchFrameworkSection() {
             <p
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '14px',
+                fontSize: '15px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
                 marginBottom: '6px',
@@ -384,10 +384,10 @@ function ResearchFrameworkSection() {
             <p
               style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--text-dim)',
                 lineHeight: 1.55,
-                marginBottom: '10px',
+                marginBottom: '12px',
               }}
             >
               Every research piece includes our methodology, data sources, assumptions, and limitations.
@@ -396,7 +396,7 @@ function ResearchFrameworkSection() {
               href="/about"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
                 textDecoration: 'none',
               }}
@@ -411,7 +411,7 @@ function ResearchFrameworkSection() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
@@ -423,7 +423,7 @@ function ResearchFrameworkSection() {
           <h2
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               marginBottom: '24px',
@@ -442,11 +442,11 @@ function ResearchFrameworkSection() {
                   borderLeft: `3px solid ${lvl.color}`,
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '2px' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '3px' }}>
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 500,
                       color: lvl.color,
                     }}
@@ -456,7 +456,7 @@ function ResearchFrameworkSection() {
                   <span
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                     }}
@@ -467,7 +467,7 @@ function ResearchFrameworkSection() {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '10px',
+                    fontSize: '12px',
                     color: 'var(--text-dim)',
                   }}
                 >
@@ -480,7 +480,7 @@ function ResearchFrameworkSection() {
             href="/about"
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
               textDecoration: 'none',
             }}
@@ -494,6 +494,9 @@ function ResearchFrameworkSection() {
 }
 
 function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePreview[]; pressRelease: ArticlePreview[] }) {
+  const featuredSponsored = sponsored[0]
+  const restSponsored = sponsored.slice(1)
+
   return (
     <section
       style={{
@@ -512,12 +515,12 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         }}
         className="lg:grid-cols-[1fr_1fr_300px]"
       >
-        {/* Sponsored Articles */}
+        {/* ── Sponsored Articles ── */}
         <div style={{ background: 'var(--bg-page)', padding: '32px 24px' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '9px',
+              fontSize: '11px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -537,7 +540,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
             <h2
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '16px',
+                fontSize: '18px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
               }}
@@ -548,7 +551,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
               href="/sponsored-articles"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
                 textDecoration: 'none',
               }}
@@ -556,8 +559,97 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
               View all →
             </Link>
           </div>
+
+          {/* Featured sponsored article */}
+          {featuredSponsored && (
+            <Link
+              href={`/article/${featuredSponsored.slug}`}
+              style={{ textDecoration: 'none', display: 'block', marginBottom: '1px' }}
+            >
+              <div style={{ background: 'var(--bg-page)' }} className="row-hover">
+                <div
+                  style={{
+                    position: 'relative',
+                    height: '180px',
+                    background: 'var(--bg-surface)',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <Image
+                    src={featuredSponsored.coverImage}
+                    alt={featuredSponsored.title}
+                    fill
+                    style={{ objectFit: 'cover', opacity: 0.8 }}
+                    sizes="(max-width: 1024px) 100vw, 400px"
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(26,26,24,0.7) 0%, transparent 60%)',
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: 'absolute',
+                      top: '10px',
+                      left: '10px',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.8px',
+                      background: 'var(--text-primary)',
+                      color: 'var(--bg-void)',
+                      padding: '3px 8px',
+                      borderRadius: '2px',
+                      fontWeight: 500,
+                    }}
+                  >
+                    Sponsored
+                  </span>
+                </div>
+                <div style={{ padding: '16px 14px 18px' }}>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '18px',
+                      fontWeight: 500,
+                      color: 'var(--text-primary)',
+                      lineHeight: 1.4,
+                      marginBottom: '8px',
+                    }}
+                  >
+                    {featuredSponsored.title.replace('[Sponsored] ', '')}
+                  </h3>
+                  <p
+                    className="line-clamp-2"
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '14px',
+                      color: 'var(--text-dim)',
+                      lineHeight: 1.55,
+                      marginBottom: '12px',
+                    }}
+                  >
+                    {featuredSponsored.excerpt}
+                  </p>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '12px',
+                      color: 'var(--text-dim)',
+                    }}
+                  >
+                    Read Full Article →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {/* Smaller sponsored articles */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
-            {sponsored.map((article) => (
+            {restSponsored.map((article) => (
               <Link
                 key={article.slug}
                 href={`/article/${article.slug}`}
@@ -576,8 +668,8 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                   <div
                     style={{
                       position: 'relative',
-                      width: '56px',
-                      height: '44px',
+                      width: '64px',
+                      height: '48px',
                       flexShrink: 0,
                       background: 'var(--bg-surface)',
                       borderRadius: '2px',
@@ -589,19 +681,19 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       alt={article.title}
                       fill
                       style={{ objectFit: 'cover', opacity: 0.8 }}
-                      sizes="56px"
+                      sizes="64px"
                     />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '9px',
+                        fontSize: '11px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.6px',
                         color: 'var(--text-dim)',
                         display: 'block',
-                        marginBottom: '3px',
+                        marginBottom: '4px',
                       }}
                     >
                       Sponsored
@@ -610,7 +702,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       className="line-clamp-2"
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '13px',
+                        fontSize: '14px',
                         fontWeight: 500,
                         color: 'var(--text-primary)',
                         lineHeight: 1.4,
@@ -619,14 +711,14 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       {article.title.replace('[Sponsored] ', '')}
                     </p>
                   </div>
-                  <span style={{ color: 'var(--text-dim)', flexShrink: 0, fontSize: '14px' }}>›</span>
+                  <span style={{ color: 'var(--text-dim)', flexShrink: 0, fontSize: '16px' }}>›</span>
                 </div>
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Press Release */}
+        {/* ── Press Release — card format with thumbnails ── */}
         <div style={{ background: 'var(--bg-page)', padding: '32px 24px' }}>
           <div
             style={{
@@ -640,7 +732,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
             <h2
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '16px',
+                fontSize: '18px',
                 fontWeight: 500,
                 color: 'var(--text-primary)',
               }}
@@ -651,7 +743,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
               href="/press-release"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
                 textDecoration: 'none',
               }}
@@ -660,7 +752,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
             </Link>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
-            {pressRelease.map((article, i) => (
+            {pressRelease.map((article) => (
               <Link
                 key={article.slug}
                 href={`/article/${article.slug}`}
@@ -669,34 +761,43 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                 <div
                   style={{
                     display: 'flex',
-                    gap: '12px',
+                    gap: '14px',
                     padding: '14px',
                     background: 'var(--bg-page)',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                   }}
                   className="row-hover"
                 >
-                  {/* Color block instead of image */}
-                  <span
+                  {/* Thumbnail */}
+                  <div
                     style={{
-                      width: '8px',
-                      height: '8px',
-                      borderRadius: '2px',
-                      background: `hsl(${(i * 47 + 180) % 360}, 45%, 55%)`,
+                      position: 'relative',
+                      width: '84px',
+                      height: '64px',
                       flexShrink: 0,
-                      marginTop: '3px',
+                      background: 'var(--bg-surface)',
+                      borderRadius: '3px',
+                      overflow: 'hidden',
                     }}
-                  />
+                  >
+                    <Image
+                      src={article.coverImage}
+                      alt={article.title}
+                      fill
+                      style={{ objectFit: 'cover', opacity: 0.75 }}
+                      sizes="84px"
+                    />
+                  </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '9px',
+                        fontSize: '11px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.6px',
                         color: 'var(--text-dim)',
                         display: 'block',
-                        marginBottom: '3px',
+                        marginBottom: '5px',
                       }}
                     >
                       Press Release
@@ -705,28 +806,37 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       className="line-clamp-2"
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '13px',
+                        fontSize: '14px',
                         fontWeight: 500,
                         color: 'var(--text-primary)',
                         lineHeight: 1.4,
+                        marginBottom: '6px',
                       }}
                     >
                       {article.title}
                     </p>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '11px',
+                        color: 'var(--text-dim)',
+                      }}
+                    >
+                      {timeAgo(article.publishedAt)}
+                    </span>
                   </div>
-                  <span style={{ color: 'var(--text-dim)', flexShrink: 0, fontSize: '14px' }}>›</span>
                 </div>
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Trust & Transparency */}
+        {/* ── Trust & Transparency ── */}
         <div style={{ background: 'var(--bg-void)', padding: '32px 24px' }}>
           <h3
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 500,
               color: 'var(--text-primary)',
               marginBottom: '20px',
@@ -736,7 +846,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
           >
             Trust & Transparency
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
             {[
               { icon: '◉', label: 'Editorial independence', desc: 'We do not accept payment for editorial coverage.' },
               { icon: '◈', label: 'Source transparency', desc: 'All data sources are cited in every research piece.' },
@@ -759,10 +869,10 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                   <p
                     style={{
                       fontFamily: 'var(--font-sans)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
-                      marginBottom: '2px',
+                      marginBottom: '3px',
                     }}
                   >
                     {label}
@@ -772,7 +882,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       href="/about"
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '11px',
+                        fontSize: '12px',
                         color: 'var(--text-dim)',
                         textDecoration: 'none',
                       }}
@@ -783,7 +893,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                     <p
                       style={{
                         fontFamily: 'var(--font-sans)',
-                        fontSize: '12px',
+                        fontSize: '13px',
                         color: 'var(--text-dim)',
                         lineHeight: 1.5,
                       }}

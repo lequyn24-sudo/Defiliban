@@ -85,7 +85,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: m.changeUp ? 'var(--color-positive)' : 'var(--color-negative)',
                   fontWeight: 500,
                 }}
@@ -100,7 +100,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '9px',
+                  fontSize: '11px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.8px',
                   color: 'var(--text-dim)',
@@ -111,7 +111,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '9px',
+                  fontSize: '11px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.6px',
                   color: 'var(--text-dim)',
@@ -138,7 +138,7 @@ export function PriceTicker() {
             href="/cmc"
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.8px',
               color: 'var(--text-primary)',
