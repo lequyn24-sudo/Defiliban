@@ -155,7 +155,7 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '15px',
-              fontWeight: 500,
+              fontWeight: 600,
               color: 'var(--text-primary)',
               lineHeight: 1.45,
             }}
@@ -209,7 +209,7 @@ function CompactCard({
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '14px',
-            color: 'rgba(232,232,198,0.45)',
+            color: 'var(--text-subtle)',
             fontWeight: 500,
             flexShrink: 0,
             minWidth: '20px',

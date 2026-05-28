@@ -165,8 +165,8 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
                 {/* Logo */}
                 <div
                   style={{
-                    width: '24px',
-                    height: '24px',
+                    width: '32px',
+                    height: '32px',
                     borderRadius: '50%',
                     overflow: 'hidden',
                     flexShrink: 0,
@@ -179,7 +179,7 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
                       src={coin.imageUrl}
                       alt={coin.name}
                       fill
-                      sizes="24px"
+                      sizes="32px"
                       style={{ objectFit: 'cover' }}
                     />
                   ) : null}
@@ -189,7 +189,7 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '12px',
+                        fontSize: '14px',
                         fontWeight: 500,
                         color: 'var(--text-primary)',
                         whiteSpace: 'nowrap',
@@ -211,7 +211,7 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '12px',
+                      fontSize: '13px',
                       color: 'var(--text-dim)',
                       whiteSpace: 'nowrap',
                     }}
