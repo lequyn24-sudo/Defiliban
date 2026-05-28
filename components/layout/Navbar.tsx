@@ -267,17 +267,18 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
       href={href}
       style={{
         fontFamily: 'var(--font-mono)',
-        fontSize: '12px',
+        fontSize: '13px',
         textTransform: 'uppercase',
-        letterSpacing: '1.2px',
-        color: active ? 'var(--text-primary)' : 'var(--text-dim)',
+        letterSpacing: '0.8px',
+        color: 'var(--text-primary)',
+        opacity: active ? 1 : 0.6,
         fontWeight: 500,
         padding: 'var(--sp-1) var(--sp-3)',
         height: '64px',
         display: 'inline-flex',
         alignItems: 'center',
-        borderBottom: active ? '1.5px solid var(--text-primary)' : '1.5px solid transparent',
-        transition: 'color 0.15s, border-color 0.15s',
+        borderBottom: active ? '2px solid var(--text-primary)' : '2px solid transparent',
+        transition: 'opacity 0.15s, border-color 0.15s',
         textDecoration: 'none',
         whiteSpace: 'nowrap',
       }}
