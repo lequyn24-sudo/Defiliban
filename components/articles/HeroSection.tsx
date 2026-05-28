@@ -44,14 +44,25 @@ export function HeroSection({ featured, latest, prices }: Props) {
 function ResearchSpotlight({ article }: { article: ArticlePreview }) {
   const confidence = 82
   const confidenceColor = 'var(--color-positive)'
-  // Portrait crypto image — fixed seed for relevant visual
-  const portraitSrc = 'https://picsum.photos/seed/crypto88/480/640'
+  // Landscape image — same seed as article coverImage, displayed at top of card
+  const landscapeSrc = article.coverImage  // already 800×450 (16:9)
 
   return (
-    /* Flex-row: text column (flex:1) | image column (260px fixed) */
-    <div style={{ display: 'flex', height: '100%' }}>
-      {/* Text column — fills remaining width naturally, no padding override needed */}
-      <div style={{ flex: 1, minWidth: 0, padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
+    /* Flex-col: image on top → text below */
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      {/* Thumbnail — landscape, full width */}
+      <div style={{ position: 'relative', height: '220px', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden' }}>
+        <Image
+          src={landscapeSrc}
+          alt={article.title}
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 1024px) 100vw, 700px"
+          priority
+        />
+      </div>
+      {/* Text content — flex:1 fills remaining height */}
+      <div style={{ flex: 1, padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
       >
         <div>
           <span style={{
@@ -160,27 +171,6 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         </div>
       </div>
 
-      {/* Image column — flex sibling, same height as text column, fill works reliably */}
-      <div
-        className="hidden lg:block"
-        style={{
-          width: '260px',
-          flexShrink: 0,
-          position: 'relative',
-          overflow: 'hidden',
-          background: 'var(--bg-surface)',
-          borderLeft: '1px solid var(--border)',
-        }}
-      >
-        <Image
-          src={portraitSrc}
-          alt={article.title}
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center top' }}
-          sizes="260px"
-          priority
-        />
-      </div>
     </div>
   )
 }

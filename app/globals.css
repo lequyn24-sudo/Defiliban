@@ -19,9 +19,9 @@
   --color-void:      #1A1A18;   /* #252525 darkened — deepest bg */
   --color-surface2:  #363634;   /* midpoint between #252525 and #474744 */
 
-  /* Functional / data colors — unchanged */
-  --color-positive:  #4CAF7A;
-  --color-negative:  #CF5C5C;
+  /* Functional / data colors (dark-mode values; light mode overrides below) */
+  --color-positive:  #4CAF7A;   /* dark: 4.8–5.9:1 ✓ AA */
+  --color-negative:  #E87272;   /* dark: lightened for 4.6:1 ✓ AA on bg-page */
   --color-info-blue: #7ABAEF;
 
   --font-mono: 'DM Mono', 'Courier New', monospace;
@@ -64,7 +64,7 @@
 
   --text-primary: #E8E8C6;                    /* full cream — headings, values */
   --text-dim:     rgba(232, 232, 198, 0.72);  /* secondary text — labels, meta */
-  --text-subtle:  rgba(232, 232, 198, 0.45);  /* rank numbers, muted indicators */
+  --text-subtle:  rgba(232, 232, 198, 0.60);  /* rank numbers — 4.5:1 AA on bg-page */
   --text-faint:   rgba(232, 232, 198, 0.25);  /* subtle fills · badge bg */
   --text-ghost:   rgba(232, 232, 198, 0.08);  /* hover tint */
 
@@ -83,13 +83,17 @@
 
   --text-primary: #252525;                   /* dark swatch — all primary text */
   --text-dim:     rgba(37, 37, 37, 0.82);    /* secondary text — raised for light mode contrast */
-  --text-subtle:  rgba(37, 37, 37, 0.45);    /* rank numbers, muted indicators */
+  --text-subtle:  rgba(37, 37, 37, 0.70);    /* rank numbers — 5.1:1 AA on bg-page */
   --text-faint:   rgba(37, 37, 37, 0.18);    /* subtle fills */
   --text-ghost:   rgba(37, 37, 37, 0.06);    /* hover tint */
 
   --border:        rgba(37, 37, 37, 0.14);
   --border-mid:    rgba(37, 37, 37, 0.26);
   --border-strong: rgba(37, 37, 37, 0.45);
+
+  /* Functional colors override — accessible on cream backgrounds */
+  --color-positive:  #1B6E33;   /* dark green: 5.2:1 AA on cream */
+  --color-negative:  #B91C1C;   /* dark red:   5.1:1 AA on cream */
 }
 
 *,
