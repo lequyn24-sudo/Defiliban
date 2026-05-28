@@ -96,11 +96,11 @@ export function ResearchCoverageSection() {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-mono)',
+              fontFamily: 'var(--font-sans)',
               fontSize: '28px',
-              fontWeight: 500,
+              fontWeight: 700,
               color: 'var(--text-primary)',
-              letterSpacing: '-0.2px',
+              letterSpacing: '-0.4px',
             }}
           >
             What We Analyze in DeFi

@@ -46,11 +46,11 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-mono)',
+              fontFamily: 'var(--font-sans)',
               fontSize: '24px',
-              fontWeight: 500,
+              fontWeight: 700,
               color: 'var(--text-primary)',
-              letterSpacing: '-0.2px',
+              letterSpacing: '-0.3px',
             }}
           >
             {title}

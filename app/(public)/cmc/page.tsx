@@ -40,11 +40,11 @@ export default function CMCPage() {
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
             <h1
               style={{
-                fontFamily: 'var(--font-mono)',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '28px',
-                fontWeight: 500,
+                fontWeight: 700,
                 color: 'var(--text-primary)',
-                letterSpacing: '-0.3px',
+                letterSpacing: '-0.4px',
               }}
             >
               Market Overview

@@ -177,12 +177,12 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
         <h2
           className="line-clamp-3"
           style={{
-            fontFamily: 'var(--font-mono)',
+            fontFamily: 'var(--font-sans)',
             fontSize: '28px',
-            fontWeight: 500,
-            letterSpacing: '-0.3px',
+            fontWeight: 800,
+            letterSpacing: '-0.5px',
             color: 'var(--text-primary)',
-            lineHeight: 1.25,
+            lineHeight: 1.15,
           }}
         >
           {article.title}

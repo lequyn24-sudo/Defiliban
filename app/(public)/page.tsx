@@ -376,9 +376,9 @@ function ResearchFrameworkSection() {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-mono)',
+              fontFamily: 'var(--font-sans)',
               fontSize: '18px',
-              fontWeight: 500,
+              fontWeight: 600,
               color: 'var(--text-primary)',
               marginBottom: 'var(--sp-4)',
             }}
@@ -435,9 +435,9 @@ function ResearchFrameworkSection() {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-mono)',
+              fontFamily: 'var(--font-sans)',
               fontSize: '18px',
-              fontWeight: 500,
+              fontWeight: 600,
               color: 'var(--text-primary)',
               marginBottom: 'var(--sp-3)',
             }}
@@ -484,9 +484,9 @@ function ResearchFrameworkSection() {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-mono)',
+              fontFamily: 'var(--font-sans)',
               fontSize: '18px',
-              fontWeight: 500,
+              fontWeight: 600,
               color: 'var(--text-primary)',
               marginBottom: 'var(--sp-4)',
             }}
@@ -594,9 +594,9 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
           >
             <h2
               style={{
-                fontFamily: 'var(--font-mono)',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '24px',
-                fontWeight: 500,
+                fontWeight: 700,
                 color: 'var(--text-primary)',
               }}
             >
@@ -771,9 +771,9 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
           >
             <h2
               style={{
-                fontFamily: 'var(--font-mono)',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '24px',
-                fontWeight: 500,
+                fontWeight: 700,
                 color: 'var(--text-primary)',
               }}
             >
