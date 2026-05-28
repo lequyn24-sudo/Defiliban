@@ -195,7 +195,7 @@ function ResearchFrameworkSection() {
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             How We Break Down DeFi
           </h2>
-          <div className="grid grid-cols-2" style={{ gap: 'var(--sp-3)', gridAutoRows: '1fr' }}>
+          <div className="grid grid-cols-2" style={{ gap: 'var(--sp-4)', gridAutoRows: '1fr' }}>
             {clusters.map((c) => (
               <Link key={c.slug} href={c.href} style={{ textDecoration: 'none', display: 'flex' }}>
                 <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', width: '100%' }} className="card-hover">
@@ -231,7 +231,7 @@ function ResearchFrameworkSection() {
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             Why this site feels different
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)', marginBottom: 'var(--sp-6)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)', marginBottom: 'var(--sp-6)' }}>
             {whyPoints.map((pt) => (
               <div key={pt} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
                 <span style={{ width: '16px', height: '16px', borderRadius: '50%', border: '1.5px solid var(--color-positive)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
@@ -334,7 +334,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
           <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-4)', letterSpacing: '-0.1px' }}>
             Trust & Transparency
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
             {[
               { icon: '◉', label: 'Editorial independence', desc: 'We do not accept payment for editorial coverage.' },
               { icon: '◈', label: 'Source transparency', desc: 'All data sources are cited in every research piece.' },
@@ -343,7 +343,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
               { icon: '⬡', label: 'No affiliate links', desc: 'We do not use affiliate or referral links in research.' },
               { icon: '○', label: 'Have feedback?', desc: 'Help us improve →', isLink: true },
             ].map(({ icon, label, desc, isLink }) => (
-              <div key={label} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start', padding: 'var(--sp-4) var(--sp-3)', background: 'var(--bg-void)' }}>
+              <div key={label} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--text-dim)', flexShrink: 0, marginTop: '2px' }}>{icon}</span>
                 <div>
                   <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>{label}</p>
@@ -365,10 +365,10 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
 /* Shared compact article row — used by Sponsored + Press Release */
 function CommercialList({ articles, label }: { articles: ArticlePreview[]; label: string }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border)' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
       {articles.map((article) => (
         <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-          <div style={{ display: 'flex', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--bg-page)', alignItems: 'center' }} className="row-hover">
+          <div style={{ display: 'flex', gap: 'var(--sp-3)', padding: 'var(--sp-3)', background: 'var(--bg-page)', border: '1px solid var(--border)', borderRadius: '4px', alignItems: 'center' }} className="row-hover">
             <div style={{ position: 'relative', width: '72px', height: '54px', flexShrink: 0, background: 'var(--bg-surface)', borderRadius: '3px', overflow: 'hidden' }}>
               <Image src={article.coverImage} alt={article.title} fill style={{ objectFit: 'cover', opacity: 0.8 }} sizes="72px" />
             </div>
