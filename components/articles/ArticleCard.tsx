@@ -8,15 +8,17 @@ interface Props {
   article: ArticlePreview
   variant?: 'featured' | 'default' | 'compact' | 'horizontal'
   index?: number
+  noBorder?: boolean
 }
 
 export function ArticleCard({
   article,
   variant = 'default',
   index = 0,
+  noBorder = false,
 }: Props) {
   if (variant === 'featured') return <FeaturedCard article={article} />
-  if (variant === 'compact') return <CompactCard article={article} index={index} />
+  if (variant === 'compact') return <CompactCard article={article} index={index} noBorder={noBorder} />
   if (variant === 'horizontal') return <HorizontalCard article={article} />
   return <DefaultCard article={article} />
 }
@@ -107,6 +109,8 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
       <div
         className="card-hover"
         style={{
+          border: '1px solid var(--border)',
+          borderRadius: '4px',
           overflow: 'hidden',
           height: '100%',
           display: 'flex',
@@ -180,9 +184,11 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
 function CompactCard({
   article,
   index,
+  noBorder = false,
 }: {
   article: ArticlePreview
   index: number
+  noBorder?: boolean
 }) {
   return (
     <Link
@@ -195,7 +201,7 @@ function CompactCard({
           display: 'flex',
           gap: 'var(--sp-3)',
           padding: 'var(--sp-3) 0',
-          borderBottom: '1px solid var(--border)',
+          borderBottom: noBorder ? 'none' : '1px solid var(--border)',
           alignItems: 'flex-start',
         }}
       >

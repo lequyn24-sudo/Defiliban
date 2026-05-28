@@ -15,7 +15,6 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
   return (
     <section
       style={{
-        borderTop: '1px solid var(--border)',
         padding: 'var(--sp-8) var(--sp-4)',
         maxWidth: '1280px',
         margin: '0 auto',

@@ -31,7 +31,7 @@ export function Navbar() {
     <header
       className="sticky top-0 z-40"
       style={{
-        height: '52px',
+        height: '64px',
         background: 'var(--bg-void)',
         borderBottom: '1px solid var(--border)',
       }}
@@ -193,7 +193,7 @@ export function Navbar() {
         <div
           className="absolute left-0 right-0 md:hidden z-50 py-4 px-4"
           style={{
-            top: '52px',
+            top: '64px',
             background: 'var(--bg-void)',
             borderBottom: '1px solid var(--border)',
           }}
@@ -272,7 +272,7 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
         letterSpacing: '1.2px',
         color: active ? 'var(--text-primary)' : 'var(--text-dim)',
         padding: 'var(--sp-1) var(--sp-3)',
-        height: '52px',
+        height: '64px',
         display: 'inline-flex',
         alignItems: 'center',
         borderBottom: active ? '1.5px solid var(--text-primary)' : '1.5px solid transparent',

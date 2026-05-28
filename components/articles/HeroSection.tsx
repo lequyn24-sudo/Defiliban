@@ -286,7 +286,7 @@ function MostRead({ articles }: { articles: ArticlePreview[] }) {
       <div style={{ flex: 1, padding: 'var(--sp-1) 0' }}>
         {articles.map((article, i) => (
           <div key={article.slug} style={{ padding: '0 var(--sp-4)' }}>
-            <ArticleCard article={article} variant="compact" index={i} />
+            <ArticleCard article={article} variant="compact" index={i} noBorder={i === articles.length - 1} />
           </div>
         ))}
       </div>
