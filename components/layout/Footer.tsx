@@ -30,10 +30,10 @@ export function Footer() {
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
-          padding: '40px 24px 32px',
+          padding: 'var(--sp-10) var(--sp-6) var(--sp-8)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-          gap: '40px',
+          gap: 'var(--sp-10)',
         }}
       >
         {/* Brand column */}
@@ -67,7 +67,7 @@ export function Footer() {
               fontSize: '14px',
               color: 'var(--text-dim)',
               lineHeight: 1.65,
-              marginBottom: '4px',
+              marginBottom: 'var(--sp-1)',
             }}
           >
             A DeFi protocol deep-dive specialist covering protocol structure, yield systems, liquidity architecture, infrastructure dependencies, and risk surfaces.
@@ -79,7 +79,7 @@ export function Footer() {
               textTransform: 'uppercase',
               letterSpacing: '0.6px',
               color: 'var(--text-dim)',
-              marginTop: '12px',
+              marginTop: 'var(--sp-3)',
             }}
           >
             NOT A NEWS SITE. A SYSTEM-LEVEL VIEW OF DEFI.
@@ -95,12 +95,12 @@ export function Footer() {
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
-              marginBottom: '14px',
+              marginBottom: 'var(--sp-3)',
             }}
           >
             Coverage
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)' }}>
             {COVERAGE_LINKS.map((link) => (
               <FooterLink key={link.href + link.label} href={link.href} label={link.label} />
             ))}
@@ -116,7 +116,7 @@ export function Footer() {
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
-              marginBottom: '14px',
+              marginBottom: 'var(--sp-3)',
             }}
           >
             Company
@@ -137,12 +137,12 @@ export function Footer() {
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
-              marginBottom: '14px',
+              marginBottom: 'var(--sp-3)',
             }}
           >
             Connect
           </p>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'center' }}>
             {[
               { Icon: Twitter, label: 'X / Twitter', href: '#' },
               { Icon: Linkedin, label: 'LinkedIn', href: '#' },
@@ -166,7 +166,7 @@ export function Footer() {
       <div
         style={{
           borderTop: '1px solid var(--border)',
-          padding: '14px 24px',
+          padding: 'var(--sp-3) var(--sp-6)',
         }}
       >
         <div

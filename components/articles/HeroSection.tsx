@@ -47,7 +47,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '14px 16px 10px',
+          padding: 'var(--sp-3) var(--sp-4) var(--sp-2)',
           borderBottom: '1px solid var(--border)',
           flexShrink: 0,
         }}
@@ -86,12 +86,12 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
           >
             <div
               style={{
-                padding: '12px 16px',
+                padding: 'var(--sp-3) var(--sp-4)',
                 borderBottom: i < articles.length - 1 ? '1px solid var(--border)' : 'none',
               }}
               className="row-hover"
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '5px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', marginBottom: 'var(--sp-1)' }}>
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
@@ -148,7 +148,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
           }}
         />
         {/* Badges */}
-        <div style={{ position: 'absolute', top: '14px', left: '14px', display: 'flex', gap: '6px', alignItems: 'center' }}>
+        <div style={{ position: 'absolute', top: 'var(--sp-3)', left: 'var(--sp-3)', display: 'flex', gap: 'var(--sp-2)', alignItems: 'center' }}>
           <span
             style={{
               fontFamily: 'var(--font-mono)',
@@ -157,7 +157,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
               letterSpacing: '1px',
               background: 'var(--text-primary)',
               color: 'var(--bg-void)',
-              padding: '3px 8px',
+              padding: 'var(--sp-1) var(--sp-2)',
               borderRadius: '2px',
               fontWeight: 500,
             }}
@@ -173,7 +173,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
       </div>
 
       {/* Content */}
-      <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ padding: 'var(--sp-5)', flex: 1, display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
         <h2
           className="line-clamp-3"
           style={{
@@ -201,7 +201,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
         </p>
 
         {/* Meta */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', flexWrap: 'wrap' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>
             {timeAgo(article.publishedAt)}
           </span>
@@ -215,7 +215,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
         </div>
 
         {/* CTAs */}
-        <div style={{ display: 'flex', gap: '10px', marginTop: 'auto', paddingTop: '4px' }}>
+        <div style={{ display: 'flex', gap: 'var(--sp-2)', marginTop: 'auto', paddingTop: 'var(--sp-1)' }}>
           <Link
             href={`/article/${article.slug}`}
             style={{
@@ -224,7 +224,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
               letterSpacing: '0.5px',
               background: 'var(--text-primary)',
               color: 'var(--bg-void)',
-              padding: '7px 16px',
+              padding: 'var(--sp-2) var(--sp-4)',
               borderRadius: '20px',
               textDecoration: 'none',
               fontWeight: 500,
@@ -240,7 +240,7 @@ function FeaturedSpotlight({ article }: { article: ArticlePreview }) {
               letterSpacing: '0.5px',
               background: 'transparent',
               color: 'var(--text-dim)',
-              padding: '7px 16px',
+              padding: 'var(--sp-2) var(--sp-4)',
               borderRadius: '20px',
               border: '1px solid var(--border)',
               cursor: 'pointer',
@@ -264,7 +264,7 @@ function MostRead({ articles }: { articles: ArticlePreview[] }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '14px 16px 10px',
+          padding: 'var(--sp-3) var(--sp-4) var(--sp-2)',
           borderBottom: '1px solid var(--border)',
           flexShrink: 0,
         }}
@@ -283,9 +283,9 @@ function MostRead({ articles }: { articles: ArticlePreview[] }) {
       </div>
 
       {/* Numbered article list */}
-      <div style={{ flex: 1, padding: '4px 0' }}>
+      <div style={{ flex: 1, padding: 'var(--sp-1) 0' }}>
         {articles.map((article, i) => (
-          <div key={article.slug} style={{ padding: '0 16px' }}>
+          <div key={article.slug} style={{ padding: '0 var(--sp-4)' }}>
             <ArticleCard article={article} variant="compact" index={i} />
           </div>
         ))}

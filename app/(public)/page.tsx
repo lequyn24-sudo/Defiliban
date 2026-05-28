@@ -110,7 +110,7 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
-          padding: '12px 16px',
+          padding: 'var(--sp-3) var(--sp-4)',
         }}
       >
         {/* Header row */}
@@ -119,7 +119,7 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginBottom: '12px',
+            marginBottom: 'var(--sp-3)',
           }}
         >
           <span
@@ -158,10 +158,10 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
                 key={coin.id}
                 style={{
                   background: 'var(--bg-void)',
-                  padding: '10px 14px',
+                  padding: 'var(--sp-2) var(--sp-3)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '8px',
+                  gap: 'var(--sp-2)',
                 }}
               >
                 {/* Logo */}
@@ -274,11 +274,11 @@ function TrustBar() {
           <div
             key={item.title}
             style={{
-              padding: '22px 24px',
+              padding: 'var(--sp-6)',
               borderRight: i < items.length - 1 ? '1px solid var(--border)' : 'none',
               display: 'flex',
               alignItems: 'flex-start',
-              gap: '12px',
+              gap: 'var(--sp-3)',
             }}
           >
             {item.icon && (
@@ -297,7 +297,7 @@ function TrustBar() {
                     fontWeight: 500,
                     color: 'var(--text-primary)',
                     letterSpacing: '-0.3px',
-                    marginBottom: '4px',
+                    marginBottom: 'var(--sp-1)',
                   }}
                 >
                   {item.title}
@@ -309,7 +309,7 @@ function TrustBar() {
                     fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--text-primary)',
-                    marginBottom: '5px',
+                    marginBottom: 'var(--sp-1)',
                     letterSpacing: '0.2px',
                   }}
                 >
@@ -364,7 +364,7 @@ function ResearchFrameworkSection() {
         className="grid grid-cols-1 lg:grid-cols-3"
       >
         {/* Col 1: Research Framework */}
-        <div style={{ background: 'var(--bg-page)', padding: '24px 28px' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
@@ -372,7 +372,7 @@ function ResearchFrameworkSection() {
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
-              marginBottom: '6px',
+              marginBottom: 'var(--sp-2)',
             }}
           >
             Research Framework
@@ -383,12 +383,12 @@ function ResearchFrameworkSection() {
               fontSize: '18px',
               fontWeight: 500,
               color: 'var(--text-primary)',
-              marginBottom: '16px',
+              marginBottom: 'var(--sp-4)',
             }}
           >
             How We Break Down DeFi
           </h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
             {topics.map((t) => (
               <span
                 key={t}
@@ -400,7 +400,7 @@ function ResearchFrameworkSection() {
                   color: 'var(--text-dim)',
                   border: '1px solid var(--border)',
                   borderRadius: '2px',
-                  padding: '3px 8px',
+                  padding: 'var(--sp-1) var(--sp-2)',
                 }}
               >
                 {t}
@@ -411,7 +411,7 @@ function ResearchFrameworkSection() {
             href="/protocols"
             style={{
               display: 'inline-block',
-              marginTop: '14px',
+              marginTop: 'var(--sp-3)',
               fontFamily: 'var(--font-mono)',
               fontSize: '12px',
               color: 'var(--text-dim)',
@@ -423,7 +423,7 @@ function ResearchFrameworkSection() {
         </div>
 
         {/* Col 2: Why Defiliban */}
-        <div style={{ background: 'var(--bg-page)', padding: '24px 28px' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
@@ -442,7 +442,7 @@ function ResearchFrameworkSection() {
               fontSize: '18px',
               fontWeight: 500,
               color: 'var(--text-primary)',
-              marginBottom: '12px',
+              marginBottom: 'var(--sp-3)',
             }}
           >
             Why this site feels different
@@ -453,7 +453,7 @@ function ResearchFrameworkSection() {
               fontSize: '14px',
               color: 'var(--text-dim)',
               lineHeight: 1.6,
-              marginBottom: '14px',
+              marginBottom: 'var(--sp-3)',
             }}
           >
             Built to explain how DeFi systems are designed, where they fail, and what actually matters — not a generic crypto feed, not a broad market portal.
@@ -472,7 +472,7 @@ function ResearchFrameworkSection() {
         </div>
 
         {/* Col 3: Confidence Scale */}
-        <div style={{ background: 'var(--bg-page)', padding: '24px 28px' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
@@ -491,14 +491,14 @@ function ResearchFrameworkSection() {
               fontSize: '18px',
               fontWeight: 500,
               color: 'var(--text-primary)',
-              marginBottom: '16px',
+              marginBottom: 'var(--sp-4)',
             }}
           >
             Confidence scale
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)' }}>
             {confidenceLevels.map((lvl) => (
-              <div key={lvl.range} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div key={lvl.range} style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
                 <span
                   style={{
                     width: '8px',
@@ -535,7 +535,7 @@ function ResearchFrameworkSection() {
             href="/about"
             style={{
               display: 'inline-block',
-              marginTop: '14px',
+              marginTop: 'var(--sp-3)',
               fontFamily: 'var(--font-mono)',
               fontSize: '12px',
               color: 'var(--text-dim)',
@@ -574,7 +574,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_300px]"
       >
         {/* ── Sponsored Articles ── */}
-        <div style={{ background: 'var(--bg-page)', padding: '32px 24px' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-8) var(--sp-6)' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
@@ -592,7 +592,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
               display: 'flex',
               alignItems: 'baseline',
               justifyContent: 'space-between',
-              marginBottom: '20px',
+              marginBottom: 'var(--sp-5)',
             }}
           >
             <h2
@@ -653,7 +653,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       letterSpacing: '0.8px',
                       background: 'var(--text-primary)',
                       color: 'var(--bg-void)',
-                      padding: '3px 8px',
+                      padding: 'var(--sp-1) var(--sp-2)',
                       borderRadius: '2px',
                       fontWeight: 500,
                     }}
@@ -661,7 +661,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                     Sponsored
                   </span>
                 </div>
-                <div style={{ padding: '16px 14px 18px' }}>
+                <div style={{ padding: 'var(--sp-4) var(--sp-3) var(--sp-4)' }}>
                   <h3
                     style={{
                       fontFamily: 'var(--font-sans)',
@@ -669,7 +669,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       fontWeight: 500,
                       color: 'var(--text-primary)',
                       lineHeight: 1.4,
-                      marginBottom: '8px',
+                      marginBottom: 'var(--sp-2)',
                     }}
                   >
                     {featuredSponsored.title.replace('[Sponsored] ', '')}
@@ -681,7 +681,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       fontSize: '16px',
                       color: 'var(--text-dim)',
                       lineHeight: 1.55,
-                      marginBottom: '12px',
+                      marginBottom: 'var(--sp-3)',
                     }}
                   >
                     {featuredSponsored.excerpt}
@@ -701,8 +701,8 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                 <div
                   style={{
                     display: 'flex',
-                    gap: '12px',
-                    padding: '14px',
+                    gap: 'var(--sp-3)',
+                    padding: 'var(--sp-3)',
                     background: 'var(--bg-page)',
                     alignItems: 'center',
                   }}
@@ -736,7 +736,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                         letterSpacing: '0.6px',
                         color: 'var(--text-dim)',
                         display: 'block',
-                        marginBottom: '4px',
+                        marginBottom: 'var(--sp-1)',
                       }}
                     >
                       Sponsored
@@ -762,13 +762,13 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         </div>
 
         {/* ── Press Release ── */}
-        <div style={{ background: 'var(--bg-page)', padding: '32px 24px' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-8) var(--sp-6)' }}>
           <div
             style={{
               display: 'flex',
               alignItems: 'baseline',
               justifyContent: 'space-between',
-              marginBottom: '20px',
+              marginBottom: 'var(--sp-5)',
               marginTop: '15px',
             }}
           >
@@ -795,8 +795,8 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                 <div
                   style={{
                     display: 'flex',
-                    gap: '14px',
-                    padding: '14px',
+                    gap: 'var(--sp-3)',
+                    padding: 'var(--sp-3)',
                     background: 'var(--bg-page)',
                     alignItems: 'flex-start',
                   }}
@@ -830,7 +830,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                         letterSpacing: '0.6px',
                         color: 'var(--text-dim)',
                         display: 'block',
-                        marginBottom: '5px',
+                        marginBottom: 'var(--sp-1)',
                       }}
                     >
                       Press Release
@@ -843,7 +843,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                         fontWeight: 500,
                         color: 'var(--text-primary)',
                         lineHeight: 1.4,
-                        marginBottom: '6px',
+                        marginBottom: 'var(--sp-2)',
                       }}
                     >
                       {article.title}
@@ -859,28 +859,28 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         </div>
 
         {/* ── Trust & Transparency ── */}
-        <div style={{ background: 'var(--bg-void)', padding: '32px 24px' }}>
+        <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-8) var(--sp-6)' }}>
           <h3
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '14px',
               fontWeight: 500,
               color: 'var(--text-primary)',
-              marginBottom: '20px',
+              marginBottom: 'var(--sp-5)',
               textTransform: 'uppercase',
               letterSpacing: '0.8px',
             }}
           >
             Trust & Transparency
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
             {[
               { icon: '◉', label: 'Editorial independence', desc: 'We do not accept payment for editorial coverage.' },
               { icon: '◈', label: 'Source transparency', desc: 'All data sources are cited in every research piece.' },
               { icon: '◫', label: 'Last updated', desc: 'All timestamps reflect real update time.' },
               { icon: '◌', label: 'Have feedback?', desc: 'Help us improve →', isLink: true },
             ].map(({ icon, label, desc, isLink }) => (
-              <div key={label} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+              <div key={label} style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'flex-start' }}>
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
@@ -899,7 +899,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                       fontSize: '15px',
                       fontWeight: 500,
                       color: 'var(--text-primary)',
-                      marginBottom: '3px',
+                      marginBottom: 'var(--sp-1)',
                     }}
                   >
                     {label}

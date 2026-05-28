@@ -65,7 +65,7 @@ export function ResearchCoverageSection() {
     <section
       style={{
         borderTop: '1px solid var(--border)',
-        padding: '48px 16px 40px',
+        padding: 'var(--sp-12) var(--sp-4) var(--sp-10)',
         maxWidth: '1280px',
         margin: '0 auto',
       }}
@@ -76,9 +76,9 @@ export function ResearchCoverageSection() {
           display: 'flex',
           alignItems: 'flex-end',
           justifyContent: 'space-between',
-          marginBottom: '28px',
+          marginBottom: 'var(--sp-8)',
           flexWrap: 'wrap',
-          gap: '8px',
+          gap: 'var(--sp-2)',
         }}
       >
         <div>
@@ -89,7 +89,7 @@ export function ResearchCoverageSection() {
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
-              marginBottom: '6px',
+              marginBottom: 'var(--sp-2)',
             }}
           >
             Research Coverage
@@ -175,7 +175,7 @@ export function ResearchCoverageSection() {
             </div>
 
             {/* Card content */}
-            <div style={{ padding: '16px 18px 18px', flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ padding: 'var(--sp-4)', flex: 1, display: 'flex', flexDirection: 'column', gap: 'var(--sp-2)' }}>
               <h3
                 style={{
                   fontFamily: 'var(--font-sans)',
@@ -200,7 +200,7 @@ export function ResearchCoverageSection() {
                 {card.description}
               </p>
               {/* Tags */}
-              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 'var(--sp-2)', flexWrap: 'wrap' }}>
                 {card.tags.map((tag) => (
                   <span
                     key={tag}
@@ -212,7 +212,7 @@ export function ResearchCoverageSection() {
                       color: 'var(--text-dim)',
                       border: '1px solid var(--border)',
                       borderRadius: '2px',
-                      padding: '2px 7px',
+                      padding: 'var(--sp-1) var(--sp-2)',
                     }}
                   >
                     {tag}
@@ -230,12 +230,12 @@ export function ResearchCoverageSection() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginTop: '16px',
+          marginTop: 'var(--sp-4)',
           flexWrap: 'wrap',
-          gap: '8px',
+          gap: 'var(--sp-2)',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-4)', flexWrap: 'wrap' }}>
           <span
             style={{
               fontFamily: 'var(--font-mono)',
@@ -258,7 +258,7 @@ export function ResearchCoverageSection() {
                 color: 'var(--text-dim)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '5px',
+                gap: 'var(--sp-1)',
               }}
             >
               <span

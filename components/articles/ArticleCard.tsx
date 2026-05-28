@@ -53,7 +53,7 @@ function FeaturedCard({ article }: { article: ArticlePreview }) {
               background: 'linear-gradient(to top, rgba(37,37,37,0.95) 0%, transparent 60%)',
             }}
           />
-          <div style={{ position: 'absolute', bottom: '16px', left: '16px' }}>
+          <div style={{ position: 'absolute', bottom: 'var(--sp-4)', left: 'var(--sp-4)' }}>
             <CategoryBadge
               category={article.category}
               isBreaking={article.isBreaking}
@@ -63,7 +63,7 @@ function FeaturedCard({ article }: { article: ArticlePreview }) {
         </div>
 
         {/* Content */}
-        <div style={{ padding: '20px' }}>
+        <div style={{ padding: 'var(--sp-5)' }}>
           <h2
             className="line-clamp-3"
             style={{
@@ -73,7 +73,7 @@ function FeaturedCard({ article }: { article: ArticlePreview }) {
               letterSpacing: '-0.3px',
               color: 'var(--text-primary)',
               lineHeight: 1.35,
-              marginBottom: '10px',
+              marginBottom: 'var(--sp-2)',
             }}
           >
             {article.title}
@@ -85,7 +85,7 @@ function FeaturedCard({ article }: { article: ArticlePreview }) {
               fontSize: '14px',
               color: 'var(--text-dim)',
               lineHeight: 1.6,
-              marginBottom: '16px',
+              marginBottom: 'var(--sp-4)',
             }}
           >
             {article.excerpt}
@@ -136,11 +136,11 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
         {/* Content */}
         <div
           style={{
-            padding: '14px',
+            padding: 'var(--sp-3)',
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
+            gap: 'var(--sp-2)',
           }}
         >
           <CategoryBadge
@@ -195,8 +195,8 @@ function CompactCard({
       <div
         style={{
           display: 'flex',
-          gap: '12px',
-          padding: '12px 0',
+          gap: 'var(--sp-3)',
+          padding: 'var(--sp-3) 0',
           borderBottom: '1px solid var(--border)',
           alignItems: 'flex-start',
         }}
@@ -231,8 +231,8 @@ function CompactCard({
               fontWeight: 500,
               color: 'var(--text-primary)',
               lineHeight: 1.4,
-              marginTop: '4px',
-              marginBottom: '4px',
+              marginTop: 'var(--sp-1)',
+              marginBottom: 'var(--sp-1)',
             }}
           >
             {article.title}
@@ -263,8 +263,8 @@ function HorizontalCard({ article }: { article: ArticlePreview }) {
         className="card-hover"
         style={{
           display: 'flex',
-          gap: '12px',
-          padding: '12px',
+          gap: 'var(--sp-3)',
+          padding: 'var(--sp-3)',
           borderRadius: '4px',
           border: '1px solid var(--border)',
         }}
@@ -298,8 +298,8 @@ function HorizontalCard({ article }: { article: ArticlePreview }) {
               fontWeight: 500,
               color: 'var(--text-primary)',
               lineHeight: 1.4,
-              marginTop: '4px',
-              marginBottom: '4px',
+              marginTop: 'var(--sp-1)',
+              marginBottom: 'var(--sp-1)',
             }}
           >
             {article.title}
@@ -307,7 +307,7 @@ function HorizontalCard({ article }: { article: ArticlePreview }) {
           <span
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '11px',
               color: 'var(--text-dim)',
             }}
           >
@@ -325,7 +325,7 @@ function MetaRow({ article }: { article: ArticlePreview }) {
       style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '8px',
+        gap: 'var(--sp-2)',
         flexWrap: 'wrap',
       }}
     >

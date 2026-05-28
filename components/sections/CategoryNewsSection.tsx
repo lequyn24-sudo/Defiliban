@@ -16,7 +16,7 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
     <section
       style={{
         borderTop: '1px solid var(--border)',
-        padding: '36px 16px',
+        padding: 'var(--sp-8) var(--sp-4)',
         maxWidth: '1280px',
         margin: '0 auto',
       }}
@@ -27,9 +27,9 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
           display: 'flex',
           alignItems: 'flex-end',
           justifyContent: 'space-between',
-          marginBottom: '20px',
+          marginBottom: 'var(--sp-5)',
           flexWrap: 'wrap',
-          gap: '8px',
+          gap: 'var(--sp-2)',
         }}
       >
         <div>
@@ -40,7 +40,7 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
-              marginBottom: '4px',
+              marginBottom: 'var(--sp-1)',
             }}
           >
             {eyebrow}

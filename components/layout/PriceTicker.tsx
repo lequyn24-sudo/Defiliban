@@ -67,12 +67,12 @@ export function PriceTicker() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              padding: '0 12px',
+              padding: '0 var(--sp-3)',
               borderRight: i < METRICS.length - 1 ? '1px solid var(--border)' : 'none',
               gap: '2px',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', minWidth: 0 }}>
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
@@ -100,7 +100,7 @@ export function PriceTicker() {
                 {m.changeUp ? SPARKLINE_UP : SPARKLINE_DOWN}
               </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', overflow: 'hidden' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', overflow: 'hidden' }}>
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
@@ -138,7 +138,7 @@ export function PriceTicker() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            padding: '0 20px',
+            padding: '0 var(--sp-5)',
             flexShrink: 0,
             borderLeft: '1px solid var(--border)',
           }}
@@ -153,7 +153,7 @@ export function PriceTicker() {
               color: 'var(--text-primary)',
               border: '1px solid var(--border)',
               borderRadius: '4px',
-              padding: '5px 12px',
+              padding: 'var(--sp-2) var(--sp-3)',
               whiteSpace: 'nowrap',
               textDecoration: 'none',
               display: 'flex',

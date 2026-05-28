@@ -21,10 +21,10 @@ export default function CMCPage() {
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '40px 16px 60px' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'var(--sp-10) var(--sp-4) var(--sp-16)' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '32px' }}>
+        <div style={{ marginBottom: 'var(--sp-8)' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
@@ -32,12 +32,12 @@ export default function CMCPage() {
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
-              marginBottom: '6px',
+              marginBottom: 'var(--sp-2)',
             }}
           >
             Market Data
           </p>
-          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
             <h1
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -74,10 +74,10 @@ export default function CMCPage() {
             style={{
               display: 'grid',
               gridTemplateColumns: '40px 2fr 120px 100px 100px 140px 140px',
-              padding: '10px 16px',
+              padding: 'var(--sp-2) var(--sp-4)',
               background: 'var(--bg-surface2)',
               borderBottom: '1px solid var(--border)',
-              gap: '8px',
+              gap: 'var(--sp-2)',
             }}
           >
             {['#', 'ASSET', 'PRICE', '24H %', '7D %', 'MARKET CAP', 'VOLUME (24H)'].map((h) => (
@@ -109,7 +109,7 @@ export default function CMCPage() {
             fontFamily: 'var(--font-mono)',
             fontSize: '11px',
             color: 'rgba(232,232,198,0.35)',
-            marginTop: '20px',
+            marginTop: 'var(--sp-5)',
             textAlign: 'center',
           }}
         >
@@ -129,8 +129,8 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
       style={{
         display: 'grid',
         gridTemplateColumns: '40px 2fr 120px 100px 100px 140px 140px',
-        padding: '12px 16px',
-        gap: '8px',
+        padding: 'var(--sp-3) var(--sp-4)',
+        gap: 'var(--sp-2)',
         alignItems: 'center',
         borderBottom: '1px solid var(--border)',
         background: isEven ? 'var(--bg-page)' : 'transparent',

@@ -27,6 +27,18 @@
   --font-mono: 'DM Mono', 'Courier New', monospace;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 
+  /* Spacing scale — 8px grid (xs=8 · s=16 · m=24 · l=32 · xl=48 · xxl=64) */
+  --sp-1:   4px;   /* half-unit: label margins, micro gaps */
+  --sp-2:   8px;   /* xs: icon-text gap, badge padding, tight metadata */
+  --sp-3:  12px;   /* card row padding, compact list items */
+  --sp-4:  16px;   /* s: card internal padding, section horizontal pad */
+  --sp-5:  20px;   /* content areas, hero content padding */
+  --sp-6:  24px;   /* m: footer padding, column group spacing */
+  --sp-8:  32px;   /* l: commercial/framework section padding */
+  --sp-10: 40px;   /* research coverage section */
+  --sp-12: 48px;   /* xl: major section top/bottom padding */
+  --sp-16: 64px;   /* xxl: largest section separation */
+
   /* Type scale — 5 tiers from microcopy → display */
   --text-2xs:  11px;   /* badges · signal labels · section eyebrows */
   --text-xs:   12px;   /* captions · timestamps · metadata */
