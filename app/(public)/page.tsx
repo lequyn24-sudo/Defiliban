@@ -102,7 +102,6 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
     <div
       style={{
         background: 'var(--bg-void)',
-        borderTop: '1px solid var(--border)',
       }}
     >
       <div
@@ -148,7 +147,7 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
         {/* 6-coin grid */}
         <div
           className="grid grid-cols-3 lg:grid-cols-6"
-          style={{ gap: '1px', background: 'var(--border)' }}
+          style={{ gap: '0', background: 'var(--bg-void)' }}
         >
           {top6.map((coin) => {
             const up = coin.price_change_percentage_24h >= 0

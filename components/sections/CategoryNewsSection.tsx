@@ -74,15 +74,10 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
       {/* 3-column article grid */}
       <div
         className="grid grid-cols-1 sm:grid-cols-3"
-        style={{
-          gap: '1px',
-          background: 'var(--border)',
-        }}
+        style={{ gap: 'var(--sp-4)' }}
       >
         {articles.map((article) => (
-          <div key={article.slug} style={{ background: 'var(--bg-page)' }}>
-            <ArticleCard article={article} variant="default" />
-          </div>
+          <ArticleCard key={article.slug} article={article} variant="default" />
         ))}
       </div>
     </section>
