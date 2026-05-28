@@ -8,7 +8,6 @@ import { MAIN_NAV_CATEGORIES } from '@/lib/constants/categories'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const EXTRA_LINKS = [
-  { slug: 'tools', label: 'Tools', href: '/tools' },
   { slug: 'about', label: 'About', href: '/about' },
 ]
 
@@ -54,7 +53,7 @@ export function Navbar() {
       }}
     >
       <nav
-        className="flex items-center h-full gap-6 px-4"
+        className="flex items-center h-full gap-3 px-4"
         style={{ maxWidth: '1280px', margin: '0 auto' }}
       >
         {/* Wordmark + subtitle */}
@@ -64,7 +63,7 @@ export function Navbar() {
           style={{ textDecoration: 'none' }}
         >
           <BarChart2 size={16} style={{ color: 'var(--text-primary)' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -78,17 +77,18 @@ export function Navbar() {
             >
               DEFILIBAN
             </span>
+            {/* Subtext: hidden on md, shown only on xl+ to save horizontal space */}
             <span
+              className="hidden xl:block"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
-                letterSpacing: '0.4px',
+                fontSize: '10px',
+                letterSpacing: '0.3px',
                 color: 'var(--text-dim)',
                 lineHeight: 1,
-                whiteSpace: 'nowrap',
               }}
             >
-              DeFi Protocol Deep-Dive Specialist
+              DeFi Protocol Specialist
             </span>
           </div>
         </Link>
@@ -139,7 +139,7 @@ export function Navbar() {
               border: '1px solid var(--border)',
               borderRadius: '4px',
               padding: 'var(--sp-2) 36px var(--sp-2) var(--sp-2)',
-              width: '180px',
+              width: '150px',
               outline: 'none',
               letterSpacing: '0.3px',
             }}
@@ -316,7 +316,7 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
         color: 'var(--text-primary)',
         opacity: active ? 1 : 0.65,
         fontWeight: 700,
-        padding: 'var(--sp-1) var(--sp-3)',
+        padding: 'var(--sp-1) var(--sp-2)',
         height: '64px',
         display: 'inline-flex',
         alignItems: 'center',
