@@ -271,7 +271,7 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
         textTransform: 'uppercase',
         letterSpacing: '1.2px',
         color: active ? 'var(--text-primary)' : 'var(--text-dim)',
-        padding: '4px 10px',
+        padding: 'var(--sp-1) var(--sp-3)',
         height: '52px',
         display: 'inline-flex',
         alignItems: 'center',

@@ -107,8 +107,6 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
       <div
         className="card-hover"
         style={{
-          border: '1px solid var(--border)',
-          borderRadius: '4px',
           overflow: 'hidden',
           height: '100%',
           display: 'flex',
@@ -136,7 +134,7 @@ function DefaultCard({ article }: { article: ArticlePreview }) {
         {/* Content */}
         <div
           style={{
-            padding: 'var(--sp-3)',
+            padding: 'var(--sp-4)',
             flex: 1,
             display: 'flex',
             flexDirection: 'column',

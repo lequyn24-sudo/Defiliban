@@ -67,7 +67,7 @@ export function PriceTicker() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              padding: '0 var(--sp-3)',
+              padding: '0 var(--sp-4)',
               borderRight: i < METRICS.length - 1 ? '1px solid var(--border)' : 'none',
               gap: '2px',
             }}
