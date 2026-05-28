@@ -107,15 +107,40 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
           </div>
         </div>
 
-        {/* Why it matters — flex:1 fills vertical space between metadata and CTAs */}
-        <div style={{ flex: 1 }}>
+        {/* Why it matters */}
+        <div>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Why it matters:</p>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.65 }}>
             {article.excerpt}
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap', paddingTop: 'var(--sp-1)' }}>
+        {/* Tags */}
+        {article.tags.length > 0 && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
+            {article.tags.slice(0, 5).map((tag) => (
+              <span key={tag} style={{
+                fontFamily: 'var(--font-mono)', fontSize: '10px', textTransform: 'uppercase',
+                letterSpacing: '0.5px', color: 'var(--text-dim)',
+                border: '1px solid var(--border)', borderRadius: '2px',
+                padding: 'var(--sp-1) var(--sp-2)',
+              }}>{tag}</span>
+            ))}
+          </div>
+        )}
+
+        {/* Source + read time */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)', paddingTop: 'var(--sp-1)', borderTop: '1px solid var(--border)', marginTop: 'auto' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
+            AI · Based on {article.sourceAttribution}
+          </span>
+          <span style={{ color: 'var(--border)', fontSize: '10px' }}>·</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
+            {article.readTimeMin} min read
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap' }}>
           <Link href={`/article/${article.slug}`} style={{
             fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, letterSpacing: '0.5px',
             background: 'var(--color-positive)', color: '#1A1A18',
