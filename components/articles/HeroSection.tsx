@@ -48,59 +48,77 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
   const landscapeSrc = article.coverImage  // already 800×450 (16:9)
 
   return (
-    /* Flex-col: image on top → text below */
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Thumbnail — landscape, full width */}
-      <div style={{ position: 'relative', height: '120px', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden' }}>
+
+      {/* Thumbnail — 16:9 responsive ratio (source images are 800×450 = 16:9) */}
+      <div style={{ position: 'relative', aspectRatio: '16/9', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden', maxHeight: '260px' }}>
         <Image
           src={landscapeSrc}
           alt={article.title}
           fill
           style={{ objectFit: 'cover' }}
-          sizes="(max-width: 1024px) 100vw, 700px"
+          sizes="(max-width: 1024px) 100vw, 800px"
           priority
         />
       </div>
-      {/* Text content — flex:1 fills remaining height */}
-      <div style={{ flex: 1, padding: 'var(--sp-4)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)', overflow: 'hidden' }}
-      >
-        <div>
-          <span style={{
-            fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
-            textTransform: 'uppercase', letterSpacing: '1px',
-            background: 'var(--color-positive)', color: '#1A1A18',
-            borderRadius: '2px', padding: '2px 8px',
-          }}>
-            Research Spotlight
-          </span>
-        </div>
 
+      {/* Text content */}
+      <div style={{ flex: 1, padding: 'var(--sp-4)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
+
+        {/* Badge */}
+        <span style={{
+          fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
+          textTransform: 'uppercase', letterSpacing: '1px',
+          background: 'var(--color-positive)', color: '#1A1A18',
+          borderRadius: '2px', padding: '2px 8px', alignSelf: 'flex-start',
+        }}>
+          Research Spotlight
+        </span>
+
+        {/* Headline */}
         <Link href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-          <h2 className="line-clamp-3" style={{
-            fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 800,
-            letterSpacing: '-0.3px', color: 'var(--text-primary)', lineHeight: 1.25,
+          <h2 className="line-clamp-2" style={{
+            fontFamily: 'var(--font-sans)', fontSize: '22px', fontWeight: 800,
+            letterSpacing: '-0.3px', color: 'var(--text-primary)', lineHeight: 1.2,
           }}>
             {article.title}
           </h2>
         </Link>
 
-        {/* Compact meta: confidence + date */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, color: confidenceColor }}>
-            {confidence}/100 High
-          </span>
-          <span style={{ color: 'var(--border)' }}>·</span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
-            {timeAgo(article.publishedAt)}
-          </span>
+        {/* Metadata: Confidence | Data Sources | Last Updated */}
+        <div style={{ display: 'flex', gap: 'var(--sp-5)', flexWrap: 'wrap', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: 'var(--sp-2) 0' }}>
+          <div>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Confidence</p>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1 }}>{confidence}</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>/100</span>
+            </div>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: confidenceColor, fontWeight: 500 }}>High</span>
+          </div>
+          <div>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '5px' }}>Data Sources</p>
+            <div style={{ display: 'flex', gap: '4px' }}>
+              {['Onchain', 'Market', 'Model'].map((src) => (
+                <span key={src} style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-dim)', border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 5px' }}>{src}</span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Last Updated</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+              {new Date(article.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
+            </p>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>{timeAgo(article.publishedAt)}</span>
+          </div>
         </div>
 
         {/* Excerpt */}
-        <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.6, flex: 1 }}>
+        <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.6, flex: 1 }}>
           {article.excerpt}
         </p>
 
-        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap', marginTop: 'auto' }}>
+        {/* CTAs */}
+        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap' }}>
           <Link href={`/article/${article.slug}`} style={{
             fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, letterSpacing: '0.5px',
             background: 'var(--color-positive)', color: '#1A1A18',
