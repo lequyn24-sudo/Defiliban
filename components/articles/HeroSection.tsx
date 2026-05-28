@@ -18,7 +18,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
   return (
     <div
       style={{ gap: 'var(--sp-4)', padding: 'var(--sp-4) 0' }}
-      className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_200px_320px]"
+      className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px_360px]"
     >
       {/* ── Research Spotlight ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
@@ -174,7 +174,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
               }}
               className="row-hover"
             >
-              <h3 className="line-clamp-2" style={{
+              <h3 style={{
                 fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 700,
                 color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: 'var(--sp-2)',
               }}>
