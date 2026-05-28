@@ -44,14 +44,17 @@ export function HeroSection({ featured, latest, prices }: Props) {
 function ResearchSpotlight({ article }: { article: ArticlePreview }) {
   const confidence = 82
   const confidenceColor = 'var(--color-positive)'
+  // Rebuild picsum URL as portrait (3:4) — original articles use 800/450 landscape
+  const seed = article.coverImage.split('/seed/')[1]?.split('/')[0] ?? 'art001'
+  const portraitSrc = `https://picsum.photos/seed/${seed}/480/640`
 
   return (
-    <div
-      style={{ height: '100%', minHeight: '380px' }}
-      className="grid grid-cols-1 lg:grid-cols-[1fr_240px]"
-    >
-      {/* Text */}
-      <div style={{ padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
+    /* position:relative → image absolutely fills the right side */
+    <div style={{ position: 'relative' }}>
+      {/* Text — right padding reserves 260px for the image on desktop */}
+      <div style={{ padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
+           className="lg:pr-[272px]"
+      >
         <div>
           <span style={{
             fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
@@ -106,14 +109,15 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
           </div>
         </div>
 
-        <div style={{ flex: 1 }}>
+        {/* Why it matters — no flex:1 so no empty gap */}
+        <div>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Why it matters:</p>
-          <p className="line-clamp-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.65 }}>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.65 }}>
             {article.excerpt}
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap', paddingTop: 'var(--sp-1)' }}>
           <Link href={`/article/${article.slug}`} style={{
             fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, letterSpacing: '0.5px',
             background: 'var(--color-positive)', color: '#1A1A18',
@@ -133,17 +137,17 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         </div>
       </div>
 
-      {/* Image — no gradient, full opacity */}
+      {/* Image: absolutely fills right 260px × full card height — portrait 3:4 mockup */}
       <div
-        style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-surface)', minHeight: '200px' }}
+        style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: '260px', overflow: 'hidden', background: 'var(--bg-surface)' }}
         className="hidden lg:block"
       >
         <Image
-          src={article.coverImage}
+          src={portraitSrc}
           alt={article.title}
           fill
-          style={{ objectFit: 'cover' }}
-          sizes="240px"
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          sizes="260px"
           priority
         />
       </div>
