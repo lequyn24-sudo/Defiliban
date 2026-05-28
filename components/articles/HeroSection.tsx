@@ -18,7 +18,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
   return (
     <div
       style={{ gap: 'var(--sp-4)', padding: 'var(--sp-4) 0' }}
-      className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px]"
+      className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(260px,2fr)_260px] lg:h-[310px]"
     >
       {/* ── Research Spotlight ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
@@ -51,7 +51,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
     /* Flex-col: image on top → text below */
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       {/* Thumbnail — landscape, full width */}
-      <div style={{ position: 'relative', height: '220px', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: '120px', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden' }}>
         <Image
           src={landscapeSrc}
           alt={article.title}
@@ -62,7 +62,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         />
       </div>
       {/* Text content — flex:1 fills remaining height */}
-      <div style={{ flex: 1, padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
+      <div style={{ flex: 1, padding: 'var(--sp-4)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)', overflow: 'hidden' }}
       >
         <div>
           <span style={{
@@ -76,82 +76,31 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         </div>
 
         <Link href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-          <h2 className="line-clamp-5" style={{
-            fontFamily: 'var(--font-sans)', fontSize: '28px', fontWeight: 800,
-            letterSpacing: '-0.4px', color: 'var(--text-primary)', lineHeight: 1.2,
+          <h2 className="line-clamp-3" style={{
+            fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 800,
+            letterSpacing: '-0.3px', color: 'var(--text-primary)', lineHeight: 1.25,
           }}>
             {article.title}
           </h2>
         </Link>
 
-        {/* Metadata */}
-        <div style={{
-          display: 'flex', gap: 'var(--sp-5)', flexWrap: 'wrap',
-          borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)',
-          padding: 'var(--sp-3) 0',
-        }}>
-          <div>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Confidence</p>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px' }}>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1 }}>{confidence}</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>/100</span>
-            </div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: confidenceColor, fontWeight: 500 }}>High</span>
-          </div>
-          <div>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Data Sources</p>
-            <div style={{ display: 'flex', gap: '4px', alignItems: 'center', marginBottom: '2px' }}>
-              {['Onchain', 'Market', 'Model'].map((src) => (
-                <span key={src} style={{
-                  fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-dim)',
-                  border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 5px',
-                }}>{src}</span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Last Updated</p>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.2 }}>
-              {new Date(article.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
-            </p>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>{timeAgo(article.publishedAt)}</span>
-          </div>
-        </div>
-
-        {/* Why it matters */}
-        <div>
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Why it matters:</p>
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.65 }}>
-            {article.excerpt}
-          </p>
-        </div>
-
-        {/* Tags */}
-        {article.tags.length > 0 && (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--sp-2)' }}>
-            {article.tags.slice(0, 5).map((tag) => (
-              <span key={tag} style={{
-                fontFamily: 'var(--font-mono)', fontSize: '10px', textTransform: 'uppercase',
-                letterSpacing: '0.5px', color: 'var(--text-dim)',
-                border: '1px solid var(--border)', borderRadius: '2px',
-                padding: 'var(--sp-1) var(--sp-2)',
-              }}>{tag}</span>
-            ))}
-          </div>
-        )}
-
-        {/* Source + read time */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)', paddingTop: 'var(--sp-1)', borderTop: '1px solid var(--border)', marginTop: 'auto' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
-            AI · Based on {article.sourceAttribution}
+        {/* Compact meta: confidence + date */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, color: confidenceColor }}>
+            {confidence}/100 High
           </span>
-          <span style={{ color: 'var(--border)', fontSize: '10px' }}>·</span>
+          <span style={{ color: 'var(--border)' }}>·</span>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
-            {article.readTimeMin} min read
+            {timeAgo(article.publishedAt)}
           </span>
         </div>
 
-        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap' }}>
+        {/* Excerpt */}
+        <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.6, flex: 1 }}>
+          {article.excerpt}
+        </p>
+
+        <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap', marginTop: 'auto' }}>
           <Link href={`/article/${article.slug}`} style={{
             fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, letterSpacing: '0.5px',
             background: 'var(--color-positive)', color: '#1A1A18',
@@ -181,20 +130,17 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
 function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      {/* Header */}
+      {/* Header — title only, no subtext */}
       <div style={{
         padding: 'var(--sp-3) var(--sp-4)',
         borderBottom: '1px solid var(--border)', flexShrink: 0,
       }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-primary)' }}>
           Latest Insights
-        </span>
-        <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)' }}>
-          Latest research &amp; protocol analysis
         </span>
       </div>
 
-      {/* 3 articles — fill height equally, each with title + subtext */}
+      {/* 3 articles — title + meta only, equal height rows */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         {articles.map((article, i) => (
           <Link
@@ -205,7 +151,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
             <div
               style={{
                 flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center',
-                padding: 'var(--sp-4)',
+                padding: 'var(--sp-3) var(--sp-4)',
                 borderBottom: i < articles.length - 1 ? '1px solid var(--border)' : 'none',
               }}
               className="row-hover"
@@ -216,12 +162,6 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
               }}>
                 {article.title}
               </h3>
-              <p className="line-clamp-2" style={{
-                fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)',
-                lineHeight: 1.55, marginBottom: 'var(--sp-2)', flex: 1,
-              }}>
-                {article.excerpt}
-              </p>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--sp-2)' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
                   {timeAgo(article.publishedAt)}
@@ -240,7 +180,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
 /*  Market Leaders                              */
 /* ─────────────────────────────────────────── */
 function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
-  const top10 = [...prices].sort((a, b) => b.market_cap - a.market_cap).slice(0, 10)
+  const top10 = [...prices].sort((a, b) => b.market_cap - a.market_cap).slice(0, 5)
 
   function fmt7d(val: number) {
     return { text: (val >= 0 ? '+' : '') + val.toFixed(2) + '%', up: val >= 0 }
