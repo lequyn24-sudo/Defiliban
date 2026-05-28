@@ -48,11 +48,10 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
   const portraitSrc = 'https://picsum.photos/seed/crypto88/480/640'
 
   return (
-    /* height:100% fills the grid cell; flex-col so text can use flex:1 */
-    <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-      {/* Text — flex:1 stretches to fill card height; right padding reserves image space */}
-      <div style={{ flex: 1, padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
-           className="lg:pr-[272px]"
+    /* Flex-row: text column (flex:1) | image column (260px fixed) */
+    <div style={{ display: 'flex', height: '100%' }}>
+      {/* Text column — fills remaining width naturally, no padding override needed */}
+      <div style={{ flex: 1, minWidth: 0, padding: 'var(--sp-5)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}
       >
         <div>
           <span style={{
@@ -67,7 +66,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
 
         <Link href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
           <h2 className="line-clamp-5" style={{
-            fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 800,
+            fontFamily: 'var(--font-sans)', fontSize: '28px', fontWeight: 800,
             letterSpacing: '-0.4px', color: 'var(--text-primary)', lineHeight: 1.2,
           }}>
             {article.title}
@@ -136,10 +135,17 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         </div>
       </div>
 
-      {/* Image: absolutely fills right 260px × full card height — portrait 3:4 mockup */}
+      {/* Image column — flex sibling, same height as text column, fill works reliably */}
       <div
-        style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: '260px', overflow: 'hidden', background: 'var(--bg-surface)' }}
         className="hidden lg:block"
+        style={{
+          width: '260px',
+          flexShrink: 0,
+          position: 'relative',
+          overflow: 'hidden',
+          background: 'var(--bg-surface)',
+          borderLeft: '1px solid var(--border)',
+        }}
       >
         <Image
           src={portraitSrc}
