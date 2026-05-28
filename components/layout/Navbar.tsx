@@ -77,7 +77,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav links */}
-        <div className="hidden md:flex items-center flex-1 gap-0">
+        <div className="hidden md:flex items-center flex-1 gap-1">
           {MAIN_NAV_CATEGORIES.map((cat) => {
             const active = pathname.startsWith(`/${cat.slug}`)
             return (

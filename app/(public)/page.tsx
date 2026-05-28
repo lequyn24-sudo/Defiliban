@@ -103,7 +103,6 @@ function MarketOverviewStrip({ prices }: { prices: CoinPrice[] }) {
       style={{
         background: 'var(--bg-void)',
         borderTop: '1px solid var(--border)',
-        borderBottom: '1px solid var(--border)',
       }}
     >
       <div
@@ -263,7 +262,6 @@ function TrustBar() {
       style={{
         background: 'var(--bg-void)',
         borderTop: '1px solid var(--border)',
-        borderBottom: '1px solid var(--border)',
       }}
     >
       <div

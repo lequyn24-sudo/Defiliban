@@ -55,7 +55,7 @@ export function PriceTicker() {
     >
       <div
         className="flex items-stretch flex-1"
-        style={{ maxWidth: '1280px', margin: '0 auto', width: '100%' }}
+        style={{ maxWidth: '1280px', margin: '0 auto', width: '100%', padding: '0 var(--sp-4)' }}
       >
         {METRICS.map((m, i) => (
           <div
@@ -76,7 +76,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '20px',
+                  fontSize: '13px',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   letterSpacing: '-0.3px',
