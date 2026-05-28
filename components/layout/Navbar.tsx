@@ -309,13 +309,13 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
     <Link
       href={href}
       style={{
-        fontFamily: 'var(--font-mono)',
+        fontFamily: 'var(--font-sans)',
         fontSize: '13px',
         textTransform: 'uppercase',
-        letterSpacing: '0.8px',
+        letterSpacing: '0.6px',
         color: 'var(--text-primary)',
-        opacity: active ? 1 : 0.6,
-        fontWeight: 500,
+        opacity: active ? 1 : 0.65,
+        fontWeight: 700,
         padding: 'var(--sp-1) var(--sp-3)',
         height: '64px',
         display: 'inline-flex',
