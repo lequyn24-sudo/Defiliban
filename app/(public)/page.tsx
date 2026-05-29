@@ -15,13 +15,13 @@ export default function HomePage() {
 
   const sponsoredArticles = allPreviews
     .filter((a) => a.isSponsor || a.tier1 === 'sponsored-articles')
-    .concat(allPreviews.filter((a) => a.tier1 === 'protocols').slice(0, 6))
-    .slice(0, 6)
+    .concat(allPreviews.filter((a) => a.tier1 === 'protocols').slice(0, 5))
+    .slice(0, 5)
 
   const pressReleaseArticles = allPreviews
     .filter((a) => a.tier1 === 'press-release')
-    .concat(allPreviews.filter((a) => a.tier1 === 'infrastructure').slice(0, 6))
-    .slice(0, 6)
+    .concat(allPreviews.filter((a) => a.tier1 === 'infrastructure').slice(0, 5))
+    .slice(0, 5)
 
   return (
     <div>
