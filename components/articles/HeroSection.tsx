@@ -18,7 +18,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
   return (
     <div
       style={{ gap: 'var(--sp-4)', padding: 'var(--sp-4) 0' }}
-      className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px_360px] lg:h-[352px]"
+      className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px_360px] lg:h-[420px]"
     >
       {/* ── Research Spotlight ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
@@ -51,7 +51,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
 
       {/* Thumbnail — 16:9 responsive ratio (source images are 800×450 = 16:9) */}
-      <div style={{ position: 'relative', aspectRatio: '16/9', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden', maxHeight: '260px' }}>
+      <div style={{ position: 'relative', aspectRatio: '16/9', flexShrink: 0, background: 'var(--bg-surface)', overflow: 'hidden', maxHeight: '200px' }}>
         <Image
           src={landscapeSrc}
           alt={article.title}
