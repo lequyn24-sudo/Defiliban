@@ -180,10 +180,10 @@ function ResearchFrameworkSection() {
     <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-page)' }}>
       <div
         style={{ maxWidth: '1280px', margin: '0 auto', gap: '1px', background: 'var(--border)' }}
-        className="grid grid-cols-1 lg:grid-cols-3"
+        className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,3fr)_minmax(0,2fr)]"
       >
         {/* ── Col 1: Cluster cards ── */}
-        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
+        <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-2)' }}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)' }}>
               Research Framework
