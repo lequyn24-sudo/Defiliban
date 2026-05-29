@@ -233,35 +233,36 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
         ))}
       </div>
 
-      {/* Rows */}
-      <div style={{ flex: 1 }}>
+      {/* Rows — flex-col so each row stretches equally to fill container */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         {top10.map((coin, i) => {
           const mock7d = coin.price_change_percentage_24h * 3.5
           const { text, up } = fmt7d(mock7d)
           return (
-            <Link key={coin.id} href="/cmc" style={{ textDecoration: 'none', display: 'block' }}>
+            <Link key={coin.id} href="/cmc" style={{ textDecoration: 'none', flex: 1, display: 'flex' }}>
               <div className="row-hover" style={{
-                display: 'grid', gridTemplateColumns: '20px 1fr 52px 16px',
+                flex: 1,
+                display: 'grid', gridTemplateColumns: '24px 1fr 60px 18px',
                 padding: 'var(--sp-2) var(--sp-3)',
                 borderBottom: i < top10.length - 1 ? '1px solid var(--border)' : 'none',
                 alignItems: 'center', gap: 'var(--sp-2)',
               }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-subtle)' }}>{i + 1}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 500, color: 'var(--text-subtle)' }}>{i + 1}</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', minWidth: 0 }}>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, position: 'relative', background: 'var(--bg-surface)' }}>
-                    {coin.imageUrl && <Image src={coin.imageUrl} alt={coin.name} fill sizes="20px" style={{ objectFit: 'cover' }} />}
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, position: 'relative', background: 'var(--bg-surface)' }}>
+                    {coin.imageUrl && <Image src={coin.imageUrl} alt={coin.name} fill sizes="24px" style={{ objectFit: 'cover' }} />}
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {coin.name}
                     </span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>({coin.symbol})</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>({coin.symbol})</span>
                   </div>
                 </div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, color: up ? 'var(--color-positive)' : 'var(--color-negative)', textAlign: 'right', display: 'block' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 600, color: up ? 'var(--color-positive)' : 'var(--color-negative)', textAlign: 'right', display: 'block' }}>
                   {text}
                 </span>
-                <Star size={10} style={{ color: 'var(--text-dim)', opacity: 0.5 }} />
+                <Star size={12} style={{ color: 'var(--text-dim)', opacity: 0.5 }} />
               </div>
             </Link>
           )
