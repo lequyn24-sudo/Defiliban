@@ -18,7 +18,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
   return (
     <div
       style={{ gap: 'var(--sp-4)', padding: 'var(--sp-4) 0' }}
-      className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px_360px] lg:h-[420px]"
+      className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px_360px]"
     >
       {/* ── Research Spotlight ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', height: '100%' }}>
@@ -198,7 +198,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
 /*  Market Leaders                              */
 /* ─────────────────────────────────────────── */
 function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
-  const top10 = [...prices].sort((a, b) => b.market_cap - a.market_cap).slice(0, 5)
+  const top10 = [...prices].sort((a, b) => b.market_cap - a.market_cap).slice(0, 7)
 
   function fmt7d(val: number) {
     return { text: (val >= 0 ? '+' : '') + val.toFixed(2) + '%', up: val >= 0 }
