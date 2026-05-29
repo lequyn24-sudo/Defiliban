@@ -195,7 +195,7 @@ function ResearchFrameworkSection() {
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             How We Break Down DeFi
           </h2>
-          <div className="grid grid-cols-2" style={{ gap: 'var(--sp-4)', gridAutoRows: '1fr' }}>
+          <div className="grid grid-cols-2" style={{ gap: '16px', gridAutoRows: '1fr' }}>
             {clusters.map((c) => (
               <Link key={c.slug} href={c.href} style={{ textDecoration: 'none', display: 'flex' }}>
                 <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', width: '100%' }} className="card-hover">
