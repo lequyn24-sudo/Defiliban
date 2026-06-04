@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Database, Eye, Briefcase } from 'lucide-react'
 import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
@@ -54,17 +55,17 @@ export default function HomePage() {
 function TrustBar() {
   const items = [
     {
-      icon: '◈',
+      icon: <Database size={18} />,
       title: 'All research is data-backed',
       body: 'We combine onchain data, market metrics, and protocol analysis.',
     },
     {
-      icon: '◫',
+      icon: <Eye size={18} />,
       title: 'Transparent methodology',
       body: 'Every insight includes sources, assumptions, and limitations.',
     },
     {
-      icon: '◉',
+      icon: <Briefcase size={18} />,
       title: 'Built for professionals',
       body: 'Actionable intelligence for allocators, researchers, and builders.',
     },
@@ -100,7 +101,7 @@ function TrustBar() {
           >
             {item.icon && (
               <span
-                style={{ fontSize: '18px', color: 'var(--text-dim)', lineHeight: 1, flexShrink: 0, marginTop: '2px' }}
+                style={{ color: 'var(--text-dim)', flexShrink: 0, marginTop: '2px' }}
               >
                 {item.icon}
               </span>
