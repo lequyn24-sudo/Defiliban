@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Database, Eye, Briefcase } from 'lucide-react'
+import { Database, Eye, Briefcase, Award, FileText, Clock } from 'lucide-react'
 import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
@@ -332,27 +332,41 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
 
         {/* ── Trust & Transparency ── */}
         <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
-          <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-4)', letterSpacing: '-0.1px' }}>
-            Trust & Transparency
-          </h3>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
+            <div>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
+                Our Standards
+              </p>
+              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                Trust & Transparency
+              </h2>
+            </div>
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)' }}>
             {[
-              { icon: '◉', label: 'Editorial independence', desc: 'We do not accept payment for editorial coverage.' },
-              { icon: '◈', label: 'Source transparency', desc: 'All data sources are cited in every research piece.' },
-              { icon: '◫', label: 'Last updated', desc: 'All timestamps reflect real update time.' },
-              { icon: '◌', label: 'AI-generated content', desc: 'All articles are AI-written from primary sources and reviewed editorially.' },
-              { icon: '⬡', label: 'No affiliate links', desc: 'We do not use affiliate or referral links in research.' },
-              { icon: '○', label: 'Have feedback?', desc: 'Help us improve →', isLink: true },
-            ].map(({ icon, label, desc, isLink }) => (
-              <div key={label} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--text-dim)', flexShrink: 0, marginTop: '2px' }}>{icon}</span>
+              { icon: <Award size={18} />, label: 'Editorial independence', desc: 'We do not accept payment for editorial coverage.' },
+              { icon: <FileText size={18} />, label: 'Source transparency', desc: 'All data sources are cited in every research piece.' },
+              { icon: <Clock size={18} />, label: 'Last updated', desc: 'All timestamps reflect real update time.' },
+            ].map(({ icon, label, desc }) => (
+              <div
+                key={label}
+                style={{
+                  display: 'flex',
+                  gap: 'var(--sp-3)',
+                  padding: 'var(--sp-3)',
+                  background: 'var(--bg-page)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '4px',
+                  alignItems: 'center',
+                  minHeight: '78px',
+                }}
+              >
+                <span style={{ color: 'var(--text-dim)', flexShrink: 0, display: 'flex' }}>
+                  {icon}
+                </span>
                 <div>
                   <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>{label}</p>
-                  {isLink ? (
-                    <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>{desc}</Link>
-                  ) : (
-                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.5 }}>{desc}</p>
-                  )}
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.5 }}>{desc}</p>
                 </div>
               </div>
             ))}
