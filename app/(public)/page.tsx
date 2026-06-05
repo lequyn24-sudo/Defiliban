@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Database, Eye, Briefcase, Award, FileText, Clock } from 'lucide-react'
+import { Database, Eye, Briefcase, Award, FileText, Clock, Users } from 'lucide-react'
 import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
@@ -70,7 +70,7 @@ function TrustBar() {
       body: 'Actionable intelligence for allocators, researchers, and builders.',
     },
     {
-      icon: null,
+      icon: <Users size={18} />,
       title: '155,842',
       body: 'Researchers trust Defiliban',
       large: true,
@@ -86,7 +86,12 @@ function TrustBar() {
     >
       <div
         className="grid grid-cols-2 lg:grid-cols-4"
-        style={{ maxWidth: '1280px', margin: '0 auto' }}
+        style={{ 
+          maxWidth: '1280px', 
+          margin: '0 auto',
+          borderLeft: '1px solid var(--border)',
+          borderRight: '1px solid var(--border)'
+        }}
       >
         {items.map((item, i) => (
           <div
