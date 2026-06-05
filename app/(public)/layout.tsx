@@ -1,6 +1,5 @@
 import { PriceTicker } from '@/components/layout/PriceTicker'
 import { Navbar } from '@/components/layout/Navbar'
-import { SubNav } from '@/components/layout/SubNav'
 import { Footer } from '@/components/layout/Footer'
 
 export default function PublicLayout({
@@ -12,7 +11,6 @@ export default function PublicLayout({
     <>
       <PriceTicker />
       <Navbar />
-      <SubNav />
       <main
         style={{ minHeight: '100vh', background: 'var(--bg-page)' }}
       >

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useRef, useEffect } from 'react'
-import { BarChart2, Menu, X, User } from 'lucide-react'
+import { BarChart2, Menu, X, User, ChevronDown } from 'lucide-react'
 import { MAIN_NAV_CATEGORIES } from '@/lib/constants/categories'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
@@ -114,6 +114,14 @@ export function Navbar() {
               active={pathname.startsWith(link.href)}
             />
           ))}
+          <NavDropdown
+            label="Explore"
+            links={[
+              { label: 'CMC Data', href: '/cmc' },
+              { label: 'Sponsored', href: '/sponsored-articles' },
+              { label: 'Press Release', href: '/press-release' },
+            ]}
+          />
         </div>
 
         {/* Search bar */}
@@ -280,6 +288,47 @@ export function Navbar() {
               {cat.label}
             </Link>
           ))}
+          
+          <div style={{
+             borderBottom: '1px solid var(--border)',
+             padding: 'var(--sp-2) 0',
+          }}>
+            <span style={{
+              display: 'block',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '12px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.8px',
+              color: 'var(--text-primary)',
+              fontWeight: 700,
+              marginBottom: '8px',
+            }}>Explore</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', paddingLeft: '12px' }}>
+              {[
+                { label: 'CMC Data', href: '/cmc' },
+                { label: 'Sponsored', href: '/sponsored-articles' },
+                { label: 'Press Release', href: '/press-release' },
+              ].map(link => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '12px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.8px',
+                    color: 'var(--text-dim)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div style={{ marginTop: '12px' }}>
             <Link
               href="/newsletter"
@@ -328,5 +377,67 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
     >
       {label}
     </Link>
+  )
+}
+
+function NavDropdown({ label, links }: { label: string; links: { label: string; href: string }[] }) {
+  const pathname = usePathname()
+  const isActive = links.some(link => pathname.startsWith(link.href))
+  
+  return (
+    <div className="group relative inline-flex items-center h-full">
+      <div
+        style={{
+          fontFamily: 'var(--font-sans)',
+          fontSize: '13px',
+          textTransform: 'uppercase',
+          letterSpacing: '0.6px',
+          color: 'var(--text-primary)',
+          opacity: isActive ? 1 : 0.72,
+          fontWeight: 700,
+          padding: 'var(--sp-1) var(--sp-2)',
+          height: '64px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '4px',
+          borderBottom: isActive ? '2px solid var(--text-primary)' : '2px solid transparent',
+          cursor: 'pointer',
+        }}
+      >
+        {label}
+        <ChevronDown size={14} />
+      </div>
+      <div
+        className="absolute top-full left-0 hidden group-hover:flex flex-col z-50 min-w-[160px]"
+        style={{
+          background: 'var(--bg-void)',
+          border: '1px solid var(--border)',
+          borderTop: 'none',
+          padding: '8px 0',
+        }}
+      >
+        {links.map(link => (
+          <Link
+            key={link.href}
+            href={link.href}
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: '13px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.6px',
+              color: 'var(--text-primary)',
+              opacity: pathname.startsWith(link.href) ? 1 : 0.72,
+              fontWeight: 700,
+              padding: '10px 16px',
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+            className="hover:bg-[var(--bg-surface)] hover:opacity-100"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   )
 }
