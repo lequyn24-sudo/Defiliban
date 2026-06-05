@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Database, Eye, Briefcase, Award, FileText, Clock, Users, CheckCircle2 } from 'lucide-react'
+import { Database, Eye, Briefcase, Award, FileText, Clock, Users, CheckCircle2, ScanEye, CircleSlash, Network, ArrowDownCircle } from 'lucide-react'
 import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
@@ -170,10 +170,10 @@ function ResearchFrameworkSection() {
   ]
 
   const whyPoints = [
-    'Not a generic crypto feed.',
-    'Not a broad market portal chasing every narrative equally.',
-    'Built to explain how DeFi systems are designed, where they fail, and what actually matters beneath the surface.',
-    'Research first. Structure second. Headlines last.',
+    { text: 'Not a generic crypto feed.', icon: <ScanEye size={16} /> },
+    { text: 'Not a broad market portal chasing every narrative equally.', icon: <CircleSlash size={16} /> },
+    { text: 'Built to explain how DeFi systems are designed, where they fail, and what actually matters beneath the surface.', icon: <Network size={16} /> },
+    { text: 'Research first. Structure second. Headlines last.', icon: <ArrowDownCircle size={16} /> },
   ]
 
   const confidenceLevels = [
@@ -239,10 +239,12 @@ function ResearchFrameworkSection() {
             Why this site feels different
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)', marginBottom: 'var(--sp-6)' }}>
-            {whyPoints.map((pt) => (
-              <div key={pt} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={16} style={{ color: 'var(--color-positive)', flexShrink: 0, marginTop: '2px' }} />
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.6 }}>{pt}</p>
+            {whyPoints.map((pt, i) => (
+              <div key={i} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
+                <span style={{ color: 'var(--color-positive)', flexShrink: 0, marginTop: '2px' }}>
+                  {pt.icon}
+                </span>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.6 }}>{pt.text}</p>
               </div>
             ))}
           </div>
