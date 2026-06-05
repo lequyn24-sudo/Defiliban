@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Database, Eye, Briefcase, Award, FileText, Clock, Users } from 'lucide-react'
+import { Database, Eye, Briefcase, Award, FileText, Clock, Users, CheckCircle2 } from 'lucide-react'
 import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
@@ -240,9 +240,7 @@ function ResearchFrameworkSection() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)', marginBottom: 'var(--sp-6)' }}>
             {whyPoints.map((pt) => (
               <div key={pt} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
-                <span style={{ width: '16px', height: '16px', borderRadius: '50%', border: '1.5px solid var(--color-positive)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-positive)', display: 'block' }} />
-                </span>
+                <CheckCircle2 size={16} style={{ color: 'var(--color-positive)', flexShrink: 0, marginTop: '2px' }} />
                 <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.6 }}>{pt}</p>
               </div>
             ))}
@@ -268,15 +266,30 @@ function ResearchFrameworkSection() {
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)', marginBottom: 'var(--sp-6)' }}>
             {confidenceLevels.map((lvl) => (
-              <div key={lvl.range} style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'flex-start' }}>
-                <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: lvl.color, flexShrink: 0, marginTop: '3px', display: 'block' }} />
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--sp-2)', marginBottom: '2px' }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', minWidth: '52px' }}>{lvl.range}</span>
+              <div 
+                key={lvl.range} 
+                style={{ 
+                  background: 'var(--bg-surface2)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '4px',
+                  padding: 'var(--sp-3)',
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  gap: 'var(--sp-2)'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--sp-2)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: lvl.color, flexShrink: 0, display: 'block' }} />
                     <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>{lvl.label}</span>
                   </div>
-                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)' }}>{lvl.desc}</p>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', background: 'var(--bg-page)', padding: '2px 6px', borderRadius: '2px', border: '1px solid var(--border)', flexShrink: 0 }}>
+                    {lvl.range}
+                  </span>
                 </div>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', paddingLeft: 'calc(8px + var(--sp-2))' }}>
+                  {lvl.desc}
+                </p>
               </div>
             ))}
           </div>
