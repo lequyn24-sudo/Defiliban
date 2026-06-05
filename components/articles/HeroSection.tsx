@@ -67,7 +67,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
 
         {/* Badge */}
         <span style={{
-          fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
+          fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, fontWeight: 500,
           textTransform: 'uppercase', letterSpacing: '1px',
           background: 'var(--color-positive)', color: 'var(--color-on-positive)',
           borderRadius: '2px', padding: '2px 8px', alignSelf: 'flex-start',
@@ -88,39 +88,39 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
         {/* Metadata: Confidence | Data Sources | Last Updated */}
         <div style={{ display: 'flex', gap: 'var(--sp-5)', flexWrap: 'wrap', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: 'var(--sp-2) 0' }}>
           <div>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Confidence</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Confidence</p>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px' }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1 }}>{confidence}</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>/100</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)' }}>/100</span>
             </div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: confidenceColor, fontWeight: 500 }}>High</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: confidenceColor, fontWeight: 500 }}>High</span>
           </div>
           <div>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '5px' }}>Data Sources</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '5px' }}>Data Sources</p>
             <div style={{ display: 'flex', gap: '4px' }}>
               {['Onchain', 'Market', 'Model'].map((src) => (
-                <span key={src} style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-dim)', border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 5px' }}>{src}</span>
+                <span key={src} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)', border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 5px' }}>{src}</span>
               ))}
             </div>
           </div>
           <div>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Last Updated</p>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '3px' }}>Last Updated</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.2 }}>
               {new Date(article.publishedAt).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}
             </p>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>{timeAgo(article.publishedAt)}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)' }}>{timeAgo(article.publishedAt)}</span>
           </div>
         </div>
 
         {/* Excerpt */}
-        <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.6, flex: 1 }}>
+        <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.6, flex: 1 }}>
           {article.excerpt}
         </p>
 
         {/* CTAs */}
         <div style={{ display: 'flex', gap: 'var(--sp-2)', alignItems: 'center', flexWrap: 'wrap' }}>
           <Link href={`/article/${article.slug}`} style={{
-            fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500, letterSpacing: '0.5px',
+            fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 500, letterSpacing: '0.5px',
             background: 'var(--color-positive)', color: 'var(--color-on-positive)',
             padding: 'var(--sp-2) var(--sp-5)', borderRadius: '20px',
             textDecoration: 'none', whiteSpace: 'nowrap',
@@ -128,7 +128,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
             Read Full Research →
           </Link>
           <button style={{
-            fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.5px',
+            fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.5px',
             background: 'transparent', color: 'var(--text-dim)',
             padding: 'var(--sp-2) var(--sp-4)', borderRadius: '20px',
             border: '1px solid var(--border)', cursor: 'pointer', whiteSpace: 'nowrap',
@@ -153,7 +153,7 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
         padding: 'var(--sp-3) var(--sp-4)',
         borderBottom: '1px solid var(--border)', flexShrink: 0,
       }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-primary)' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-primary)' }}>
           Latest Insights
         </span>
       </div>
@@ -175,13 +175,13 @@ function LatestInsights({ articles }: { articles: ArticlePreview[] }) {
               className="row-hover"
             >
               <h3 style={{
-                fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 700,
+                fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 700,
                 color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: 'var(--sp-2)',
               }}>
                 {article.title}
               </h3>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--sp-2)' }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>
                   {timeAgo(article.publishedAt)}
                 </span>
                 <CategoryBadge category={article.category} isBreaking={article.isBreaking} isSponsor={article.isSponsor} />
@@ -208,14 +208,14 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
       <div style={{ padding: 'var(--sp-3) var(--sp-4)', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>
           Market Leaders
         </span>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)' }}>
             Top assets by market cap
           </span>
-          <Link href="/cmc" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>
+          <Link href="/cmc" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}>
             View all →
           </Link>
         </div>
@@ -227,7 +227,7 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
         padding: 'var(--sp-1) var(--sp-3)', borderBottom: '1px solid var(--border)', gap: 'var(--sp-2)',
       }}>
         {['#', 'ASSET', '7D %', ''].map((h) => (
-          <span key={h} style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', textAlign: h === '7D %' ? 'right' : 'left' }}>
+          <span key={h} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', textAlign: h === '7D %' ? 'right' : 'left' }}>
             {h}
           </span>
         ))}
@@ -247,19 +247,19 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
                 borderBottom: i < top10.length - 1 ? '1px solid var(--border)' : 'none',
                 alignItems: 'center', gap: 'var(--sp-2)',
               }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 500, color: 'var(--text-subtle)' }}>{i + 1}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500, color: 'var(--text-subtle)' }}>{i + 1}</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', minWidth: 0 }}>
                   <div style={{ width: '24px', height: '24px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, position: 'relative', background: 'var(--bg-surface)' }}>
                     {coin.imageUrl && <Image src={coin.imageUrl} alt={coin.name} fill sizes="24px" style={{ objectFit: 'cover' }} />}
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {coin.name}
                     </span>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>({coin.symbol})</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>({coin.symbol})</span>
                   </div>
                 </div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 600, color: up ? 'var(--color-positive)' : 'var(--color-negative)', textAlign: 'right', display: 'block' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 600, color: up ? 'var(--color-positive)' : 'var(--color-negative)', textAlign: 'right', display: 'block' }}>
                   {text}
                 </span>
                 <Star size={12} style={{ color: 'var(--text-dim)', opacity: 0.5 }} />
@@ -270,7 +270,7 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
       </div>
 
       <div style={{ padding: 'var(--sp-2) var(--sp-3)', borderTop: '1px solid var(--border)', flexShrink: 0 }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>Updated 2m ago</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)' }}>Updated 2m ago</span>
       </div>
     </div>
   )

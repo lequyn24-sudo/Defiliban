@@ -12,12 +12,12 @@
 @theme {
   /* 3 primary swatches */
   --color-cream:     #E8E8C6;
-  --color-dark:      #252525;
-  --color-surface:   #474744;
+  --color-dark:      #1D1D1B;
+  --color-surface:   #30302E;
 
   /* Derived dark levels */
-  --color-void:      #1A1A18;   /* #252525 darkened — deepest bg */
-  --color-surface2:  #363634;   /* midpoint between #252525 and #474744 */
+  --color-void:      #121211;   /* deepest bg */
+  --color-surface2:  #262624;   /* midpoint */
 
   /* Functional / data colors (dark-mode values; light mode overrides below) */
   --color-positive:    #4CAF7A;   /* dark: 4.8–5.9:1 ✓ AA on bg-page/void */
@@ -58,14 +58,14 @@
  *  Border:     cream at low opacity on dark bg               */
 :root,
 [data-theme="dark"] {
-  --bg-void:      #1A1A18;   /* body · navbar · footer — deepest */
-  --bg-page:      #252525;   /* sections · card backgrounds */
-  --bg-surface2:  #363634;   /* raised panels · methodology card */
-  --bg-surface:   #474744;   /* clearly elevated — the mid swatch */
+  --bg-void:      #121211;   /* body · navbar · footer — deepest */
+  --bg-page:      #1D1D1B;   /* sections · card backgrounds */
+  --bg-surface2:  #262624;   /* raised panels · methodology card */
+  --bg-surface:   #30302E;   /* clearly elevated — the mid swatch */
 
   --text-primary: #E8E8C6;                    /* full cream — headings, values */
-  --text-dim:     rgba(232, 232, 198, 0.78);  /* secondary text — 4.6:1 on bg-surface, 6.5:1 on bg-page */
-  --text-subtle:  rgba(232, 232, 198, 0.65);  /* rank numbers — 4.9:1 AA on bg-page (margin above 4.5) */
+  --text-dim:     rgba(232, 232, 198, 0.88);  /* secondary text */
+  --text-subtle:  rgba(232, 232, 198, 0.78);  /* rank numbers */
   --text-faint:   rgba(232, 232, 198, 0.25);  /* subtle fills · badge bg */
   --text-ghost:   rgba(232, 232, 198, 0.08);  /* hover tint */
 
@@ -77,20 +77,20 @@
 /* ── Light theme ───────────────────────────────────────────── */
 /*  Flip: cream → background, dark → text                      */
 [data-theme="light"] {
-  --bg-void:      #F5F3EA;   /* body · lightest cream wash */
-  --bg-page:      #EDEBD8;   /* sections · cream-tinted bg */
-  --bg-surface2:  #E2E0CE;   /* raised panels */
-  --bg-surface:   #D6D4C2;   /* elevated cards */
+  --bg-void:      #FFFFFF;   /* body · lightest */
+  --bg-page:      #F6F5ED;   /* sections */
+  --bg-surface2:  #EBE9DE;   /* raised panels */
+  --bg-surface:   #DFDCCD;   /* elevated cards */
 
-  --text-primary: #252525;                   /* dark swatch — all primary text */
-  --text-dim:     rgba(37, 37, 37, 0.82);    /* secondary text — raised for light mode contrast */
-  --text-subtle:  rgba(37, 37, 37, 0.70);    /* rank numbers — 5.1:1 AA on bg-page */
-  --text-faint:   rgba(37, 37, 37, 0.18);    /* subtle fills */
-  --text-ghost:   rgba(37, 37, 37, 0.06);    /* hover tint */
+  --text-primary: #151515;                   /* dark swatch — all primary text */
+  --text-dim:     rgba(21, 21, 21, 0.88);    /* secondary text */
+  --text-subtle:  rgba(21, 21, 21, 0.78);    /* rank numbers */
+  --text-faint:   rgba(21, 21, 21, 0.18);    /* subtle fills */
+  --text-ghost:   rgba(21, 21, 21, 0.06);    /* hover tint */
 
-  --border:        rgba(37, 37, 37, 0.14);
-  --border-mid:    rgba(37, 37, 37, 0.26);
-  --border-strong: rgba(37, 37, 37, 0.45);
+  --border:        rgba(21, 21, 21, 0.14);
+  --border-mid:    rgba(21, 21, 21, 0.26);
+  --border-strong: rgba(21, 21, 21, 0.45);
 
   /* Functional colors override — accessible on cream backgrounds */
   --color-positive:    #1B6E33;   /* dark green: 5.2:1 ✓ AA on cream */
@@ -165,7 +165,7 @@ a {
 }
 .badge-infra {
   background: rgba(232, 232, 198, 0.06);
-  color: rgba(232, 232, 198, 0.55);
+  color: rgba(232, 232, 198, 0.85);
   border: 1px solid rgba(232, 232, 198, 0.18);
 }
 .badge-breaking {
@@ -174,7 +174,7 @@ a {
 }
 .badge-sponsored {
   background: rgba(232, 232, 198, 0.06);
-  color: rgba(232, 232, 198, 0.55);
+  color: rgba(232, 232, 198, 0.85);
   border: 1px solid rgba(232, 232, 198, 0.18);
 }
 
@@ -200,7 +200,7 @@ a {
 }
 [data-theme="light"] .badge-infra {
   background: rgba(26, 26, 26, 0.06);
-  color: rgba(26, 26, 26, 0.55);
+  color: rgba(26, 26, 26, 0.85);
   border: 1px solid rgba(26, 26, 26, 0.18);
 }
 [data-theme="light"] .badge-breaking {
@@ -209,7 +209,7 @@ a {
 }
 [data-theme="light"] .badge-sponsored {
   background: rgba(26, 26, 26, 0.06);
-  color: rgba(26, 26, 26, 0.55);
+  color: rgba(26, 26, 26, 0.85);
   border: 1px solid rgba(26, 26, 26, 0.18);
 }
 
