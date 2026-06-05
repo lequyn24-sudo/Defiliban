@@ -27,7 +27,7 @@ export function HeroSection({ featured, latest, prices }: Props) {
 
       {/* ── Latest Insights ── */}
       <div style={{ border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', background: 'var(--bg-surface2)', display: 'flex', flexDirection: 'column' }}>
-        <LatestInsights articles={latest.slice(0, 3)} />
+        <LatestInsights articles={latest.slice(0, 5)} />
       </div>
 
       {/* ── Market Leaders ── */}
