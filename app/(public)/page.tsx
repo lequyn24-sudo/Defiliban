@@ -264,32 +264,28 @@ function ResearchFrameworkSection() {
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             How we rate our research
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-4)', marginBottom: 'var(--sp-6)' }}>
-            {confidenceLevels.map((lvl) => (
+          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: 'var(--sp-6)' }}>
+            {confidenceLevels.map((lvl, i) => (
               <div 
                 key={lvl.range} 
                 style={{ 
-                  background: 'var(--bg-surface2)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '4px',
-                  padding: 'var(--sp-3)',
                   display: 'flex', 
-                  flexDirection: 'column',
-                  gap: 'var(--sp-2)'
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: 'var(--sp-3) 0',
+                  borderBottom: i < confidenceLevels.length - 1 ? '1px solid var(--border)' : 'none'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--sp-2)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)' }}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: lvl.color, flexShrink: 0, display: 'block' }} />
-                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>{lvl.label}</span>
+                <div style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'center' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: lvl.color, flexShrink: 0, display: 'block' }} />
+                  <div>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>{lvl.label}</span>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'var(--text-dim)', display: 'block', lineHeight: 1.4 }}>{lvl.desc}</span>
                   </div>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', background: 'var(--bg-page)', padding: '2px 6px', borderRadius: '2px', border: '1px solid var(--border)', flexShrink: 0 }}>
-                    {lvl.range}
-                  </span>
                 </div>
-                <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', paddingLeft: 'calc(8px + var(--sp-2))' }}>
-                  {lvl.desc}
-                </p>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 4px', whiteSpace: 'nowrap' }}>
+                  {lvl.range}
+                </span>
               </div>
             ))}
           </div>
