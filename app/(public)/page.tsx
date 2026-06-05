@@ -106,7 +106,7 @@ function TrustBar() {
           >
             {item.icon && (
               <span
-                style={{ color: 'var(--text-dim)', flexShrink: 0, marginTop: '2px' }}
+                style={{ color: 'var(--text-dim)', flexShrink: 0, marginTop: item.large ? '5px' : '2px' }}
               >
                 {item.icon}
               </span>
@@ -120,6 +120,7 @@ function TrustBar() {
                     fontWeight: 500,
                     color: 'var(--text-primary)',
                     letterSpacing: '-0.3px',
+                    lineHeight: 1,
                     marginBottom: 'var(--sp-1)',
                   }}
                 >
