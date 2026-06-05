@@ -186,10 +186,10 @@ function ResearchFrameworkSection() {
     <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-page)' }}>
       <div
         style={{ maxWidth: '1280px', margin: '0 auto', gap: '1px', background: 'var(--border)' }}
-        className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,2fr)_minmax(0,3fr)]"
+        className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,3fr)_minmax(0,2fr)]"
       >
         {/* ── Col 1: Cluster cards ── */}
-        <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
+        <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-2)' }}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)' }}>
               Research Framework
@@ -201,7 +201,7 @@ function ResearchFrameworkSection() {
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
             How We Break Down DeFi
           </h2>
-          <div className="grid grid-cols-2" style={{ gap: '16px', gridAutoRows: '1fr' }}>
+          <div className="grid grid-cols-2" style={{ gap: '16px', gridAutoRows: '1fr', flexGrow: 1 }}>
             {clusters.map((c) => (
               <Link key={c.slug} href={c.href} style={{ textDecoration: 'none', display: 'flex' }}>
                 <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', width: '100%' }} className="card-hover">
@@ -230,7 +230,7 @@ function ResearchFrameworkSection() {
         </div>
 
         {/* ── Col 2: Why Defiliban ── */}
-        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
+        <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)', display: 'flex', flexDirection: 'column' }}>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
             Why Defiliban
           </p>
@@ -245,9 +245,9 @@ function ResearchFrameworkSection() {
               </div>
             ))}
           </div>
-          <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-4)' }}>
+          <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-4)', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Methodology transparency</p>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-3)' }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-3)', flexGrow: 1 }}>
               Every research piece includes our methodology, data sources, assumptions, and limitations.
             </p>
             <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>
