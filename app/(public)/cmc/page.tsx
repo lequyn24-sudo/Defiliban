@@ -28,7 +28,7 @@ export default function CMCPage() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
@@ -85,7 +85,7 @@ export default function CMCPage() {
                 key={h}
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.6px',
                   color: 'var(--text-dim)',
@@ -107,8 +107,8 @@ export default function CMCPage() {
         <p
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
-            color: 'rgba(232,232,198,0.35)',
+            fontSize: '12px',
+            color: 'var(--text-subtle)',
             marginTop: 'var(--sp-5)',
             textAlign: 'center',
           }}
@@ -143,7 +143,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
         style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '12px',
-          color: 'rgba(232,232,198,0.35)',
+          color: 'var(--text-subtle)',
         }}
       >
         {rank}
@@ -200,7 +200,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
           <span
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
             }}
           >
@@ -213,7 +213,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--text-primary)',
           textAlign: 'right',
           display: 'block',
@@ -226,7 +226,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '13px',
+          fontSize: '14px',
           fontWeight: 500,
           color: up24 ? 'var(--color-positive)' : 'var(--color-negative)',
           textAlign: 'right',
@@ -240,7 +240,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '13px',
+          fontSize: '14px',
           fontWeight: 500,
           color: mock7d >= 0 ? 'var(--color-positive)' : 'var(--color-negative)',
           textAlign: 'right',
@@ -254,7 +254,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--text-dim)',
           textAlign: 'right',
           display: 'block',
@@ -267,7 +267,7 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--text-dim)',
           textAlign: 'right',
           display: 'block',

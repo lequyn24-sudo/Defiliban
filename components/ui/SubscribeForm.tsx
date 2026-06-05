@@ -65,7 +65,7 @@ export function SubscribeForm({ compact = false, dark = false }: Props) {
             border: '1px solid var(--border)',
             color: 'var(--text-primary)',
             fontFamily: 'var(--font-sans)',
-            fontSize: '13px',
+            fontSize: '14px',
             padding: '8px 12px',
             borderRadius: '4px',
             outline: 'none',
@@ -79,7 +79,7 @@ export function SubscribeForm({ compact = false, dark = false }: Props) {
             background: 'var(--text-primary)',
             color: 'var(--bg-page)',
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '12px', fontWeight: 600,
             letterSpacing: '0.8px',
             textTransform: 'uppercase',
             padding: '8px 16px',
@@ -100,7 +100,7 @@ export function SubscribeForm({ compact = false, dark = false }: Props) {
       <p
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '11px',
+          fontSize: '12px',
           textTransform: 'uppercase',
           letterSpacing: '1.5px',
           color: 'var(--text-dim)',
@@ -157,7 +157,7 @@ export function SubscribeForm({ compact = false, dark = false }: Props) {
             background: 'var(--text-primary)',
             color: 'var(--bg-page)',
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             letterSpacing: '1px',
             textTransform: 'uppercase',
             padding: '10px 24px',
@@ -178,7 +178,7 @@ export function SubscribeForm({ compact = false, dark = false }: Props) {
         <p
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--color-negative)',
             marginTop: '8px',
           }}
@@ -189,7 +189,7 @@ export function SubscribeForm({ compact = false, dark = false }: Props) {
       <p
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
+          fontSize: '12px', fontWeight: 600,
           color: 'var(--text-faint)',
           marginTop: '12px',
         }}

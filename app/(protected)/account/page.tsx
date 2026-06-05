@@ -72,7 +72,7 @@ function SectionShell({ title, desc, children }: { title: string; desc: string; 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ marginBottom: 'var(--sp-5)' }}>
-      <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
+      <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
         {label}
       </label>
       {children}
@@ -98,7 +98,7 @@ function MockInput({ value, placeholder }: { value?: string; placeholder?: strin
 function SaveButton() {
   return (
     <button style={{
-      marginTop: 'var(--sp-6)', fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase',
+      marginTop: 'var(--sp-6)', fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase',
       letterSpacing: '0.8px', background: 'var(--text-primary)', color: 'var(--bg-void)',
       border: 'none', borderRadius: '20px', padding: 'var(--sp-2) var(--sp-6)', cursor: 'pointer', fontWeight: 500,
     }}>
@@ -150,7 +150,7 @@ function SectionIdentity({ user }: { user: MockUser }) {
         </div>
         <div>
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--sp-1)' }}>{user.displayName}</p>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>{user.email}</p>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>{user.email}</p>
         </div>
       </div>
       <Field label="Display Name"><MockInput value={user.displayName} /></Field>
@@ -185,8 +185,8 @@ function SectionSecurity() {
       <SaveButton />
       <div style={{ marginTop: 'var(--sp-8)', padding: 'var(--sp-5)', background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px' }}>
         <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Two-Factor Authentication</p>
-        <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', marginBottom: 'var(--sp-4)' }}>Add an extra layer of security to your account.</p>
-        <button style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.8px', border: '1px solid var(--border)', background: 'transparent', color: 'var(--text-primary)', borderRadius: '4px', padding: 'var(--sp-2) var(--sp-4)', cursor: 'pointer' }}>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', marginBottom: 'var(--sp-4)' }}>Add an extra layer of security to your account.</p>
+        <button style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.8px', border: '1px solid var(--border)', background: 'transparent', color: 'var(--text-primary)', borderRadius: '4px', padding: 'var(--sp-2) var(--sp-4)', cursor: 'pointer' }}>
           Enable 2FA
         </button>
       </div>
@@ -199,12 +199,12 @@ function SectionSubscription() {
     <SectionShell title="Subscription" desc="Your current plan and billing information.">
       <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-6)', marginBottom: 'var(--sp-5)' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--sp-3)' }}>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', fontWeight: 500, color: 'var(--text-primary)' }}>Free Plan</span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--color-positive)', border: '1px solid var(--color-positive)', borderRadius: '2px', padding: '2px 8px' }}>Active</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500, color: 'var(--text-primary)' }}>Free Plan</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--color-positive)', border: '1px solid var(--color-positive)', borderRadius: '2px', padding: '2px 8px' }}>Active</span>
         </div>
-        <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)' }}>Full article access · Weekly newsletter · Community features</p>
+        <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)' }}>Full article access · Weekly newsletter · Community features</p>
       </div>
-      <button style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.8px', background: 'var(--text-primary)', color: 'var(--bg-void)', border: 'none', borderRadius: '20px', padding: 'var(--sp-3) var(--sp-6)', cursor: 'pointer', fontWeight: 500 }}>
+      <button style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.8px', background: 'var(--text-primary)', color: 'var(--bg-void)', border: 'none', borderRadius: '20px', padding: 'var(--sp-3) var(--sp-6)', cursor: 'pointer', fontWeight: 500 }}>
         Upgrade to Pro →
       </button>
     </SectionShell>
@@ -217,12 +217,12 @@ function SectionPreferences() {
       <Field label="Theme">
         <div style={{ display: 'flex', gap: 'var(--sp-2)' }}>
           {['Dark', 'Light', 'System'].map((t) => (
-            <button key={t} style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: t === 'Dark' ? 'var(--text-primary)' : 'transparent', color: t === 'Dark' ? 'var(--bg-void)' : 'var(--text-dim)', cursor: 'pointer' }}>{t}</button>
+            <button key={t} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: t === 'Dark' ? 'var(--text-primary)' : 'transparent', color: t === 'Dark' ? 'var(--bg-void)' : 'var(--text-dim)', cursor: 'pointer' }}>{t}</button>
           ))}
         </div>
       </Field>
       <Field label="Default Feed">
-        <select style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-primary)', background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-2) var(--sp-4)', outline: 'none', cursor: 'pointer' }}>
+        <select style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-primary)', background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-2) var(--sp-4)', outline: 'none', cursor: 'pointer' }}>
           <option>All categories</option>
           <option>Protocols only</option>
           <option>Yield & Risk</option>
@@ -232,7 +232,7 @@ function SectionPreferences() {
       <Field label="Article density">
         <div style={{ display: 'flex', gap: 'var(--sp-2)' }}>
           {['Compact', 'Normal', 'Spacious'].map((d) => (
-            <button key={d} style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: d === 'Normal' ? 'var(--text-primary)' : 'transparent', color: d === 'Normal' ? 'var(--bg-void)' : 'var(--text-dim)', cursor: 'pointer' }}>{d}</button>
+            <button key={d} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: d === 'Normal' ? 'var(--text-primary)' : 'transparent', color: d === 'Normal' ? 'var(--bg-void)' : 'var(--text-dim)', cursor: 'pointer' }}>{d}</button>
           ))}
         </div>
       </Field>
@@ -244,12 +244,12 @@ function SectionPreferences() {
 function SectionNotifications() {
   return (
     <SectionShell title="Notifications" desc="Choose what you hear about and how.">
-      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--text-dim)', marginBottom: 'var(--sp-3)' }}>Email</p>
+      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--text-dim)', marginBottom: 'var(--sp-3)' }}>Email</p>
       <Toggle label="Weekly newsletter digest" defaultOn />
       <Toggle label="Breaking news alerts" />
       <Toggle label="Protocol exploit alerts" defaultOn />
       <Toggle label="Watchlist price alerts" />
-      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--text-dim)', margin: 'var(--sp-5) 0 var(--sp-3)' }}>In-app</p>
+      <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--text-dim)', margin: 'var(--sp-5) 0 var(--sp-3)' }}>In-app</p>
       <Toggle label="New article in followed category" defaultOn />
       <Toggle label="Portfolio significant moves" />
       <Toggle label="Governance proposals (watchlist)" />
@@ -262,7 +262,7 @@ function SectionInvestmentProfile() {
   return (
     <SectionShell title="Investment Profile" desc="Help us personalize research relevance to your context.">
       <Field label="Investor type">
-        <select style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-primary)', background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-2) var(--sp-4)', outline: 'none', cursor: 'pointer' }}>
+        <select style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-primary)', background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-2) var(--sp-4)', outline: 'none', cursor: 'pointer' }}>
           <option>Researcher / Analyst</option>
           <option>Protocol Builder</option>
           <option>Retail Investor</option>
@@ -272,14 +272,14 @@ function SectionInvestmentProfile() {
       <Field label="Risk tolerance">
         <div style={{ display: 'flex', gap: 'var(--sp-2)', flexWrap: 'wrap' }}>
           {['Conservative', 'Moderate', 'Aggressive', 'Degen'].map((r) => (
-            <button key={r} style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: 'transparent', color: 'var(--text-dim)', cursor: 'pointer' }}>{r}</button>
+            <button key={r} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: 'transparent', color: 'var(--text-dim)', cursor: 'pointer' }}>{r}</button>
           ))}
         </div>
       </Field>
       <Field label="Primary interest">
         <div style={{ display: 'flex', gap: 'var(--sp-2)', flexWrap: 'wrap' }}>
           {['Protocols', 'Yield', 'Liquidity', 'Risk', 'Infrastructure'].map((c) => (
-            <button key={c} style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: 'transparent', color: 'var(--text-dim)', cursor: 'pointer' }}>{c}</button>
+            <button key={c} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', padding: 'var(--sp-2) var(--sp-3)', border: '1px solid var(--border)', borderRadius: '4px', background: 'transparent', color: 'var(--text-dim)', cursor: 'pointer' }}>{c}</button>
           ))}
         </div>
       </Field>
@@ -333,10 +333,10 @@ function SectionActivity() {
         {items.map((item, i) => (
           <div key={i} style={{ background: 'var(--bg-page)', padding: 'var(--sp-3) var(--sp-4)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 'var(--sp-4)' }}>
             <div>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', marginRight: 'var(--sp-3)' }}>{item.label}</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', marginRight: 'var(--sp-3)' }}>{item.label}</span>
               <span style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-primary)' }}>{item.detail}</span>
             </div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', flexShrink: 0 }}>{item.time}</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', flexShrink: 0 }}>{item.time}</span>
           </div>
         ))}
       </div>
@@ -356,8 +356,8 @@ function SectionReputation() {
         {badges.map((b) => (
           <div key={b.label} style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-4)', textAlign: 'center' }}>
             <span style={{ fontSize: '24px', display: 'block', marginBottom: 'var(--sp-2)' }}>{b.icon}</span>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--sp-1)' }}>{b.label}</p>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>{b.desc}</p>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--sp-1)' }}>{b.label}</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)' }}>{b.desc}</p>
           </div>
         ))}
       </div>
@@ -365,7 +365,7 @@ function SectionReputation() {
         {[{ label: 'Articles Read', value: '47' }, { label: 'Streak (days)', value: '12' }, { label: 'Bookmarks', value: '8' }].map((s) => (
           <div key={s.label} style={{ textAlign: 'center' }}>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '28px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1 }}>{s.value}</p>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.8px', marginTop: 'var(--sp-1)' }}>{s.label}</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.8px', marginTop: 'var(--sp-1)' }}>{s.label}</p>
           </div>
         ))}
       </div>
@@ -435,15 +435,15 @@ export default function AccountPage() {
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 500, color: 'var(--text-primary)' }}>{initials}</span>
             </div>
             <div style={{ minWidth: 0 }}>
-              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{user.displayName}</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{user.email}</p>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{user.displayName}</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{user.email}</p>
             </div>
           </div>
 
           {/* Nav groups */}
           {NAV.map((group) => (
             <div key={group.label} style={{ marginBottom: 'var(--sp-5)' }}>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)', paddingLeft: 'var(--sp-3)' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)', paddingLeft: 'var(--sp-3)' }}>
                 {group.label}
               </p>
               {group.items.map((item) => {
@@ -457,7 +457,7 @@ export default function AccountPage() {
                       width: '100%', padding: 'var(--sp-2) var(--sp-3)',
                       background: isActive ? 'var(--bg-surface)' : 'transparent',
                       border: 'none', borderRadius: '4px', cursor: 'pointer',
-                      fontFamily: 'var(--font-sans)', fontSize: '13px',
+                      fontFamily: 'var(--font-sans)', fontSize: '14px',
                       color: isActive ? 'var(--text-primary)' : 'var(--text-dim)',
                       fontWeight: isActive ? 600 : 400,
                       textAlign: 'left', marginBottom: '2px',
@@ -477,7 +477,7 @@ export default function AccountPage() {
             style={{
               display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', width: '100%',
               padding: 'var(--sp-2) var(--sp-3)', background: 'none', border: 'none',
-              cursor: 'pointer', fontFamily: 'var(--font-mono)', fontSize: '11px',
+              cursor: 'pointer', fontFamily: 'var(--font-mono)', fontSize: '12px',
               textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-negative)',
               borderRadius: '4px', marginTop: 'var(--sp-4)',
             }}
@@ -497,7 +497,7 @@ export default function AccountPage() {
                 key={item.id}
                 onClick={() => setActive(item.id)}
                 style={{
-                  fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.6px',
+                  fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.6px',
                   padding: 'var(--sp-1) var(--sp-2)', border: '1px solid var(--border)', borderRadius: '4px',
                   background: active === item.id ? 'var(--text-primary)' : 'transparent',
                   color: active === item.id ? 'var(--bg-void)' : 'var(--text-dim)',

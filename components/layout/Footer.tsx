@@ -49,7 +49,7 @@ export function Footer() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   letterSpacing: '1px',
                   textTransform: 'uppercase',
@@ -76,7 +76,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '0.6px',
               color: 'var(--text-dim)',
@@ -92,7 +92,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -113,7 +113,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -134,7 +134,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',
@@ -177,7 +177,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
               opacity: 0.55,
             }}
@@ -187,7 +187,7 @@ export function Footer() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
               opacity: 0.55,
             }}

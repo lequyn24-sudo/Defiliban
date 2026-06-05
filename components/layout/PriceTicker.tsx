@@ -76,7 +76,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   letterSpacing: '-0.3px',
@@ -104,7 +104,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.8px',
                   color: 'var(--text-dim)',
@@ -118,7 +118,7 @@ export function PriceTicker() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '11px',
+                  fontSize: '12px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.6px',
                   color: 'var(--text-dim)',

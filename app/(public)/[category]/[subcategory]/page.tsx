@@ -65,7 +65,7 @@ export default async function SubcategoryPage({ params }: Props) {
           href={`/${category}`}
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '12px', fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.8px',
             color: 'var(--text-dim)',
@@ -74,11 +74,11 @@ export default async function SubcategoryPage({ params }: Props) {
         >
           {meta.label}
         </Link>
-        <span style={{ color: 'var(--text-faint)', fontSize: '10px' }}>/</span>
+        <span style={{ color: 'var(--text-faint)', fontSize: '12px', fontWeight: 600 }}>/</span>
         <span
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '12px', fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.8px',
             color: 'var(--text-primary)',
@@ -128,7 +128,7 @@ export default async function SubcategoryPage({ params }: Props) {
               href={sub.href}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px', fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.8px',
                 color:

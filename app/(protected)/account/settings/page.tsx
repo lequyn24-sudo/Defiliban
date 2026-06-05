@@ -40,7 +40,7 @@ export default function SettingsPage() {
           alignItems: 'center',
           gap: '6px',
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
+          fontSize: '12px', fontWeight: 600,
           textTransform: 'uppercase',
           letterSpacing: '0.8px',
           color: 'var(--text-dim)',
@@ -73,7 +73,7 @@ export default function SettingsPage() {
               onClick={() => setTheme(t)}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
+                fontSize: '12px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.8px',
                 padding: '8px 20px',
@@ -114,7 +114,7 @@ export default function SettingsPage() {
         <p
           style={{
             fontFamily: 'var(--font-sans)',
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--text-dim)',
             marginBottom: '12px',
           }}
@@ -125,7 +125,7 @@ export default function SettingsPage() {
           href="/newsletter"
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '12px', fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.8px',
             background: 'var(--text-primary)',
@@ -146,7 +146,7 @@ export default function SettingsPage() {
           onClick={handleLogout}
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '12px', fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.8px',
             padding: '8px 16px',
@@ -182,7 +182,7 @@ function SettingSection({
       <h2
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
+          fontSize: '12px', fontWeight: 600,
           textTransform: 'uppercase',
           letterSpacing: '1px',
           color: 'var(--text-dim)',
@@ -202,7 +202,7 @@ function InfoRow({ label, value }: { label: string; value: string }) {
       <span
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '11px',
+          fontSize: '12px',
           color: 'var(--text-dim)',
         }}
       >
@@ -211,7 +211,7 @@ function InfoRow({ label, value }: { label: string; value: string }) {
       <span
         style={{
           fontFamily: 'var(--font-sans)',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--text-primary)',
         }}
       >

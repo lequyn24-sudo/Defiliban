@@ -81,7 +81,7 @@ export default function NotFound() {
         href="/"
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '11px',
+          fontSize: '12px',
           textTransform: 'uppercase',
           letterSpacing: '0.8px',
           background: 'var(--text-primary)',

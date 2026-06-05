@@ -67,7 +67,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
 
         {/* Badge */}
         <span style={{
-          fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, fontWeight: 500,
+          fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600,
           textTransform: 'uppercase', letterSpacing: '1px',
           background: 'var(--color-positive)', color: 'var(--color-on-positive)',
           borderRadius: '2px', padding: '2px 8px', alignSelf: 'flex-start',
@@ -93,7 +93,7 @@ function ResearchSpotlight({ article }: { article: ArticlePreview }) {
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1 }}>{confidence}</span>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)' }}>/100</span>
             </div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: confidenceColor, fontWeight: 500 }}>High</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: confidenceColor }}>High</span>
           </div>
           <div>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: '5px' }}>Data Sources</p>

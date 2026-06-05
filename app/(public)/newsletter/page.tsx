@@ -29,7 +29,7 @@ export default function NewsletterPage() {
         <p
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '12px', fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             color: 'var(--text-dim)',
@@ -81,7 +81,7 @@ export default function NewsletterPage() {
           <h2
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
               color: 'var(--text-dim)',

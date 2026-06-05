@@ -46,7 +46,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: '720px', marginBottom: 'var(--sp-16)' }}>
           <p style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             color: 'var(--text-dim)',
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <div style={{ marginBottom: 'var(--sp-16)' }}>
           <p style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             color: 'var(--text-dim)',
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div style={{ marginBottom: 'var(--sp-16)' }}>
           <p style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             color: 'var(--text-dim)',
@@ -172,7 +172,7 @@ export default function AboutPage() {
               >
                 <span style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   color: 'var(--text-primary)',
                   minWidth: '180px',
@@ -203,7 +203,7 @@ export default function AboutPage() {
         }}>
           <p style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             color: 'var(--text-dim)',
@@ -249,7 +249,7 @@ export default function AboutPage() {
                 </p>
                 <p style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--text-dim)',
                   lineHeight: 1.55,
                 }}>

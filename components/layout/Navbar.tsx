@@ -82,7 +82,7 @@ export function Navbar() {
               className="hidden xl:block"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px', fontWeight: 600,
                 letterSpacing: '0.3px',
                 color: 'var(--text-dim)',
                 lineHeight: 1,
@@ -141,7 +141,7 @@ export function Navbar() {
             placeholder="Search research..."
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-primary)',
               background: 'transparent',
               border: '1px solid var(--border)',
@@ -157,7 +157,7 @@ export function Navbar() {
               position: 'absolute',
               right: '8px',
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
               pointerEvents: 'none',
               letterSpacing: '0',
@@ -192,7 +192,7 @@ export function Navbar() {
           title={userInitials ? 'My Account' : 'Sign In'}
         >
           {userInitials ? (
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500 }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 500 }}>
               {userInitials}
             </span>
           ) : (
@@ -206,7 +206,7 @@ export function Navbar() {
           className="hidden md:block"
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.8px',
             background: 'var(--text-primary)',
@@ -335,7 +335,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
+                fontSize: '12px',
                 background: 'var(--text-primary)',
                 color: 'var(--bg-void)',
                 padding: 'var(--sp-2) var(--sp-3)',
@@ -359,7 +359,7 @@ function NavLink({ href, label, active }: { href: string; label: string; active:
       href={href}
       style={{
         fontFamily: 'var(--font-sans)',
-        fontSize: '13px',
+        fontSize: '14px',
         textTransform: 'uppercase',
         letterSpacing: '0.6px',
         color: 'var(--text-primary)',
@@ -389,7 +389,7 @@ function NavDropdown({ label, links }: { label: string; links: { label: string; 
       <div
         style={{
           fontFamily: 'var(--font-sans)',
-          fontSize: '13px',
+          fontSize: '14px',
           textTransform: 'uppercase',
           letterSpacing: '0.6px',
           color: 'var(--text-primary)',
@@ -422,7 +422,7 @@ function NavDropdown({ label, links }: { label: string; links: { label: string; 
             href={link.href}
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '13px',
+              fontSize: '14px',
               textTransform: 'uppercase',
               letterSpacing: '0.6px',
               color: 'var(--text-primary)',

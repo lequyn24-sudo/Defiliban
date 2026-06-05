@@ -38,7 +38,7 @@ export default function BookmarksPage() {
           alignItems: 'center',
           gap: '6px',
           fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
+          fontSize: '12px', fontWeight: 600,
           textTransform: 'uppercase',
           letterSpacing: '0.8px',
           color: 'var(--text-dim)',
@@ -85,7 +85,7 @@ export default function BookmarksPage() {
             href="/"
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
+              fontSize: '12px', fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.8px',
               background: 'var(--text-primary)',

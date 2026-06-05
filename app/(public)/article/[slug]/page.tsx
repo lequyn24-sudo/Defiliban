@@ -68,7 +68,7 @@ export default async function ArticlePage({ params }: Props) {
               href={`/${article.tier1}`}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px', fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.8px',
                 color: 'var(--text-dim)',
@@ -79,12 +79,12 @@ export default async function ArticlePage({ params }: Props) {
             </Link>
             {subMeta && (
               <>
-                <span style={{ color: 'var(--text-faint)', fontSize: '10px' }}>/</span>
+                <span style={{ color: 'var(--text-faint)', fontSize: '12px', fontWeight: 600 }}>/</span>
                 <Link
                   href={`/${article.tier1}/${subMeta.slug}`}
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '10px',
+                    fontSize: '12px', fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.8px',
                     color: 'var(--text-dim)',
@@ -151,17 +151,17 @@ export default async function ArticlePage({ params }: Props) {
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
               }}
             >
               {formatDate(article.publishedAt)}
             </span>
-            <span style={{ color: 'var(--border)', fontSize: '10px' }}>·</span>
+            <span style={{ color: 'var(--border)', fontSize: '12px', fontWeight: 600 }}>·</span>
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
               }}
             >
@@ -201,8 +201,8 @@ export default async function ArticlePage({ params }: Props) {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
-              color: 'rgba(232,232,198,0.35)',
+              fontSize: '12px',
+              color: 'var(--text-subtle)',
               marginTop: '32px',
               paddingTop: '16px',
               borderTop: '1px solid var(--border)',
@@ -244,7 +244,7 @@ export default async function ArticlePage({ params }: Props) {
               <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>
                 Defiliban Research
               </p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)' }}>
                 Senior Analyst
               </p>
             </div>
@@ -265,7 +265,7 @@ export default async function ArticlePage({ params }: Props) {
                   key={tag}
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '10px',
+                    fontSize: '12px', fontWeight: 600,
                     letterSpacing: '0.5px',
                     textTransform: 'uppercase',
                     color: 'var(--text-dim)',
@@ -287,7 +287,7 @@ export default async function ArticlePage({ params }: Props) {
             <h2
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '12px', fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '1.5px',
                 color: 'var(--text-dim)',

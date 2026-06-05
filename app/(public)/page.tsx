@@ -178,8 +178,8 @@ function ResearchFrameworkSection() {
 
   const confidenceLevels = [
     { range: '80 – 100', label: 'High confidence',      desc: 'Strong data & clear signal',      color: 'var(--color-positive)' },
-    { range: '60 – 79',  label: 'Moderate confidence',  desc: 'Good data, some uncertainty',     color: '#E8C84A' },
-    { range: '40 – 59',  label: 'Low confidence',       desc: 'Limited data or mixed signals',   color: '#E8A04A' },
+    { range: '60 – 79',  label: 'Moderate confidence',  desc: 'Good data, some uncertainty',     color: 'var(--color-info-blue)' },
+    { range: '40 – 59',  label: 'Low confidence',       desc: 'Limited data or mixed signals',   color: 'var(--color-negative)' },
     { range: '0 – 39',   label: 'Very low confidence',  desc: 'Speculative / early signal',      color: 'var(--color-negative)' },
   ]
 
@@ -192,10 +192,10 @@ function ResearchFrameworkSection() {
         {/* ── Col 1: Cluster cards ── */}
         <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)', display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-2)' }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)' }}>
               Research Framework
             </p>
-            <Link href="/protocols" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            <Link href="/protocols" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               Explore framework →
             </Link>
           </div>
@@ -219,10 +219,10 @@ function ResearchFrameworkSection() {
                     <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-1)', lineHeight: 1.3 }}>
                       {c.label}
                     </p>
-                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'var(--text-dim)', lineHeight: 1.5, marginBottom: 'var(--sp-2)', flex: 1 }}>
+                    <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.5, marginBottom: 'var(--sp-2)', flex: 1 }}>
                       {c.desc}
                     </p>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>Explore cluster →</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)' }}>Explore cluster →</span>
                   </div>
                 </div>
               </Link>
@@ -232,7 +232,7 @@ function ResearchFrameworkSection() {
 
         {/* ── Col 2: Why Defiliban ── */}
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)', display: 'flex', flexDirection: 'column' }}>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
             Why Defiliban
           </p>
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
@@ -250,10 +250,10 @@ function ResearchFrameworkSection() {
           </div>
           <div style={{ background: 'var(--bg-surface2)', border: '1px solid var(--border)', borderRadius: '4px', padding: 'var(--sp-4)', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-2)' }}>Methodology transparency</p>
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-3)', flexGrow: 1 }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'var(--text-dim)', lineHeight: 1.55, marginBottom: 'var(--sp-3)', flexGrow: 1 }}>
               Every research piece includes our methodology, data sources, assumptions, and limitations.
             </p>
-            <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>
+            <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}>
               View methodology →
             </Link>
           </div>
@@ -261,7 +261,7 @@ function ResearchFrameworkSection() {
 
         {/* ── Col 3: Confidence Scale ── */}
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
-          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-dim)', marginBottom: 'var(--sp-2)' }}>
             Confidence Scale
           </p>
           <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--sp-5)', letterSpacing: '-0.2px' }}>
@@ -282,17 +282,17 @@ function ResearchFrameworkSection() {
                 <div style={{ display: 'flex', gap: 'var(--sp-3)', alignItems: 'center' }}>
                   <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: lvl.color, flexShrink: 0, display: 'block' }} />
                   <div>
-                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>{lvl.label}</span>
-                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'var(--text-dim)', display: 'block', lineHeight: 1.4 }}>{lvl.desc}</span>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>{lvl.label}</span>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', display: 'block', lineHeight: 1.4 }}>{lvl.desc}</span>
                   </div>
                 </div>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 4px', whiteSpace: 'nowrap' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-dim)', border: '1px solid var(--border)', borderRadius: '2px', padding: '2px 4px', whiteSpace: 'nowrap' }}>
                   {lvl.range}
                 </span>
               </div>
             ))}
           </div>
-          <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none' }}>
+          <Link href="/about" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none' }}>
             Learn more about our confidence methodology →
           </Link>
         </div>
@@ -315,14 +315,14 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
             <div>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
                 Commercial Content
               </p>
               <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
                 Sponsored Articles
               </h2>
             </div>
-            <Link href="/sponsored-articles" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            <Link href="/sponsored-articles" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               View all →
             </Link>
           </div>
@@ -333,14 +333,14 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         <div style={{ background: 'var(--bg-page)', padding: 'var(--sp-6)' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
             <div>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
                 Official Announcements
               </p>
               <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
                 Press Release
               </h2>
             </div>
-            <Link href="/press-release" style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+            <Link href="/press-release" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-dim)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               View all →
             </Link>
           </div>
@@ -351,7 +351,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
         <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
           <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-4)' }}>
             <div>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-dim)', marginBottom: 'var(--sp-1)' }}>
                 Our Standards
               </p>
               <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
@@ -382,7 +382,7 @@ function CommercialSection({ sponsored, pressRelease }: { sponsored: ArticlePrev
                   {icon}
                 </span>
                 <div>
-                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>{label}</p>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>{label}</p>
                   <p style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'var(--text-dim)', lineHeight: 1.5 }}>{desc}</p>
                 </div>
               </div>
@@ -405,10 +405,10 @@ function CommercialList({ articles, label }: { articles: ArticlePreview[]; label
               <Image src={article.coverImage} alt={article.title} fill style={{ objectFit: 'cover', opacity: 0.8 }} sizes="72px" />
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', display: 'block', marginBottom: '3px' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.6px', color: 'var(--text-dim)', display: 'block', marginBottom: '3px' }}>
                 {label}
               </span>
-              <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4 }}>
+              <p className="line-clamp-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.4 }}>
                 {article.title.replace('[Sponsored] ', '')}
               </p>
             </div>

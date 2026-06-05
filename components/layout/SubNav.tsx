@@ -90,7 +90,7 @@ function SubNavLink({
       href={href}
       style={{
         fontFamily: 'var(--font-mono)',
-        fontSize: '10px',
+        fontSize: '12px', fontWeight: 600,
         textTransform: 'uppercase',
         letterSpacing: '0.8px',
         padding: '0 10px',

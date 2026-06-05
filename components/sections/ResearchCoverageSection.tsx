@@ -56,7 +56,7 @@ const SIGNAL_CARDS: SignalCard[] = [
 
 function signalColor(score: number): string {
   if (score >= 80) return 'var(--color-positive)'
-  if (score >= 60) return '#E8C84A'
+  if (score >= 60) return 'var(--color-info-blue)'
   return 'var(--color-negative)'
 }
 
@@ -93,7 +93,7 @@ export function ResearchCoverageSection() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',
@@ -168,7 +168,7 @@ export function ResearchCoverageSection() {
                   top: '8px',
                   left: '8px',
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '10px',
+                  fontSize: '12px', fontWeight: 600,
                   textTransform: 'uppercase',
                   letterSpacing: '0.6px',
                   color: signalTextColor(card.signal),
@@ -187,7 +187,7 @@ export function ResearchCoverageSection() {
               <h3
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 700,
                   color: 'var(--text-primary)',
                   lineHeight: 1.35,
@@ -214,7 +214,7 @@ export function ResearchCoverageSection() {
                     key={tag}
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '10px',
+                      fontSize: '12px', fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: '0.4px',
                       color: 'var(--text-dim)',
@@ -255,14 +255,14 @@ export function ResearchCoverageSection() {
           </span>
           {[
             { label: '80–100 Strong', color: 'var(--color-positive)' },
-            { label: '60–79 Moderate', color: '#E8C84A' },
+            { label: '60–79 Moderate', color: 'var(--color-info-blue)' },
             { label: '0–59 Weak', color: 'var(--color-negative)' },
           ].map(({ label, color }) => (
             <span
               key={label}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--text-dim)',
                 display: 'flex',
                 alignItems: 'center',
@@ -286,7 +286,7 @@ export function ResearchCoverageSection() {
         <span
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--text-dim)',
           }}
         >

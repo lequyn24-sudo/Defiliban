@@ -35,7 +35,7 @@ export function CategoryNewsSection({ eyebrow, title, slug, articles }: Props) {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1.5px',
               color: 'var(--text-dim)',

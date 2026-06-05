@@ -78,7 +78,7 @@ export default function SearchPage() {
               cursor: 'pointer',
               color: 'var(--text-dim)',
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
             }}
           >
             Clear
@@ -92,7 +92,7 @@ export default function SearchPage() {
           <p
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--text-dim)',
               marginBottom: '20px',
             }}
