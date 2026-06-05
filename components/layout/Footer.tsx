@@ -32,9 +32,10 @@ export function Footer() {
           margin: '0 auto',
           padding: 'var(--sp-10) var(--sp-6) var(--sp-8)',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+          gridTemplateColumns: 'minmax(320px, 3fr) 1fr 1fr 1fr',
           gap: 'var(--sp-10)',
         }}
+        className="max-md:!grid-cols-1 max-md:gap-10"
       >
         {/* Brand column */}
         <div style={{ maxWidth: '260px' }}>
