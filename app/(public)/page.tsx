@@ -81,7 +81,6 @@ function TrustBar() {
     <div
       style={{
         background: 'var(--bg-void)',
-        paddingBottom: 'var(--sp-4)', // Add some space below it since it's a box now
       }}
     >
       <div
@@ -89,9 +88,9 @@ function TrustBar() {
         style={{ 
           maxWidth: '1280px', 
           margin: '0 auto',
-          border: '1px solid var(--border)',
-          borderRadius: '4px',
-          background: 'var(--bg-void)',
+          borderTop: '1px solid var(--border)',
+          borderLeft: '1px solid var(--border)',
+          borderRight: '1px solid var(--border)',
         }}
       >
         {items.map((item, i) => (
