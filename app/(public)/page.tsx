@@ -186,7 +186,7 @@ function ResearchFrameworkSection() {
     <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-page)' }}>
       <div
         style={{ maxWidth: '1280px', margin: '0 auto', gap: '1px', background: 'var(--border)' }}
-        className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,3fr)_minmax(0,2fr)]"
+        className="grid grid-cols-1 lg:grid-cols-[minmax(0,4fr)_minmax(0,3fr)_minmax(0,3fr)]"
       >
         {/* ── Col 1: Cluster cards ── */}
         <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
@@ -272,7 +272,7 @@ function ResearchFrameworkSection() {
                   display: 'flex', 
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: 'var(--sp-3) 0',
+                  padding: 'var(--sp-2) 0',
                   borderBottom: i < confidenceLevels.length - 1 ? '1px solid var(--border)' : 'none'
                 }}
               >
