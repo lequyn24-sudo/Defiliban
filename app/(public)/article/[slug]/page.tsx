@@ -211,6 +211,45 @@ export default async function ArticlePage({ params }: Props) {
             {article.sourceAttribution}
           </p>
 
+          {/* Author */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginTop: '24px',
+              marginBottom: '12px',
+            }}
+          >
+            <div
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                position: 'relative',
+                background: 'var(--bg-surface2)',
+                border: '1px solid var(--border)',
+              }}
+            >
+              <Image
+                src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${article.slug}`}
+                alt="Author Avatar"
+                fill
+                style={{ objectFit: 'cover' }}
+                unoptimized
+              />
+            </div>
+            <div>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>
+                Defiliban Research
+              </p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
+                Senior Analyst
+              </p>
+            </div>
+          </div>
+
           {/* Tags */}
           {article.tags.length > 0 && (
             <div
