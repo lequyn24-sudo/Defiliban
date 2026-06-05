@@ -186,7 +186,7 @@ function ResearchFrameworkSection() {
     <section style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-page)' }}>
       <div
         style={{ maxWidth: '1280px', margin: '0 auto', gap: '1px', background: 'var(--border)' }}
-        className="grid grid-cols-1 lg:grid-cols-[minmax(0,4fr)_minmax(0,3fr)_minmax(0,3fr)]"
+        className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,2fr)_minmax(0,3fr)]"
       >
         {/* ── Col 1: Cluster cards ── */}
         <div style={{ background: 'var(--bg-void)', padding: 'var(--sp-6)' }}>
