@@ -1,48 +1,70 @@
 import Link from 'next/link'
+import { fetchTickerCoins } from '@/lib/coingecko'
 
-const SPARKLINE_UP = (
-  <svg width="48" height="16" viewBox="0 0 48 16" fill="none" aria-hidden="true">
-    <polyline
-      points="0,14 8,10 16,11 24,7 32,8 40,4 48,2"
-      stroke="#4CAF7A"
-      strokeWidth="1.5"
-      fill="none"
-      strokeLinejoin="round"
-      strokeLinecap="round"
-    />
-  </svg>
-)
+const TICKER_IDS = ['bitcoin', 'ethereum', 'solana', 'binancecoin']
 
-const SPARKLINE_DOWN = (
-  <svg width="48" height="16" viewBox="0 0 48 16" fill="none" aria-hidden="true">
-    <polyline
-      points="0,2 8,5 16,4 24,8 32,7 40,11 48,14"
-      stroke="#CF5C5C"
-      strokeWidth="1.5"
-      fill="none"
-      strokeLinejoin="round"
-      strokeLinecap="round"
-    />
-  </svg>
-)
-
-interface Metric {
-  label: string
-  value: string
-  change: string
-  changeUp: boolean
-  trend: string
-  trendLabel: string
+function formatPrice(price: number): string {
+  if (price >= 1000) return `$${Math.round(price).toLocaleString('en-US')}`
+  if (price >= 1) return `$${price.toFixed(2)}`
+  return `$${price.toFixed(4)}`
 }
 
-const METRICS: Metric[] = [
-  { label: 'ETH TVL', value: '$61.4B', change: '+2.8%', changeUp: true, trend: '7D TREND', trendLabel: '7D TREND' },
-  { label: 'STABLECOIN SUPPLY', value: '$153.2B', change: '+0.9%', changeUp: true, trend: '7D TREND', trendLabel: '7D TREND' },
-  { label: 'DEX VOLUME (24H)', value: '$8.1B', change: '+4.6%', changeUp: true, trend: '24H TREND', trendLabel: '24H TREND' },
-  { label: 'LENDING UTILIZATION', value: '71.2%', change: '-1.2%', changeUp: false, trend: 'RISK: COOLING', trendLabel: 'RISK: COOLING' },
-]
+function sparklinePoints(prices: number[]): string {
+  if (prices.length < 2) return ''
+  const step = Math.max(1, Math.floor(prices.length / 20))
+  const pts = prices.filter((_, i) => i % step === 0)
+  if (pts.length < 2) return ''
+  const min = Math.min(...pts)
+  const max = Math.max(...pts)
+  const range = max - min || 1
+  return pts
+    .map((p, i) => {
+      const x = ((i / (pts.length - 1)) * 48).toFixed(1)
+      const y = (15 - ((p - min) / range) * 13).toFixed(1)
+      return `${x},${y}`
+    })
+    .join(' ')
+}
 
-export function PriceTicker() {
+const STATIC_UP = '0,14 8,10 16,11 24,7 32,8 40,4 48,2'
+const STATIC_DOWN = '0,2 8,5 16,4 24,8 32,7 40,11 48,14'
+
+interface TickerItem {
+  label: string
+  price: string
+  change: string
+  up: boolean
+  points: string
+}
+
+export async function PriceTicker() {
+  let items: TickerItem[] = TICKER_IDS.map((id) => ({
+    label: id === 'binancecoin' ? 'BNB' : id.slice(0, 3).toUpperCase(),
+    price: '—',
+    change: '—',
+    up: true,
+    points: STATIC_UP,
+  }))
+
+  try {
+    const coins = await fetchTickerCoins(TICKER_IDS)
+    if (coins.length > 0) {
+      items = coins.map((coin) => {
+        const up = coin.price_change_percentage_24h >= 0
+        const pts = sparklinePoints(coin.sparkline)
+        return {
+          label: coin.symbol,
+          price: formatPrice(coin.current_price),
+          change: `${up ? '+' : ''}${coin.price_change_percentage_24h.toFixed(2)}%`,
+          up,
+          points: pts || (up ? STATIC_UP : STATIC_DOWN),
+        }
+      })
+    }
+  } catch {
+    // keep placeholder items
+  }
+
   return (
     <div
       style={{
@@ -57,9 +79,9 @@ export function PriceTicker() {
         className="flex items-stretch flex-1"
         style={{ maxWidth: '1280px', margin: '0 auto', width: '100%', padding: '0 var(--sp-4)' }}
       >
-        {METRICS.map((m, i) => (
+        {items.map((item, i) => (
           <div
-            key={m.label}
+            key={item.label}
             style={{
               flex: '1 1 0',
               minWidth: 0,
@@ -68,7 +90,7 @@ export function PriceTicker() {
               flexDirection: 'column',
               justifyContent: 'center',
               padding: '0 var(--sp-4)',
-              borderRight: i < METRICS.length - 1 ? '1px solid var(--border)' : 'none',
+              borderRight: i < items.length - 1 ? '1px solid var(--border)' : 'none',
               gap: '2px',
             }}
           >
@@ -83,21 +105,30 @@ export function PriceTicker() {
                   flexShrink: 0,
                 }}
               >
-                {m.value}
+                {item.price}
               </span>
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: m.changeUp ? 'var(--color-positive)' : 'var(--color-negative)',
+                  color: item.up ? 'var(--color-positive)' : 'var(--color-negative)',
                   fontWeight: 500,
                   flexShrink: 0,
                 }}
               >
-                {m.change}
+                {item.change}
               </span>
               <span style={{ marginLeft: 'auto', flexShrink: 0 }}>
-                {m.changeUp ? SPARKLINE_UP : SPARKLINE_DOWN}
+                <svg width="48" height="16" viewBox="0 0 48 16" fill="none" aria-hidden="true">
+                  <polyline
+                    points={item.points}
+                    stroke={item.up ? '#4CAF7A' : '#F08080'}
+                    strokeWidth="1.5"
+                    fill="none"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-2)', overflow: 'hidden' }}>
@@ -113,7 +144,7 @@ export function PriceTicker() {
                   textOverflow: 'ellipsis',
                 }}
               >
-                {m.label}
+                {item.label}
               </span>
               <span
                 style={{
@@ -127,7 +158,7 @@ export function PriceTicker() {
                   flexShrink: 0,
                 }}
               >
-                {m.trendLabel}
+                7D TREND
               </span>
             </div>
           </div>

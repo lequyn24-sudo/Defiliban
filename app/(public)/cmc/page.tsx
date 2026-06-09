@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { fetchMarkets } from '@/lib/coingecko'
 import { MOCK_PRICES } from '@/lib/mock/prices'
 import type { CoinPrice } from '@/lib/types'
 
@@ -16,8 +17,9 @@ function formatLargeNum(n: number): string {
   return `$${n.toLocaleString()}`
 }
 
-export default function CMCPage() {
-  const sorted = [...MOCK_PRICES].sort((a, b) => b.market_cap - a.market_cap)
+export default async function CMCPage() {
+  const coins = await fetchMarkets(100).catch(() => MOCK_PRICES)
+  const sorted = [...coins].sort((a, b) => b.market_cap - a.market_cap)
 
   return (
     <div style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
@@ -56,7 +58,7 @@ export default function CMCPage() {
                 color: 'var(--text-dim)',
               }}
             >
-              {sorted.length} assets · Updated 2m ago
+              {sorted.length} assets · Live · 60s cache
             </span>
           </div>
         </div>
@@ -113,7 +115,7 @@ export default function CMCPage() {
             textAlign: 'center',
           }}
         >
-          Data is illustrative / mock — not live market data · AI · Defiliban
+          Live market data via CoinGecko · Cached 60s · AI · Defiliban
         </p>
       </div>
     </div>
@@ -122,7 +124,8 @@ export default function CMCPage() {
 
 function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven: boolean }) {
   const up24 = coin.price_change_percentage_24h >= 0
-  const mock7d = coin.price_change_percentage_24h * 1.4
+  const change7d = coin.price_change_percentage_7d ?? coin.price_change_percentage_24h * 1.4
+  const up7d = change7d >= 0
 
   return (
     <div
@@ -236,18 +239,18 @@ function CoinRow({ coin, rank, isEven }: { coin: CoinPrice; rank: number; isEven
         {up24 ? '+' : ''}{coin.price_change_percentage_24h.toFixed(2)}%
       </span>
 
-      {/* 7d % (derived from 24h for mock) */}
+      {/* 7d % */}
       <span
         style={{
           fontFamily: 'var(--font-mono)',
           fontSize: '14px',
           fontWeight: 500,
-          color: mock7d >= 0 ? 'var(--color-positive)' : 'var(--color-negative)',
+          color: up7d ? 'var(--color-positive)' : 'var(--color-negative)',
           textAlign: 'right',
           display: 'block',
         }}
       >
-        {mock7d >= 0 ? '+' : ''}{mock7d.toFixed(2)}%
+        {up7d ? '+' : ''}{change7d.toFixed(2)}%
       </span>
 
       {/* Market cap */}

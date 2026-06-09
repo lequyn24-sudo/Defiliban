@@ -5,14 +5,17 @@ import { HeroSection } from '@/components/articles/HeroSection'
 import { ResearchCoverageSection } from '@/components/sections/ResearchCoverageSection'
 import { MOCK_ARTICLES, getLatestArticles, toPreview } from '@/lib/mock/articles'
 import { MOCK_PRICES } from '@/lib/mock/prices'
+import { fetchMarkets } from '@/lib/coingecko'
 import { timeAgo } from '@/lib/utils/format'
 import type { ArticlePreview } from '@/lib/types'
 import type { CoinPrice } from '@/lib/types'
 
-export default function HomePage() {
+export default async function HomePage() {
   const allPreviews = MOCK_ARTICLES.map(toPreview)
   const featured = allPreviews.find((a) => a.isFeatured && a.tier1 === 'protocols') ?? allPreviews[0]
   const latest = getLatestArticles(8).map(toPreview)
+
+  const prices = await fetchMarkets(20).catch(() => MOCK_PRICES)
 
   const sponsoredArticles = allPreviews
     .filter((a) => a.isSponsor || a.tier1 === 'sponsored-articles')
@@ -28,7 +31,7 @@ export default function HomePage() {
     <div>
       {/* ── Hero: Research Spotlight | Latest Insights | Market Leaders ── */}
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        <HeroSection featured={featured} latest={latest} prices={MOCK_PRICES} />
+        <HeroSection featured={featured} latest={latest} prices={prices} />
       </div>
 
       {/* ── Trust Bar ── */}

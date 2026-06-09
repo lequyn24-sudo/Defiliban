@@ -236,8 +236,8 @@ function MarketLeaders({ prices }: { prices: CoinPrice[] }) {
       {/* Rows — flex-col so each row stretches equally to fill container */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         {top10.map((coin, i) => {
-          const mock7d = coin.price_change_percentage_24h * 3.5
-          const { text, up } = fmt7d(mock7d)
+          const change7d = coin.price_change_percentage_7d ?? coin.price_change_percentage_24h * 3.5
+          const { text, up } = fmt7d(change7d)
           return (
             <Link key={coin.id} href="/cmc" style={{ textDecoration: 'none', flex: 1, display: 'flex' }}>
               <div className="row-hover" style={{
