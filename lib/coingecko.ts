@@ -1,6 +1,7 @@
 import type { CoinPrice } from '@/lib/types'
 
 const BASE = 'https://api.coingecko.com/api/v3'
+const TIMEOUT_MS = 8000
 
 interface CoinGeckoMarket {
   id: string
@@ -25,6 +26,10 @@ function cgHeaders(): Record<string, string> {
     h['x-cg-demo-api-key'] = process.env.COINGECKO_API_KEY
   }
   return h
+}
+
+function withTimeout(ms: number): AbortSignal {
+  return AbortSignal.timeout(ms)
 }
 
 function mapCoin(raw: CoinGeckoMarket): CoinPrice {
@@ -52,6 +57,7 @@ export async function fetchMarkets(perPage = 20): Promise<CoinPrice[]> {
   })
   const res = await fetch(`${BASE}/coins/markets?${params}`, {
     headers: cgHeaders(),
+    signal: withTimeout(TIMEOUT_MS),
     next: { revalidate: 60 },
   })
   if (!res.ok) throw new Error(`CoinGecko /markets ${res.status}`)
@@ -73,6 +79,7 @@ export async function fetchTickerCoins(
   })
   const res = await fetch(`${BASE}/coins/markets?${params}`, {
     headers: cgHeaders(),
+    signal: withTimeout(TIMEOUT_MS),
     next: { revalidate: 60 },
   })
   if (!res.ok) throw new Error(`CoinGecko ticker ${res.status}`)
@@ -87,6 +94,7 @@ export async function fetchChart(coinId: string, days = 7): Promise<number[]> {
   const params = new URLSearchParams({ vs_currency: 'usd', days: String(days) })
   const res = await fetch(`${BASE}/coins/${coinId}/market_chart?${params}`, {
     headers: cgHeaders(),
+    signal: withTimeout(TIMEOUT_MS),
     next: { revalidate: 300 },
   })
   if (!res.ok) throw new Error(`CoinGecko chart ${res.status}`)

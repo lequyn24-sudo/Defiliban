@@ -175,7 +175,6 @@ export function ResearchCoverageSection() {
                   background: signalColor(card.signal),
                   padding: '2px 6px',
                   borderRadius: '2px',
-                  fontWeight: 500,
                 }}
               >
                 Signal {card.signal}
